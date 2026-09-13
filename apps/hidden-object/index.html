@@ -1,0 +1,3486 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New HOPA Game - Gra Hidden Object</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      height: 100vh;
+      height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    header {
+      background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+      border-bottom: 2px solid #d4af37;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      z-index: 20;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+    body.hud-collapsed header,
+    body.hud-collapsed footer {
+      display: none !important;
+    }
+    .game-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fef08a;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hud-bar {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(212,175,55,0.4);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn {
+      background: linear-gradient(180deg, #d4af37 0%, #996515 100%);
+      color: #0f172a;
+      font-weight: bold;
+      border: none;
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .btn:hover {
+      filter: brightness(1.15);
+      transform: translateY(-1px);
+    }
+    .btn:active {
+      transform: translateY(1px);
+    }
+    .btn-secondary {
+      background: rgba(30, 41, 59, 0.8);
+      color: #f1f5f9;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+    .hint-progress-svg {
+      width: 15px;
+      height: 15px;
+      transform: rotate(-90deg);
+      flex-shrink: 0;
+    }
+    .hint-progress-circle-bg {
+      stroke: #334155;
+      stroke-width: 4.5;
+      fill: none;
+    }
+    .hint-progress-circle-bar {
+      stroke: #f59e0b;
+      stroke-width: 4.5;
+      stroke-linecap: round;
+      fill: none;
+      transition: stroke-dasharray 0.3s ease;
+    }
+    .badge-charges {
+      background: rgba(0,0,0,0.35);
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      margin-left: 3px;
+    }
+    .badge-cost {
+      background: rgba(0,0,0,0.35);
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      margin-left: 3px;
+      color: #fef08a;
+    }
+    .autosave-indicator {
+      display: none;
+      align-items: center;
+      gap: 5px;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      color: #6ee7b7;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      animation: pulseSave 1.5s infinite;
+    }
+    @keyframes pulseSave {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.97); }
+    }
+    .save-tab-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #334155;
+      padding-bottom: 8px;
+    }
+    .save-tab-btn {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid #475569;
+      color: #94a3b8;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .save-tab-btn.active {
+      background: rgba(212, 175, 55, 0.25);
+      border-color: #d4af37;
+      color: #fef08a;
+    }
+    .save-slots-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 380px;
+      overflow-y: auto;
+      padding-right: 4px;
+      text-align: left;
+    }
+    .save-slot-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.2s ease;
+    }
+    .save-slot-card:hover {
+      border-color: #64748b;
+      background: rgba(30, 41, 59, 0.85);
+    }
+    .save-slot-card.is-autosave {
+      border-color: rgba(52, 211, 153, 0.4);
+      background: rgba(6, 78, 59, 0.2);
+    }
+    .slot-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+      min-width: 0;
+    }
+    .slot-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .slot-badge {
+      font-size: 0.7rem;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: rgba(212, 175, 55, 0.2);
+      color: #fde047;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+    }
+    .slot-badge-auto {
+      background: rgba(16, 185, 129, 0.2);
+      color: #6ee7b7;
+      border-color: rgba(52, 211, 153, 0.3);
+    }
+    .slot-actions {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+    .slot-btn {
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      border: none;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .slot-btn-save {
+      background: #3b82f6;
+      color: #ffffff;
+    }
+    .slot-btn-save:hover {
+      background: #2563eb;
+    }
+    .slot-btn-load {
+      background: linear-gradient(180deg, #d4af37 0%, #996515 100%);
+      color: #0f172a;
+    }
+    .slot-btn-load:hover {
+      filter: brightness(1.15);
+    }
+    .slot-btn-delete {
+      background: rgba(239, 68, 68, 0.2);
+      color: #fca5a5;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+    }
+    .slot-btn-delete:hover {
+      background: rgba(239, 68, 68, 0.4);
+      color: #fff;
+    }
+    .file-drop-box {
+      border: 2px dashed #475569;
+      border-radius: 12px;
+      padding: 24px 16px;
+      text-align: center;
+      background: rgba(15, 23, 42, 0.5);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .file-drop-box:hover {
+      border-color: #d4af37;
+      background: rgba(212, 175, 55, 0.05);
+    }
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 16px 0 20px 0;
+    }
+    .diff-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 2px solid #334155;
+      border-radius: 16px;
+      padding: 14px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .diff-card:hover {
+      border-color: #64748b;
+      transform: translateY(-2px);
+    }
+    .diff-card.selected-casual {
+      border-color: #34d399 !important;
+      background: rgba(6, 78, 59, 0.3) !important;
+      box-shadow: 0 0 15px rgba(52, 211, 153, 0.2);
+    }
+    .diff-card.selected-standard {
+      border-color: #fbbf24 !important;
+      background: rgba(120, 53, 15, 0.3) !important;
+      box-shadow: 0 0 15px rgba(251, 191, 36, 0.2);
+    }
+    .diff-card.selected-expert {
+      border-color: #fb7185 !important;
+      background: rgba(136, 19, 55, 0.3) !important;
+      box-shadow: 0 0 15px rgba(251, 113, 133, 0.2);
+    }
+    .floating-controls {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 50;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .stage-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(212, 175, 55, 0.6);
+      color: #fef08a;
+      font-size: 0.8rem;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      transition: all 0.2s ease;
+    }
+    .stage-btn:hover {
+      background: rgba(212, 175, 55, 0.3);
+      color: #ffffff;
+      transform: scale(1.04);
+    }
+    .canvas-hud-toggle {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .canvas-hud-toggle {
+        display: inline-flex !important;
+      }
+    }
+    @media (min-width: 769px) {
+      body.hud-collapsed header {
+        display: flex !important;
+      }
+      body.hud-collapsed footer {
+        display: flex !important;
+      }
+    }
+    .game-container {
+      flex: 1;
+      min-height: 0;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #020617;
+      overflow: hidden;
+      padding: 4px;
+    }
+    .scene-frame {
+      position: relative;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+      aspect-ratio: 16/9;
+      background-size: 100% 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 0 0 30px rgba(0,0,0,0.8);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: auto;
+    }
+    .game-object-container {
+      position: absolute;
+      cursor: default !important;
+      transition: left 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  top 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  height 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  opacity 0.4s ease;
+      transform-origin: center center;
+      will-change: left, top, width, height, transform, opacity;
+    }
+    .game-object {
+      position: absolute;
+      cursor: default !important;
+      pointer-events: none;
+    }
+    .hitbox {
+      position: absolute;
+      cursor: default !important;
+      transition: left 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  top 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  width 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  height 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  opacity 0.4s ease;
+      transform-origin: center center;
+    }
+    .game-object-container.hint-flash, .hitbox.hint-flash {
+      animation: hintOpacityFlash 0.5s ease-in-out infinite !important;
+      z-index: 999 !important;
+    }
+    @keyframes hintOpacityFlash {
+      0%, 100% {
+        opacity: 1;
+        filter: brightness(1.25);
+      }
+      50% {
+        opacity: 0.15;
+        filter: brightness(0.7);
+      }
+    }
+    footer {
+      background: #090d16;
+      border-top: 2px solid #334155;
+      padding: 12px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 20;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+    .footer-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+    .footer-tabs {
+      display: flex;
+      gap: 8px;
+    }
+    .tab-btn {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #94a3b8;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: rgba(212, 175, 55, 0.2);
+      border-color: #d4af37;
+      color: #fef08a;
+    }
+    .tab-btn:hover {
+      color: #f1f5f9;
+    }
+    .music-control-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(15, 23, 42, 0.9);
+      padding: 3px 8px;
+      border-radius: 12px;
+      border: 1px solid rgba(99, 102, 241, 0.35);
+    }
+    .music-control-group input[type=range] {
+      width: 65px;
+      height: 5px;
+      accent-color: #818cf8;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .volume-label {
+      font-size: 0.7rem;
+      font-family: monospace;
+      font-weight: bold;
+      color: #a5b4fc;
+      min-width: 28px;
+      text-align: right;
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .targets-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      max-height: 90px;
+      overflow-y: auto;
+    }
+    .target-item {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+    }
+    .target-item.found {
+      opacity: 0.4;
+      text-decoration: line-through;
+      border-color: #22c55e;
+      background: rgba(34, 197, 94, 0.1);
+    }
+    .target-item img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+    }
+    .inventory-bar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding-top: 4px;
+      overflow-x: auto;
+    }
+    .inventory-slot {
+      width: 48px;
+      height: 48px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 2px solid #d4af37;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .inventory-slot img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+    @media (max-width: 768px) {
+      header { padding: 2px 4px; }
+      .game-title { font-size: 0.72rem; gap: 2px; }
+      .hud-bar { gap: 2px; }
+      .badge { padding: 1px 4px; font-size: 0.6rem; border-radius: 4px; }
+      .btn { padding: 1px 4px; font-size: 0.6rem; border-radius: 3px; }
+      footer { padding: 2px 4px; gap: 2px; }
+      .tab-btn { padding: 1px 4px; font-size: 0.6rem; }
+      .targets-list { gap: 2px; max-height: 30px; }
+      .target-item { padding: 1px 3px; font-size: 0.62rem; gap: 2px; }
+      .target-item img { width: 12px; height: 12px; }
+      .inventory-slot { width: 26px; height: 26px; }
+      .inventory-slot img { width: 16px; height: 16px; }
+      .canvas-hud-toggle { display: flex; padding: 2px 5px; font-size: 0.65rem; top: 4px; right: 4px; }
+    }
+    .inventory-slot.selected {
+      border-color: #38bdf8;
+      box-shadow: 0 0 12px #38bdf8;
+    }
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+    .modal-card {
+      background: #1e293b;
+      border: 2px solid #d4af37;
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    }
+    .modal-card h2 { color: #fef08a; font-size: 2rem; margin-bottom: 12px; }
+    .toast {
+      position: fixed;
+      top: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid #d4af37;
+      color: #fef08a;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      z-index: 90;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      pointer-events: none;
+      animation: fadeIn 0.3s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -10px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="game-title">
+      <span>🔎</span>
+      <span id="title-text">New HOPA Game</span>
+    </div>
+
+    <div class="hud-bar">
+      
+        <div class="badge">
+          <span>⏱️</span>
+          <span id="timer-display">00:00</span>
+        </div>
+      
+
+      <div class="badge">
+        <span>⭐</span>
+        <span id="score-display">0</span>
+        <span id="score-unit-label">pkt</span>
+      </div>
+
+      <button class="btn btn-secondary" id="lang-toggle-btn" onclick="toggleLanguage()" title="Zmień język / Change language">🌐 PL</button>
+      <button class="btn btn-secondary" id="sfx-toggle-btn" onclick="toggleSound()">🔊 Dźwięki</button>
+      <div class="music-control-group">
+        <button class="btn btn-secondary" id="music-toggle-btn" onclick="toggleMusic()">🎵 Muzyka</button>
+        <input
+          type="range"
+          id="music-volume-slider"
+          min="0"
+          max="1"
+          step="0.05"
+          value="0.1"
+          oninput="setMusicVolume(this.value)"
+          title="Głośność muzyki w tle"
+        />
+        <span id="music-volume-label" class="volume-label">10%</span>
+      </div>
+      <div id="hint-btn-slot"></div>
+      <div class="autosave-indicator" id="autosave-indicator">
+        <span>💾</span>
+        <span id="autosave-text">Autozapis...</span>
+      </div>
+      <button class="btn btn-secondary" id="save-menu-btn" onclick="openSaveLoadModal()" title="Zapisz lub wczytaj stan gry (Ctrl+S / F6)">💾 Zapis / Wczytaj</button>
+    </div>
+  </header>
+
+  <div class="game-container" id="game-container" onmousedown="handleStageMouseDown(event)" ontouchstart="handleStageTouchStart(event)" onclick="handleStageClick(event)">
+    <div class="floating-controls">
+      <button class="stage-btn" id="display-mode-btn" onclick="toggleDisplayMode(event)" title="Przełącz tryb: Dopasuj do okna / Oryginał 1:1">
+        <span id="display-mode-label">🔍 1:1</span>
+      </button>
+      <button class="stage-btn canvas-hud-toggle" id="hud-toggle-btn" onclick="toggleHud(event)" title="Zwiń/Rozwiń interfejs">
+        <span id="hud-toggle-label">👁️ HUD</span>
+      </button>
+    </div>
+    <div class="scene-frame" id="scene-frame"></div>
+  </div>
+
+  <footer>
+    <div class="footer-top-bar">
+      <div class="footer-tabs">
+        <button class="tab-btn active" id="tab-targets-btn" onclick="switchTab('targets')">
+          <span id="tab-targets-label">📋 Do Znalezienia</span> (<span id="targets-remaining">0</span>/<span id="targets-total">0</span>)
+        </button>
+        <button class="tab-btn" id="tab-inventory-btn" onclick="switchTab('inventory')">
+          <span id="tab-inventory-label">🎒 Ekwipunek</span> (<span id="inventory-count">0</span>)
+        </button>
+      </div>
+
+      <div style="font-size:0.8rem; color:#94a3b8;" id="scene-name-display">
+        Scena
+      </div>
+    </div>
+
+    <div class="footer-content">
+      <div class="targets-list" id="view-targets"></div>
+      <div class="inventory-bar" id="view-inventory" style="display:none;">
+        <div id="inventory-slots" style="display:flex; gap:10px; flex-wrap:wrap;"></div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="modal-container"></div>
+  <div id="toast-container"></div>
+
+  <script>
+    const project = {"id":"project_0yk4dd4","title":"New HOPA Game","author":"Twórca HOPA","description":"Niesamowita gra z ukrytymi obiektami stworzona w HOPA Maker Studio.","version":"1.0","createdAt":"2026-09-10T01:00:11.940Z","updatedAt":"2026-09-10T01:04:49.896Z","startSceneId":"scene_i7kw9f8","settings":{"timerMode":"count_up","timeLimitSeconds":300,"timeoutMessage":"Czas minął! Nie udało Ci się odnaleźć wszystkich ukrytych przedmiotów.","pointsPerObject":100,"penaltyOnMisclick":true,"penaltySeconds":5,"hintCooldownSeconds":10,"soundEnabled":true,"theme":"classic_gold","victoryConditionType":"all_targets_found","victoryTitle":"Gratulacje!","victoryMessage":"Udało Ci się odnaleźć wszystkie obiekty i ukończyć grę!","showItemPicturesInList":true,"allowZoom":true,"hintSettings":{"allowPlayerChoice":true,"defaultPreset":"standard","presentation":"hybrid","rechargeMode":"cooldown","cooldownSeconds":20,"findTimeReductionSeconds":3,"maxCharges":3,"scorePenaltyOnUse":50,"blockIfInsufficientScore":false,"smartNavigation":true}},"scenes":[{"id":"scene_i7kw9f8","title":"Scene 1 - Start","bgUrl":"assets/bg_scene_i7kw9f_1.jpg","bgType":"image","ambientAudio":"mysterious","completionTrigger":"none","objects":[{"id":"obj_0yqx9xk","name":"transparent","description":"","imageUrl":"assets/obj_obj_0yqx9xk_2.png","x":37.5,"y":38,"width":3.1,"height":11.5,"defaultWidth":1.67,"defaultHeight":2.5,"rotation":0,"opacity":1,"zIndex":1,"type":"hidden_object","isTarget":true,"hint":"Look for: transparent","showHintOutline":true,"pixelWidth":100,"pixelHeight":100,"libraryItemId":"lib_png_9h71ylp"}],"bgWidth":6000,"bgHeight":4000,"aspectRatio":"6000 / 4000"}]};
+
+    // ==========================================
+    // INTERNATIONALIZATION (i18n) ENGINE
+    // ==========================================
+    const I18N_DATA = {
+      pl: {
+        timer: 'Czas',
+        score: 'pkt',
+        sounds: '🔊 Dźwięki',
+        soundsOff: '🔇 Dźwięki',
+        music: '🎵 Muzyka',
+        musicOff: '🔇 Muzyka',
+        musicVolTitle: 'Głośność muzyki w tle',
+        musicMutedToast: 'Muzyka wyciszona',
+        musicEnabledToast: 'Muzyka włączona',
+        sfxEnabledToast: 'Efekty dźwiękowe włączone',
+        sfxDisabledToast: 'Efekty dźwiękowe wyłączone',
+        autosaving: 'Autozapis...',
+        saveMenu: '💾 Zapis / Wczytaj',
+        saveMenuTitle: 'Zapisz lub wczytaj stan gry (Ctrl+S / F6)',
+        tabTargets: '📋 Do Znalezienia',
+        tabInventory: '🎒 Ekwipunek',
+        emptyScene: 'Scena',
+        displayMode1to1: '🔍 1:1',
+        displayModeFit: '📱 Dopasuj',
+        hudToggle: '👁️ HUD',
+        hintBtn: '💡 Podpowiedź',
+        hintReady: 'Podpowiedź Gotowa!',
+        hintCooldown: 'Ładowanie...',
+        hintNoCharges: 'Brak ładunków',
+        hintCost: 'Koszt',
+        emptyInventory: 'Pusty ekwipunek',
+        misclickPenaltyScore: 'Nietrafione kliknięcie! (-20 pkt)',
+        misclickPenaltyTime: 'Nietrafione kliknięcie! +{sec}s kary (-20 pkt)',
+        misclickSimple: 'Nietrafione kliknięcie!',
+        foundObject: 'Znaleziono: {name}! (+{pts} pkt)',
+        addedInventory: 'Dodano do ekwipunku: {name} (+{pts} pkt)',
+        transitionTo: 'Przejście do: {title}',
+        lockAlreadyUnlocked: '{name} jest już odblokowane.',
+        lockRequiresKey: '🔒 Zamknięte! Ten obiekt wymaga klucza (brak przypisanego przedmiotu w edytorze).',
+        lockRequiresSpecificItem: '🔒 Zamknięte! Wymagany przedmiot: {item}',
+        itemDoesNotFit: '❌ Ten przedmiot tu nie pasuje!',
+        unlockedSuccess: '✨ Odblokowano: {name}! (+{pts} pkt)',
+        sceneNotFound: 'Scena docelowa nie istnieje w projekcie.',
+        sceneNotSet: 'Przejście "{name}" nie ma ustawionej sceny docelowej!',
+        noteEmptyContent: 'Notatka nie zawiera treści.',
+        itemAlreadyInInventory: 'Masz już "{name}" w ekwipunku!',
+        combinedSuccess: '✨ Połączono: {item1} + {item2} ➔ {result}! (+{bonus} pkt)',
+        cannotCombine: 'Tych przedmiotów nie można ze sobą połączyć.',
+        hintsDisabled: 'Podpowiedzi są wyłączone w tym trybie rozgrywki.',
+        hintRecharging: '⏳ Podpowiedź odnawia się... ({sec}s)',
+        hintNoChargesLeft: '❌ Wyczerpano wszystkie ładunki podpowiedzi!',
+        hintNotEnoughScore: '❌ Za mało punktów na podpowiedź! Wymagane: {penalty} pkt (posiadasz: {score} pkt)',
+        hintVisualRevealed: '💡 Wskazano ukryty obiekt na scenie!',
+        hintClueText: '💡 Wskazówka: {text}',
+        hintUseItemOnLock: '💡 Użyj posiadanego przedmiotu "{item}" na obiekcie "{lock}"!',
+        hintCombineItems: '💡 Połącz w ekwipunku: [{item1}] + [{item2}]!',
+        hintGoToScene: '🚪 Przejdź do lokacji: "{scene}" — tam czekają kolejne cele!',
+        hintAllFoundGoTo: '🧭 W tej lokacji wszystko znaleziono. Udaj się do lokacji: "{scene}"!',
+        hintNoMoreTargets: 'W tej lokacji nie ma już obiektów do odnalezienia!',
+        savedToSlot: '💾 Zapisano stan gry w Slocie {slot}!',
+        saveError: '❌ Błąd zapisu stanu gry!',
+        saveDeleted: '🗑️ Usunięto zapis.',
+        slotEmpty: '❌ Brak danych zapisu w tym slocie!',
+        loadedSave: '✅ Wczytano stan gry! Scena: {scene}',
+        loadError: '❌ Błąd podczas wczytywania zapisu!',
+        saveFileDownloaded: '💾 Pobrano plik zapisu: {file}',
+        saveFileExportError: '❌ Błąd podczas eksportowania pliku zapisu!',
+        invalidSaveFile: '❌ Wybrany plik nie jest poprawnym plikiem zapisu gry HOPA!',
+        close: 'Zamknij',
+        resumeGame: 'Wznów Grę',
+        playAgain: 'Zagraj Ponownie',
+        tryAgain: 'Spróbuj Ponownie',
+        victoryTitle: 'Zwycięstwo!',
+        victoryDefaultMsg: 'Odnaleziono wszystkie ukryte obiekty i rozwiązano zagadki!',
+        gameOverTitle: 'Koniec Czasu',
+        gameOverDefaultMsg: 'Czas minął! Nie udało Ci się odnaleźć wszystkich ukrytych przedmiotów.',
+        statScore: 'Wynik końcowy:',
+        statMisclicks: 'Nietrafione kliknięcia:',
+        statObjectsFound: 'Znaleziono celów:',
+        statCompletionTime: 'Czas gry:',
+        diffModalTitle: 'Wybierz Poziom Trudności',
+        diffModalSubtitle: 'Wybierz preferowany styl rozgrywki i zasady działania podpowiedzi przed rozpoczęciem nowej gry.',
+        diffStartGame: 'Rozpocznij Nową Grę',
+        diffSelected: 'WYBRANY',
+        casualTitle: 'Relaks / Odkrywca',
+        casualDesc: 'Swobodna eksploracja bez presji czasu i stresu.',
+        casualBadge: '🟢 Łatwy',
+        casualFeature1: '⏱️ Cooldown 15s',
+        casualFeature2: '⚡ Premia -5s za obiekt',
+        casualFeature3: '✨ Pełna asysta wizualna + tekst',
+        casualFeature4: '🧭 Inteligentna nawigacja lokacji',
+        standardTitle: 'Detektyw / Standard',
+        standardDesc: 'Zbalansowane klasyczne wyzwanie gry HOPA.',
+        standardBadge: '🟡 Standard',
+        standardFeature1: '⏱️ Cooldown 45s',
+        standardFeature2: '⚡ Premia -3s za obiekt',
+        standardFeature3: '📝 Podpowiedź tekst + błysk',
+        standardFeature4: '🧭 Asysta przejść i zamków',
+        expertTitle: 'Mistrz Zagadek / Ekspert',
+        expertDesc: 'Dla wytrawnych graczy szukających wyzwania.',
+        expertBadge: '🔴 Trudny',
+        expertFeature1: '📦 Pula 3 ładunków',
+        expertFeature2: '⭐ Koszt -50 pkt / użycie',
+        expertFeature3: '📝 Tylko wskazówki tekstowe',
+        expertFeature4: '🚫 Brak asysty nawigacji',
+        saveModalTitle: 'Zapis i Odczyt Gry',
+        saveTabManual: '🗄️ Sloty Zapisu',
+        saveTabFile: '📂 Import / Eksport Pliku (.hopasave)',
+        saveSlotEmpty: 'Pusty slot',
+        saveSlotEmptyDesc: 'Brak zapisanego stanu gry',
+        saveSlotAutoDesc: 'Aktualizuje się automatycznie podczas gry',
+        saveBtnHere: '💾 Zapisz Tutaj',
+        saveBtnOverwrite: '💾 Nadpisz',
+        loadBtn: '▶ Wczytaj',
+        exportSaveTitle: 'Eksportuj Stan Gry do Pliku',
+        exportSaveDesc: 'Pobierz aktualny postęp gry jako lekki plik .hopasave, który możesz przenieść na inny komputer lub zachować jako kopię zapasową.',
+        exportSaveBtn: '⬇ Pobierz Plik Zapisu (.hopasave)',
+        importSaveTitle: 'Wczytaj Stan Gry z Pliku',
+        importSaveDesc: 'Wczytaj wcześniej pobrany plik .hopasave lub .json z dysku urządzenia.',
+        importSaveBtn: '⬆ Wybierz Plik Zapisu',
+        startupDetected: 'Wykryto istniejący stan zapisu gry. Czy chcesz kontynuować przygodę, czy rozpocząć nową?',
+        startupLastAuto: '⚡ Ostatni Autozapis',
+        startupSlotLabel: '💾 Zapis w Slocie {slot}',
+        startupOtherSaves: '🗄️ Inne Zapisy ({count})',
+        startupNewGame: '✨ Nowa Gra',
+        startupNewGameConfirm: 'Czy na pewno chcesz rozpocząć nową grę? Poprzedni stan zapisu nie zostanie skasowany, ale nowa gra rozpocznie się od początku.',
+        locationLabel: 'Lokacja:',
+        targetsLabel: 'Cele:',
+        inventoryLabel: 'Ekwipunek:',
+        scoreLabel: 'Wynik:',
+        timeLabel: 'Czas:',
+      },
+      en: {
+        timer: 'Time',
+        score: 'pts',
+        sounds: '🔊 Sounds',
+        soundsOff: '🔇 Sounds',
+        music: '🎵 Music',
+        musicOff: '🔇 Music',
+        musicVolTitle: 'Background music volume',
+        musicMutedToast: 'Music muted',
+        musicEnabledToast: 'Music enabled',
+        sfxEnabledToast: 'Sound effects enabled',
+        sfxDisabledToast: 'Sound effects disabled',
+        autosaving: 'Autosaving...',
+        saveMenu: '💾 Save / Load',
+        saveMenuTitle: 'Save or load game state (Ctrl+S / F6)',
+        tabTargets: '📋 To Find',
+        tabInventory: '🎒 Inventory',
+        emptyScene: 'Scene',
+        displayMode1to1: '🔍 1:1',
+        displayModeFit: '📱 Fit',
+        hudToggle: '👁️ HUD',
+        hintBtn: '💡 Hint',
+        hintReady: 'Hint Ready!',
+        hintCooldown: 'Recharging...',
+        hintNoCharges: 'No charges',
+        hintCost: 'Cost',
+        emptyInventory: 'Empty inventory',
+        misclickPenaltyScore: 'Misclick! (-20 pts)',
+        misclickPenaltyTime: 'Misclick! +{sec}s penalty (-20 pts)',
+        misclickSimple: 'Misclick!',
+        foundObject: 'Found: {name}! (+{pts} pts)',
+        addedInventory: 'Added to inventory: {name} (+{pts} pts)',
+        transitionTo: 'Moving to: {title}',
+        lockAlreadyUnlocked: '{name} is already unlocked.',
+        lockRequiresKey: '🔒 Locked! Requires a key (no item assigned in editor).',
+        lockRequiresSpecificItem: '🔒 Locked! Required item: {item}',
+        itemDoesNotFit: '❌ This item does not fit here!',
+        unlockedSuccess: '✨ Unlocked: {name}! (+{pts} pts)',
+        sceneNotFound: 'Destination scene does not exist.',
+        sceneNotSet: 'Transition "{name}" has no destination scene set!',
+        noteEmptyContent: 'Note contains no content.',
+        itemAlreadyInInventory: 'You already have "{name}" in your inventory!',
+        combinedSuccess: '✨ Combined: {item1} + {item2} ➔ {result}! (+{bonus} pts)',
+        cannotCombine: 'These items cannot be combined.',
+        hintsDisabled: 'Hints are disabled in this game mode.',
+        hintRecharging: '⏳ Hint recharging... ({sec}s)',
+        hintNoChargesLeft: '❌ No hint charges remaining!',
+        hintNotEnoughScore: '❌ Not enough points for hint! Required: {penalty} pts (you have: {score} pts)',
+        hintVisualRevealed: '💡 Revealed a hidden object on scene!',
+        hintClueText: '💡 Clue: {text}',
+        hintUseItemOnLock: '💡 Use your item "{item}" on "{lock}"!',
+        hintCombineItems: '💡 Combine in inventory: [{item1}] + [{item2}]!',
+        hintGoToScene: '🚪 Go to location: "{scene}" — more targets await!',
+        hintAllFoundGoTo: '🧭 Everything found in this scene. Proceed to: "{scene}"!',
+        hintNoMoreTargets: 'No more targets left in this scene!',
+        savedToSlot: '💾 Saved game state to Slot {slot}!',
+        saveError: '❌ Failed to save game state!',
+        saveDeleted: '🗑️ Save deleted.',
+        slotEmpty: '❌ No save data in this slot!',
+        loadedSave: '✅ Loaded game state! Scene: {scene}',
+        loadError: '❌ Error loading save file!',
+        saveFileDownloaded: '💾 Downloaded save file: {file}',
+        saveFileExportError: '❌ Error exporting save file!',
+        invalidSaveFile: '❌ Selected file is not a valid HOPA save file!',
+        close: 'Close',
+        resumeGame: 'Resume Game',
+        playAgain: 'Play Again',
+        tryAgain: 'Try Again',
+        victoryTitle: 'Victory!',
+        victoryDefaultMsg: 'All hidden objects found and puzzles solved!',
+        gameOverTitle: 'Time is Up!',
+        gameOverDefaultMsg: 'Time ran out before finding all hidden objects.',
+        statScore: 'Final Score:',
+        statMisclicks: 'Misclicks:',
+        statObjectsFound: 'Targets Found:',
+        statCompletionTime: 'Completion Time:',
+        diffModalTitle: 'Select Difficulty',
+        diffModalSubtitle: 'Choose your preferred gameplay pace and hint assistance before starting.',
+        diffStartGame: 'Begin Adventure',
+        diffSelected: 'SELECTED',
+        casualTitle: 'Casual / Explorer',
+        casualDesc: 'Relaxed exploration with zero time pressure or penalties.',
+        casualBadge: '🟢 Casual',
+        casualFeature1: '⏱️ Cooldown 15s',
+        casualFeature2: '⚡ -5s bonus per item',
+        casualFeature3: '✨ Full visual assistance + text',
+        casualFeature4: '🧭 Smart location navigation',
+        standardTitle: 'Detective / Standard',
+        standardDesc: 'Balanced classic challenge adhering to classic HOPA rules.',
+        standardBadge: '🟡 Standard',
+        standardFeature1: '⏱️ Cooldown 45s',
+        standardFeature2: '⚡ -3s bonus per item',
+        standardFeature3: '📝 Text clue + flash',
+        standardFeature4: '🧭 Navigation & lock guidance',
+        expertTitle: 'Puzzle Master / Expert',
+        expertDesc: 'For seasoned mystery solvers seeking a true challenge.',
+        expertBadge: '🔴 Expert',
+        expertFeature1: '📦 Pool of 3 charges',
+        expertFeature2: '⭐ Cost -50 pts / use',
+        expertFeature3: '📝 Text-only clues',
+        expertFeature4: '🚫 No navigation hints',
+        saveModalTitle: 'Save & Load Game State',
+        saveTabManual: '🗄️ Save Slots',
+        saveTabFile: '📂 Import / Export File (.hopasave)',
+        saveSlotEmpty: 'Empty slot',
+        saveSlotEmptyDesc: 'No saved game data',
+        saveSlotAutoDesc: 'Updates automatically during gameplay',
+        saveBtnHere: '💾 Save Here',
+        saveBtnOverwrite: '💾 Overwrite',
+        loadBtn: '▶ Load',
+        exportSaveTitle: 'Export Game State to File',
+        exportSaveDesc: 'Download your current game progress as a portable .hopasave file for backups or moving to another PC.',
+        exportSaveBtn: '⬇ Download Save File (.hopasave)',
+        importSaveTitle: 'Load Game State from File',
+        importSaveDesc: 'Load a previously downloaded .hopasave or .json file from your device.',
+        importSaveBtn: '⬆ Choose Save File',
+        startupDetected: 'Existing save data detected. Would you like to continue your adventure or start fresh?',
+        startupLastAuto: '⚡ Last Autosave',
+        startupSlotLabel: '💾 Save in Slot {slot}',
+        startupOtherSaves: '🗄️ Other Saves ({count})',
+        startupNewGame: '✨ New Game',
+        startupNewGameConfirm: 'Are you sure you want to start a new game? Your existing saves will be kept, but a new game will begin from the start.',
+        locationLabel: 'Location:',
+        targetsLabel: 'Targets:',
+        inventoryLabel: 'Inventory:',
+        scoreLabel: 'Score:',
+        timeLabel: 'Time:',
+      }
+    };
+
+    let currentLang = 'pl';
+    try {
+      const savedLang = localStorage.getItem('hopa_lang');
+      if (savedLang === 'pl' || savedLang === 'en') {
+        currentLang = savedLang;
+      } else if (navigator.language && !navigator.language.startsWith('pl')) {
+        currentLang = 'en';
+      }
+    } catch (e) {}
+
+    function t(key, params) {
+      const dict = I18N_DATA[currentLang] || I18N_DATA.pl || {};
+      let str = dict[key] !== undefined ? dict[key] : (I18N_DATA.pl && I18N_DATA.pl[key] !== undefined ? I18N_DATA.pl[key] : key);
+      if (params && typeof params === 'object') {
+        Object.keys(params).forEach(k => {
+          str = str.replace(new RegExp('\{' + k + '\}', 'g'), params[k]);
+        });
+      }
+      return str;
+    }
+
+    function setLanguage(lang) {
+      currentLang = (lang === 'en' ? 'en' : 'pl');
+      try { localStorage.setItem('hopa_lang', currentLang); } catch(e){}
+      updateLanguageDom();
+    }
+
+    function toggleLanguage() {
+      setLanguage(currentLang === 'pl' ? 'en' : 'pl');
+    }
+
+    function updateLanguageDom() {
+      const langBtn = document.getElementById('lang-toggle-btn');
+      if (langBtn) langBtn.innerText = currentLang === 'pl' ? '🌐 PL' : '🌐 EN';
+
+      const sfxBtn = document.getElementById('sfx-toggle-btn');
+      if (sfxBtn) sfxBtn.innerText = soundEnabled ? t('sounds') : t('soundsOff');
+
+      const musicBtn = document.getElementById('music-toggle-btn');
+      if (musicBtn) musicBtn.innerText = (musicMuted || musicVolume === 0) ? t('musicOff') : t('music');
+
+      const musicSlider = document.getElementById('music-volume-slider');
+      if (musicSlider) musicSlider.title = t('musicVolTitle');
+
+      const saveMenuBtn = document.getElementById('save-menu-btn');
+      if (saveMenuBtn) {
+        saveMenuBtn.innerText = t('saveMenu');
+        saveMenuBtn.title = t('saveMenuTitle');
+      }
+
+      const scoreUnit = document.getElementById('score-unit-label');
+      if (scoreUnit) scoreUnit.innerText = t('score');
+
+      const tabTargets = document.getElementById('tab-targets-label');
+      if (tabTargets) tabTargets.innerText = t('tabTargets');
+
+      const tabInventory = document.getElementById('tab-inventory-label');
+      if (tabInventory) tabInventory.innerText = t('tabInventory');
+
+      const autosaveInd = document.getElementById('autosave-text');
+      if (autosaveInd) autosaveInd.innerText = t('autosaving');
+
+      renderFooter();
+      renderHintButton();
+
+      if (document.getElementById('difficulty-modal-backdrop')) {
+        showDifficultySelectionModal();
+      } else if (document.getElementById('save-load-modal-backdrop')) {
+        openSaveLoadModal(currentSaveTab);
+      } else if (document.getElementById('startup-resume-backdrop')) {
+        const latestInfo = getLatestSaveInfo();
+        if (latestInfo) showStartupResumeModal(latestInfo);
+      }
+    }
+
+    let currentSceneId = project.startSceneId || (project.scenes[0] ? project.scenes[0].id : '');
+    let foundObjectIds = [];
+    let inventoryItemIds = [];
+    let consumedItemIds = [];
+    let completedCombinationIds = [];
+    let unlockedHotspotIds = [];
+    let previousActiveStateIds = {};
+    let renderedSceneId = null;
+    let selectedInventoryItemId = null;
+    let score = 0;
+    let misclicks = 0;
+    let secondsElapsed = 0;
+    let timerInterval = null;
+    let activeHintObjId = null;
+    let hintTimeoutTimer = null;
+    let activeTab = 'targets';
+    let isCompleted = false;
+
+    // Difficulty and Hint Configuration
+    const DIFFICULTY_PRESETS_CONFIG = {
+      casual: {
+        id: 'casual',
+        name: 'Relaks / Odkrywca',
+        subtitle: 'Swobodna i przyjemna rozgrywka bez presji czasu',
+        badge: '🟢 Łatwy',
+        settings: {
+          allowPlayerChoice: true,
+          defaultPreset: 'casual',
+          presentation: 'hybrid',
+          smartNavigation: true,
+          rechargeMode: 'cooldown',
+          cooldownSeconds: 15,
+          findTimeReductionSeconds: 5,
+          maxCharges: 5,
+          scorePenaltyOnUse: 0,
+          blockIfInsufficientScore: false,
+        }
+      },
+      standard: {
+        id: 'standard',
+        name: 'Detektyw / Klasyczny',
+        subtitle: 'Zbalansowane wyzwanie z klasycznymi zasadami HOPA',
+        badge: '🟡 Standard',
+        settings: {
+          allowPlayerChoice: true,
+          defaultPreset: 'standard',
+          presentation: 'hybrid',
+          smartNavigation: true,
+          rechargeMode: 'cooldown',
+          cooldownSeconds: 45,
+          findTimeReductionSeconds: 3,
+          maxCharges: 3,
+          scorePenaltyOnUse: 20,
+          blockIfInsufficientScore: false,
+        }
+      },
+      expert: {
+        id: 'expert',
+        name: 'Mistrz Zagadek / Ekspert',
+        subtitle: 'Dla wytrawnych graczy szukających prawdziwego wyzwania',
+        badge: '🔴 Trudny',
+        settings: {
+          allowPlayerChoice: true,
+          defaultPreset: 'expert',
+          presentation: 'text',
+          smartNavigation: false,
+          rechargeMode: 'charges',
+          cooldownSeconds: 90,
+          findTimeReductionSeconds: 0,
+          maxCharges: 3,
+          scorePenaltyOnUse: 50,
+          blockIfInsufficientScore: false,
+        }
+      }
+    };
+
+    const DEFAULT_HINT_SETTINGS = {
+      allowPlayerChoice: false,
+      defaultPreset: 'standard',
+      presentation: 'hybrid',
+      smartNavigation: true,
+      rechargeMode: 'cooldown',
+      cooldownSeconds: 30,
+      findTimeReductionSeconds: 5,
+      maxCharges: 3,
+      scorePenaltyOnUse: 0,
+      blockIfInsufficientScore: false,
+    };
+
+    function getEffectiveHintSettings(settings, presetOverride) {
+      const base = settings.hintSettings ? { ...settings.hintSettings } : {
+        ...DEFAULT_HINT_SETTINGS,
+        cooldownSeconds: settings.hintCooldownSeconds || 30
+      };
+      if (presetOverride && presetOverride !== 'custom' && DIFFICULTY_PRESETS_CONFIG[presetOverride]) {
+        return {
+          ...DIFFICULTY_PRESETS_CONFIG[presetOverride].settings,
+          allowPlayerChoice: base.allowPlayerChoice
+        };
+      }
+      return base;
+    }
+
+    let selectedDifficultyPreset = (project.settings && project.settings.hintSettings && project.settings.hintSettings.defaultPreset) || 'standard';
+    let selectedDifficultyChoice = selectedDifficultyPreset;
+    let effectiveHintSettings = getEffectiveHintSettings(project.settings || {}, selectedDifficultyPreset);
+    let isDifficultyConfirmed = !effectiveHintSettings.allowPlayerChoice;
+    let hintCooldownRemaining = 0;
+    let remainingHintCharges = effectiveHintSettings.maxCharges !== undefined ? effectiveHintSettings.maxCharges : 3;
+
+    // Hint cooldown ticker
+    setInterval(() => {
+      if (isCompleted || !isDifficultyConfirmed) return;
+      if (hintCooldownRemaining > 0) {
+        hintCooldownRemaining--;
+        renderHintButton();
+      }
+    }, 1000);
+
+    // Audio & Sound FX Engine
+    let audioCtx = null;
+    let soundEnabled = true;
+    let musicMuted = false;
+    let musicVolume = 0.1;
+    let bgAudio = new Audio();
+    bgAudio.loop = true;
+    let currentPlayingMusicUrl = '';
+
+    function getAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function unlockAudio() {
+      getAudioContext();
+      if (!musicMuted && musicVolume > 0 && bgAudio && bgAudio.paused && bgAudio.src) {
+        bgAudio.play().catch(() => {});
+      }
+    }
+    window.addEventListener('click', unlockAudio, { once: false });
+    window.addEventListener('touchstart', unlockAudio, { once: false });
+
+    // Sound Synthesizers matching editor soundManager 1:1
+    function playFindSound() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      [523.25, 659.25, 783.99, 1046.50].forEach((freq, idx) => {
+        try {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+          gain.gain.setValueAtTime(0.25, now + idx * 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.08 + 0.6);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now + idx * 0.08);
+          osc.stop(now + idx * 0.08 + 0.6);
+        } catch (e) {}
+      });
+    }
+
+    function playCollectSound() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      try {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(300, now);
+        osc.frequency.exponentialRampToValueAtTime(800, now + 0.15);
+        gain.gain.setValueAtTime(0.3, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.2);
+      } catch (e) {}
+    }
+
+    function playMisclickSound() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      try {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(120, now);
+        osc.frequency.exponentialRampToValueAtTime(40, now + 0.12);
+        gain.gain.setValueAtTime(0.3, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.15);
+      } catch (e) {}
+    }
+
+    function playHintSound() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const freqs = [880, 1108.73, 1318.51, 1760, 2217.46];
+      freqs.forEach((freq, i) => {
+        try {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now + i * 0.05);
+          gain.gain.setValueAtTime(0.15, now + i * 0.05);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.05 + 0.4);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now + i * 0.05);
+          osc.stop(now + i * 0.05 + 0.4);
+        } catch (e) {}
+      });
+    }
+
+    function playUnlockSound() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      try {
+        const osc1 = ctx.createOscillator();
+        const gain1 = ctx.createGain();
+        osc1.type = 'square';
+        osc1.frequency.setValueAtTime(220, now);
+        osc1.frequency.exponentialRampToValueAtTime(80, now + 0.08);
+        gain1.gain.setValueAtTime(0.3, now);
+        gain1.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
+        osc1.connect(gain1);
+        gain1.connect(ctx.destination);
+        osc1.start(now);
+        osc1.stop(now + 0.08);
+
+        const osc2 = ctx.createOscillator();
+        const gain2 = ctx.createGain();
+        osc2.type = 'sine';
+        osc2.frequency.setValueAtTime(440, now + 0.1);
+        osc2.frequency.exponentialRampToValueAtTime(880, now + 0.35);
+        gain2.gain.setValueAtTime(0.3, now + 0.1);
+        gain2.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+        osc2.connect(gain2);
+        gain2.connect(ctx.destination);
+        osc2.start(now + 0.1);
+        osc2.stop(now + 0.4);
+      } catch (e) {}
+    }
+
+    function playVictorySound() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const notes = [
+        { f: 523.25, t: 0, d: 0.15 },
+        { f: 659.25, t: 0.15, d: 0.15 },
+        { f: 783.99, t: 0.3, d: 0.15 },
+        { f: 1046.50, t: 0.45, d: 0.5 },
+      ];
+      notes.forEach((n) => {
+        try {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(n.f, now + n.t);
+          gain.gain.setValueAtTime(0.3, now + n.t);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + n.t + n.d);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now + n.t);
+          osc.stop(now + n.t + n.d);
+        } catch (e) {}
+      });
+    }
+
+    function playCombineSound() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      const freqs = [392.00, 523.25, 659.25, 783.99, 1046.50];
+      freqs.forEach((freq, idx) => {
+        try {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(freq, now + idx * 0.06);
+          gain.gain.setValueAtTime(0.25, now + idx * 0.06);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.06 + 0.5);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now + idx * 0.06);
+          osc.stop(now + idx * 0.06 + 0.5);
+        } catch (e) {}
+      });
+    }
+
+    function playTransitionSound(type, customUrl) {
+      if (!soundEnabled) return;
+      if (customUrl) {
+        try {
+          const snd = new Audio(customUrl);
+          snd.volume = 0.6;
+          snd.play().catch(() => {});
+          return;
+        } catch (e) {}
+      }
+      if (type === 'unlock') playUnlockSound();
+      else if (type === 'collect') playCollectSound();
+      else if (type === 'find') playFindSound();
+      else if (type === 'combine') playCombineSound();
+      else if (type === 'reveal') playRevealSound();
+      else if (type === 'switch') playSwitchSound();
+      else if (type === 'creak') playCreakSound();
+      else if (type === 'none') { /* no sound */ }
+      else playRevealSound();
+    }
+
+    function playRevealSound() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      [440, 554.37, 659.25, 880, 1108.73, 1318.51].forEach((freq, idx) => {
+        try {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now + idx * 0.05);
+          gain.gain.setValueAtTime(0.2, now + idx * 0.05);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.05 + 0.6);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(now + idx * 0.05);
+          osc.stop(now + idx * 0.05 + 0.6);
+        } catch (e) {}
+      });
+    }
+
+    function playSwitchSound() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      try {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(600, now);
+        osc.frequency.exponentialRampToValueAtTime(200, now + 0.08);
+        gain.gain.setValueAtTime(0.35, now);
+        gain.gain.exponentialRampToValueAtTime(0.01, now + 0.09);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.09);
+      } catch (e) {}
+    }
+
+    function playCreakSound() {
+      if (!soundEnabled) return;
+      const ctx = getAudioContext();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+      try {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(140, now);
+        osc.frequency.exponentialRampToValueAtTime(90, now + 0.25);
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.3);
+      } catch (e) {}
+    }
+
+    function updateMusicVolume() {
+      if (bgAudio) {
+        bgAudio.volume = musicMuted ? 0 : musicVolume;
+      }
+      const label = document.getElementById('music-volume-label');
+      if (label) {
+        label.innerText = Math.round((musicMuted ? 0 : musicVolume) * 100) + '%';
+      }
+      const slider = document.getElementById('music-volume-slider');
+      if (slider) {
+        slider.value = musicMuted ? 0 : musicVolume;
+      }
+      const btn = document.getElementById('music-toggle-btn');
+      if (btn) {
+        btn.innerText = (musicMuted || musicVolume === 0) ? t('musicOff') : t('music');
+      }
+
+      if (!musicMuted && musicVolume > 0 && currentPlayingMusicUrl) {
+        if (bgAudio && bgAudio.paused) {
+          bgAudio.play().catch(() => {});
+        }
+      } else {
+        if (bgAudio && !bgAudio.paused) {
+          bgAudio.pause();
+        }
+      }
+    }
+
+    function setMusicVolume(val) {
+      const vol = parseFloat(val);
+      musicVolume = vol;
+      if (vol > 0 && musicMuted) {
+        musicMuted = false;
+      }
+      if (vol === 0) {
+        musicMuted = true;
+      }
+      updateMusicVolume();
+    }
+
+    function toggleMusic() {
+      if (musicMuted) {
+        musicMuted = false;
+        if (musicVolume === 0) musicVolume = 0.5;
+      } else {
+        musicMuted = true;
+      }
+      updateMusicVolume();
+      showToast(musicMuted ? t('musicMutedToast') : t('musicEnabledToast'));
+    }
+
+    function updateMusicForScene(musicUrl) {
+      if (!musicUrl) {
+        bgAudio.pause();
+        currentPlayingMusicUrl = '';
+        return;
+      }
+      if (currentPlayingMusicUrl === musicUrl) {
+        if (!musicMuted && musicVolume > 0 && bgAudio.paused) {
+          bgAudio.play().catch(() => {});
+        }
+        return;
+      }
+
+      currentPlayingMusicUrl = musicUrl;
+      bgAudio.src = musicUrl;
+      bgAudio.volume = musicMuted ? 0 : musicVolume;
+      if (!musicMuted && musicVolume > 0) {
+        bgAudio.play().catch(e => console.log('Autoplay deferred until user interaction'));
+      }
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById('sfx-toggle-btn');
+      if (btn) btn.innerText = soundEnabled ? t('sounds') : t('soundsOff');
+      showToast(soundEnabled ? t('sfxEnabledToast') : t('sfxDisabledToast'));
+    }
+
+    function formatImgUrl(url) {
+      if (!url) return '';
+      const trimmed = url.trim();
+      if (trimmed.startsWith('<svg') || trimmed.startsWith('<?xml')) {
+        const svgStr = trimmed.startsWith('<?xml') ? trimmed.substring(trimmed.indexOf('<svg')) : trimmed;
+        return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgStr);
+      }
+      if (trimmed.startsWith('data:image/svg+xml;utf8,')) {
+        return trimmed.replace('data:image/svg+xml;utf8,', 'data:image/svg+xml;charset=utf-8,');
+      }
+      if (trimmed.startsWith('data:image/svg+xml,')) {
+        return trimmed.replace('data:image/svg+xml,', 'data:image/svg+xml;charset=utf-8,');
+      }
+      return url;
+    }
+
+    function getLatestSaveInfo() {
+      const prefix = getProjectSavePrefix();
+      let latest = null;
+      let totalCount = 0;
+
+      // 1. Check Autosave (Slot 0)
+      const autoSave = getSaveSlot(prefix + 'autosave');
+      if (autoSave && autoSave.state) {
+        totalCount++;
+        latest = { data: autoSave, slotIndex: 0, isAuto: true, timestamp: autoSave.timestamp || 0 };
+      }
+
+      // 2. Check Manual Slots 1, 2, 3
+      for (let i = 1; i <= 3; i++) {
+        const slotData = getSaveSlot(prefix + 'slot_' + i);
+        if (slotData && slotData.state) {
+          totalCount++;
+          if (!latest || (slotData.timestamp || 0) > latest.timestamp) {
+            latest = { data: slotData, slotIndex: i, isAuto: false, timestamp: slotData.timestamp || 0 };
+          }
+        }
+      }
+
+      if (!latest) return null;
+      return {
+        latestSave: latest.data,
+        slotIndex: latest.slotIndex,
+        isAuto: latest.isAuto,
+        totalSavesCount: totalCount
+      };
+    }
+
+    function showStartupResumeModal(info) {
+      const modalEl = document.getElementById('modal-container');
+      if (!modalEl) return;
+
+      const save = info.latestSave;
+      const sum = save.summary || {};
+      const mins = Math.floor((sum.secondsElapsed || 0) / 60);
+      const secs = (sum.secondsElapsed || 0) % 60;
+      const timeStr = (mins > 0 ? mins + 'm ' : '') + secs + 's';
+      const dateStr = new Date(save.timestamp || Date.now()).toLocaleString([], {
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+      const slotLabel = info.isAuto ? t('startupLastAuto') : t('startupSlotLabel', { slot: info.slotIndex });
+
+      modalEl.innerHTML = `
+        <div class="modal-backdrop" id="startup-resume-backdrop">
+          <div class="modal-card" style="max-width: 520px; text-align: center; padding: 26px 28px;">
+            <div style="font-size: 2.2rem; margin-bottom: 6px;">📜</div>
+            <h2 style="font-size: 1.5rem; color: #fef08a; margin-bottom: 4px;">${escapeHtml(project.title || 'Gra HOPA')}</h2>
+            <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 18px;">
+              ${t('startupDetected')}
+            </p>
+
+            <div style="background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95)); border: 1px solid rgba(212, 175, 55, 0.4); border-radius: 12px; padding: 14px 18px; margin-bottom: 20px; text-align: left; box-shadow: 0 4px 16px rgba(0,0,0,0.3);">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                <span style="font-size: 0.75rem; color: #38bdf8; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em;">
+                  ${slotLabel}
+                </span>
+                <span style="font-size: 0.75rem; color: #94a3b8;">${dateStr}</span>
+              </div>
+              <div style="font-weight: bold; color: #f8fafc; font-size: 1.05rem; margin-bottom: 4px;">
+                📍 ${t('locationLabel')} ${escapeHtml(sum.sceneName || 'Lokacja')}
+              </div>
+              <div style="font-size: 0.8rem; color: #cbd5e1; display: flex; flex-wrap: wrap; gap: 12px;">
+                <span>🎯 ${t('targetsLabel')} <strong>${sum.foundTargetsCount || 0}/${sum.totalTargetsCount || 0}</strong></span>
+                <span>🎒 ${t('inventoryLabel')} <strong>${sum.inventoryCount || 0}</strong></span>
+                <span>⭐ ${t('scoreLabel')} <strong>${sum.score || 0} ${t('score')}</strong></span>
+                <span>⏱️ ${t('timeLabel')} <strong>${timeStr}</strong></span>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <button class="btn btn-primary" onclick="loadFromSlot(${info.slotIndex}, ${info.isAuto})" style="font-size: 1rem; padding: 12px 20px; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <span>▶</span> ${t('resumeGame')}
+              </button>
+
+              <div style="display: flex; gap: 10px;">
+                <button class="btn btn-secondary" onclick="openSaveLoadModal('slots')" style="flex: 1; font-size: 0.85rem; padding: 10px 14px;" title="${t('saveMenuTitle')}">
+                  ${t('startupOtherSaves', { count: info.totalSavesCount })}
+                </button>
+
+                <button class="btn btn-secondary" onclick="startNewGameFlow(true)" style="flex: 1; font-size: 0.85rem; padding: 10px 14px; color: #f87171;">
+                  ${t('startupNewGame')}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function startNewGameFlow(confirmPrompt) {
+      if (confirmPrompt) {
+        if (!confirm(t('startupNewGameConfirm'))) {
+          return;
+        }
+      }
+      const modalEl = document.getElementById('modal-container');
+      if (modalEl) modalEl.innerHTML = '';
+
+      if (!isDifficultyConfirmed && effectiveHintSettings.allowPlayerChoice) {
+        showDifficultySelectionModal();
+      } else {
+        startTimer();
+      }
+    }
+
+    function initGame() {
+      if (!currentSceneId && project.scenes.length > 0) {
+        currentSceneId = project.scenes[0].id;
+      }
+      const label = document.getElementById('display-mode-label');
+      if (label) label.innerText = displayMode === 'original' ? t('displayModeFit') : t('displayMode1to1');
+      updateLanguageDom();
+      renderScene();
+      renderFooter();
+      renderHintButton();
+
+      const latestSaveInfo = getLatestSaveInfo();
+      if (latestSaveInfo) {
+        showStartupResumeModal(latestSaveInfo);
+      } else {
+        startNewGameFlow(false);
+      }
+    }
+
+    function renderHintButton() {
+      const container = document.getElementById('hint-btn-slot');
+      if (!container) return;
+
+      if (effectiveHintSettings.rechargeMode === 'disabled') {
+        container.innerHTML = '';
+        return;
+      }
+
+      if (effectiveHintSettings.rechargeMode === 'cooldown') {
+        const cd = hintCooldownRemaining || 0;
+        const maxCd = effectiveHintSettings.cooldownSeconds || 30;
+        const isCooling = cd > 0;
+        const progressPercent = Math.min(100, Math.max(0, Math.round(((maxCd - cd) / maxCd) * 100)));
+
+        if (isCooling) {
+          container.innerHTML = `
+            <button class="btn btn-secondary" onclick="useHint()" title="${t('hintCooldown')} (${cd}s)">
+              <svg class="hint-progress-svg" viewBox="0 0 36 36">
+                <path class="hint-progress-circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                <path class="hint-progress-circle-bar" stroke-dasharray="${progressPercent}, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+              </svg>
+              <span style="color:#fbbf24; font-weight:bold; font-size:0.8rem;">${cd}s</span>
+            </button>
+          `;
+        } else {
+          container.innerHTML = `
+            <button class="btn" onclick="useHint()" title="${t('hintReady')}">
+              ${t('hintBtn')}
+            </button>
+          `;
+        }
+        return;
+      }
+
+      if (effectiveHintSettings.rechargeMode === 'charges') {
+        const charges = remainingHintCharges;
+        const maxCharges = effectiveHintSettings.maxCharges !== undefined ? effectiveHintSettings.maxCharges : 3;
+        const hasCharges = charges > 0;
+        if (hasCharges) {
+          container.innerHTML = `
+            <button class="btn" onclick="useHint()" title="${t('hintBtn')} (${charges}/${maxCharges})">
+              ${t('hintBtn')} <span class="badge-charges">${charges}/${maxCharges}</span>
+            </button>
+          `;
+        } else {
+          container.innerHTML = `
+            <button class="btn btn-secondary" onclick="useHint()" style="opacity:0.6; cursor:not-allowed;" title="${t('hintNoCharges')}">
+              ${t('hintBtn')} <span class="badge-charges">0/${maxCharges}</span>
+            </button>
+          `;
+        }
+        return;
+      }
+
+      if (effectiveHintSettings.rechargeMode === 'score_cost') {
+        const penalty = effectiveHintSettings.scorePenaltyOnUse || 50;
+        const isBlocked = Boolean(effectiveHintSettings.blockIfInsufficientScore && score < penalty);
+        if (isBlocked) {
+          container.innerHTML = `
+            <button class="btn btn-secondary" onclick="useHint()" style="opacity:0.6; cursor:not-allowed;" title="${t('hintNotEnoughScore', { penalty: penalty, score: score })}">
+              ${t('hintBtn')} <span class="badge-cost" style="color:#94a3b8; background:rgba(0,0,0,0.5);">-${penalty}p</span>
+            </button>
+          `;
+        } else {
+          container.innerHTML = `
+            <button class="btn" onclick="useHint()" title="${t('hintCost')}: -${penalty} ${t('score')}">
+              ${t('hintBtn')} <span class="badge-cost">-${penalty}p</span>
+            </button>
+          `;
+        }
+        return;
+      }
+    }
+
+    function showDifficultySelectionModal() {
+      const modalEl = document.getElementById('modal-container');
+      if (!modalEl) return;
+
+      modalEl.innerHTML = `
+        <div class="modal-backdrop" id="difficulty-modal-backdrop">
+          <div class="modal-card" style="max-width: 680px; text-align: center; padding: 24px;">
+            <div style="font-size: 2.2rem; margin-bottom: 6px;">🧭</div>
+            <h2 style="font-size: 1.6rem; color: #fef08a; margin-bottom: 4px;">${t('diffModalTitle')}</h2>
+            <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 16px;">
+              ${t('diffModalSubtitle')}
+            </p>
+
+            <div class="diff-grid">
+              <!-- Casual -->
+              <div class="diff-card ${selectedDifficultyChoice === 'casual' ? 'selected-casual' : ''}" onclick="selectDifficultyChoice('casual')">
+                <div>
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                    <span style="font-size:1.3rem;">🟢</span>
+                    ${selectedDifficultyChoice === 'casual' ? `<span style="background:#10b981; color:#022c22; font-size:0.65rem; font-weight:900; padding:2px 8px; border-radius:12px;">${t('diffSelected')}</span>` : ''}
+                  </div>
+                  <div style="font-weight:bold; color:#6ee7b7; font-size:0.9rem; margin-bottom:4px;">${t('casualTitle')}</div>
+                  <div style="color:#94a3b8; font-size:0.75rem; line-height:1.4;">${t('casualDesc')}</div>
+                </div>
+                <div style="background:rgba(0,0,0,0.4); padding:8px; border-radius:8px; font-size:0.72rem; color:#cbd5e1; display:flex; flex-direction:column; gap:3px;">
+                  <div style="color:#34d399; font-weight:bold;">${t('casualFeature1')}</div>
+                  <div>${t('casualFeature2')}</div>
+                  <div>${t('casualFeature3')}</div>
+                  <div>${t('casualFeature4')}</div>
+                </div>
+              </div>
+
+              <!-- Standard -->
+              <div class="diff-card ${selectedDifficultyChoice === 'standard' ? 'selected-standard' : ''}" onclick="selectDifficultyChoice('standard')">
+                <div>
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                    <span style="font-size:1.3rem;">🟡</span>
+                    ${selectedDifficultyChoice === 'standard' ? `<span style="background:#f59e0b; color:#451a03; font-size:0.65rem; font-weight:900; padding:2px 8px; border-radius:12px;">${t('diffSelected')}</span>` : ''}
+                  </div>
+                  <div style="font-weight:bold; color:#fde68a; font-size:0.9rem; margin-bottom:4px;">${t('standardTitle')}</div>
+                  <div style="color:#94a3b8; font-size:0.75rem; line-height:1.4;">${t('standardDesc')}</div>
+                </div>
+                <div style="background:rgba(0,0,0,0.4); padding:8px; border-radius:8px; font-size:0.72rem; color:#cbd5e1; display:flex; flex-direction:column; gap:3px;">
+                  <div style="color:#fbbf24; font-weight:bold;">${t('standardFeature1')}</div>
+                  <div>${t('standardFeature2')}</div>
+                  <div>${t('standardFeature3')}</div>
+                  <div>${t('standardFeature4')}</div>
+                </div>
+              </div>
+
+              <!-- Expert -->
+              <div class="diff-card ${selectedDifficultyChoice === 'expert' ? 'selected-expert' : ''}" onclick="selectDifficultyChoice('expert')">
+                <div>
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                    <span style="font-size:1.3rem;">🔴</span>
+                    ${selectedDifficultyChoice === 'expert' ? `<span style="background:#f43f5e; color:#fff; font-size:0.65rem; font-weight:900; padding:2px 8px; border-radius:12px;">${t('diffSelected')}</span>` : ''}
+                  </div>
+                  <div style="font-weight:bold; color:#fda4af; font-size:0.9rem; margin-bottom:4px;">${t('expertTitle')}</div>
+                  <div style="color:#94a3b8; font-size:0.75rem; line-height:1.4;">${t('expertDesc')}</div>
+                </div>
+                <div style="background:rgba(0,0,0,0.4); padding:8px; border-radius:8px; font-size:0.72rem; color:#cbd5e1; display:flex; flex-direction:column; gap:3px;">
+                  <div style="color:#fb7185; font-weight:bold;">${t('expertFeature1')}</div>
+                  <div>${t('expertFeature2')}</div>
+                  <div>${t('expertFeature3')}</div>
+                  <div>${t('expertFeature4')}</div>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn" onclick="confirmDifficultyChoice()" style="font-size: 1rem; padding: 12px 32px; width: 100%; max-width: 280px; margin: 0 auto; display: block;">
+              ▶ ${t('diffStartGame')}
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectDifficultyChoice(presetKey) {
+      selectedDifficultyChoice = presetKey;
+      showDifficultySelectionModal();
+    }
+
+    function confirmDifficultyChoice() {
+      selectedDifficultyPreset = selectedDifficultyChoice;
+      effectiveHintSettings = getEffectiveHintSettings(project.settings || {}, selectedDifficultyPreset);
+      isDifficultyConfirmed = true;
+      remainingHintCharges = effectiveHintSettings.maxCharges !== undefined ? effectiveHintSettings.maxCharges : 3;
+      hintCooldownRemaining = 0;
+      document.getElementById('modal-container').innerHTML = '';
+      renderHintButton();
+      startTimer();
+    }
+
+    function toggleHud(e) {
+      if (e) e.stopPropagation();
+      document.body.classList.toggle('hud-collapsed');
+    }
+
+    function switchTab(tab) {
+      activeTab = tab;
+      const tBtn = document.getElementById('tab-targets-btn');
+      const iBtn = document.getElementById('tab-inventory-btn');
+      const tView = document.getElementById('view-targets');
+      const iView = document.getElementById('view-inventory');
+
+      if (tab === 'targets') {
+        tBtn.classList.add('active');
+        iBtn.classList.remove('active');
+        tView.style.display = 'flex';
+        iView.style.display = 'none';
+      } else {
+        iBtn.classList.add('active');
+        tBtn.classList.remove('active');
+        iView.style.display = 'flex';
+        tView.style.display = 'none';
+      }
+    }
+
+    function getCurrentScene() {
+      return project.scenes.find(s => s.id === currentSceneId) || project.scenes[0];
+    }
+
+    function evaluateCondition(cond) {
+      if (!cond || !cond.type) return false;
+      let result = false;
+      switch (cond.type) {
+        case 'object_collected':
+          if (!cond.targetId) {
+            result = foundObjectIds.length > 0;
+          } else {
+            result = foundObjectIds.includes(cond.targetId);
+          }
+          break;
+        case 'has_item':
+          if (!cond.targetId) {
+            result = inventoryItemIds.length > 0;
+          } else {
+            result = inventoryItemIds.includes(cond.targetId);
+          }
+          break;
+        case 'item_consumed':
+          if (!cond.targetId) {
+            result = consumedItemIds.length > 0;
+          } else {
+            const inConsumed = consumedItemIds.includes(cond.targetId);
+            const collectedThenUsed = foundObjectIds.includes(cond.targetId) && !inventoryItemIds.includes(cond.targetId);
+            result = inConsumed || collectedThenUsed;
+          }
+          break;
+        case 'hotspot_unlocked':
+          if (!cond.targetId) {
+            result = unlockedHotspotIds.length > 0;
+          } else {
+            result = unlockedHotspotIds.includes(cond.targetId);
+          }
+          break;
+        case 'combination_completed':
+          if (!cond.targetId) {
+            result = completedCombinationIds.length > 0;
+          } else {
+            result = completedCombinationIds.includes(cond.targetId);
+          }
+          break;
+        case 'scene_cleared': {
+          const targetSceneId = cond.targetId || currentSceneId;
+          const targetScene = project.scenes.find(s => s.id === targetSceneId);
+          if (!targetScene) {
+            result = false;
+          } else {
+            const sceneTargets = targetScene.objects.filter(o => o.isTarget && (o.type === 'hidden_object' || o.type === 'inventory_item' || (!o.type && o.interactionType !== 'navigate')));
+            if (sceneTargets.length === 0) {
+              result = true;
+            } else {
+              result = sceneTargets.every(t => foundObjectIds.includes(t.id));
+            }
+          }
+          break;
+        }
+        default:
+          result = false;
+      }
+      return (cond.negate || cond.invert) ? !result : result;
+    }
+
+    function evaluateConditionGroup(group) {
+      if (!group || !group.conditions || !Array.isArray(group.conditions) || group.conditions.length === 0) return false;
+      const op = group.operator || 'AND';
+      if (op === 'AND') {
+        return group.conditions.every(c => evaluateCondition(c));
+      } else if (op === 'OR') {
+        return group.conditions.some(c => evaluateCondition(c));
+      } else if (op === 'NOT') {
+        return !group.conditions.every(c => evaluateCondition(c));
+      }
+      return false;
+    }
+
+    function resolveActiveObjectState(obj) {
+      if (!obj) return { effectiveObject: obj, activeState: null };
+      if (!obj.states || obj.states.length === 0) {
+        return {
+          effectiveObject: { ...obj, visible: obj.visible !== false && !obj.hidden },
+          activeState: null
+        };
+      }
+      const activeState = obj.states.find(s => evaluateConditionGroup(s.conditionGroup));
+      if (!activeState || !activeState.overrides) {
+        return {
+          effectiveObject: { ...obj, visible: obj.visible !== false && !obj.hidden },
+          activeState: null
+        };
+      }
+      const ov = activeState.overrides || {};
+      const effectiveType = ov.type !== undefined ? ov.type : obj.type;
+      const effectiveObject = {
+        ...obj,
+        name: ov.name !== undefined ? ov.name : obj.name,
+        imageUrl: ov.imageUrl !== undefined ? ov.imageUrl : obj.imageUrl,
+        type: effectiveType,
+        isTarget: ov.isTarget !== undefined ? ov.isTarget : obj.isTarget,
+        hint: ov.hint !== undefined ? ov.hint : obj.hint,
+        showHintOutline: ov.showHintOutline !== undefined ? ov.showHintOutline : obj.showHintOutline,
+        x: ov.x !== undefined ? ov.x : obj.x,
+        y: ov.y !== undefined ? ov.y : obj.y,
+        width: ov.width !== undefined ? ov.width : obj.width,
+        height: ov.height !== undefined ? ov.height : obj.height,
+        rotation: ov.rotation !== undefined ? ov.rotation : obj.rotation,
+        opacity: ov.opacity !== undefined ? ov.opacity : obj.opacity,
+        visible: ov.visible !== undefined ? ov.visible : (obj.visible !== false && !obj.hidden),
+        zIndex: ov.zIndex !== undefined ? ov.zIndex : obj.zIndex,
+        hitboxEnabled: ov.hitboxEnabled !== undefined ? ov.hitboxEnabled : obj.hitboxEnabled,
+        hitboxX: ov.hitboxX !== undefined ? ov.hitboxX : obj.hitboxX,
+        hitboxY: ov.hitboxY !== undefined ? ov.hitboxY : obj.hitboxY,
+        hitboxWidth: ov.hitboxWidth !== undefined ? ov.hitboxWidth : obj.hitboxWidth,
+        hitboxHeight: ov.hitboxHeight !== undefined ? ov.hitboxHeight : obj.hitboxHeight,
+        requiredItemId: effectiveType === 'hotspot_lock' ? (ov.requiredItemId !== undefined ? ov.requiredItemId : obj.requiredItemId) : undefined,
+        lockedText: effectiveType === 'hotspot_lock' ? (ov.lockedText !== undefined ? ov.lockedText : obj.lockedText) : undefined,
+        unlockedText: effectiveType === 'hotspot_lock' ? (ov.unlockedText !== undefined ? ov.unlockedText : obj.unlockedText) : undefined,
+        targetSceneId: ov.targetSceneId !== undefined ? ov.targetSceneId : obj.targetSceneId,
+        consumeRequiredItem: effectiveType === 'hotspot_lock' ? (ov.consumeRequiredItem !== undefined ? ov.consumeRequiredItem : obj.consumeRequiredItem) : undefined,
+        noteTitle: ov.noteTitle !== undefined ? ov.noteTitle : obj.noteTitle,
+        noteContent: ov.noteContent !== undefined ? ov.noteContent : obj.noteContent,
+      };
+      return { effectiveObject, activeState };
+    }
+
+    function checkAndPlayStateTransitions() {
+      project.scenes.forEach(scene => {
+        scene.objects.forEach(obj => {
+          if (!obj.states || obj.states.length === 0) return;
+          const { activeState } = resolveActiveObjectState(obj);
+          const currentActiveId = activeState ? activeState.id : '__base__';
+          const previousId = previousActiveStateIds[obj.id];
+
+          if (previousId !== undefined && previousId !== currentActiveId) {
+            if (activeState) {
+              const sfx = activeState.sfx || activeState.overrides?.transitionSfx || 'reveal';
+              const sfxUrl = activeState.sfxUrl || activeState.overrides?.transitionSfxCustomUrl;
+              if (sfx && sfx !== 'none') {
+                playTransitionSound(sfx, sfxUrl);
+              }
+            }
+          }
+          previousActiveStateIds[obj.id] = currentActiveId;
+        });
+      });
+    }
+
+    function getAllTargetObjects() {
+      let targets = [];
+      project.scenes.forEach(s => {
+        s.objects.forEach(o => {
+          const { effectiveObject } = resolveActiveObjectState(o);
+          const isTarget = effectiveObject.isTarget;
+          const isVisible = effectiveObject.visible !== false && !o.hidden;
+          const isCollectable =
+            effectiveObject.type === 'hidden_object' ||
+            effectiveObject.type === 'inventory_item' ||
+            (!effectiveObject.type && effectiveObject.interactionType !== 'navigate');
+
+          if (isTarget && isVisible && isCollectable) {
+            targets.push({ rawObject: o, effectiveObject });
+          }
+        });
+      });
+      return targets;
+    }
+
+    function resolveInventoryItem(itemId) {
+      for (const scene of project.scenes) {
+        for (const obj of scene.objects) {
+          if (obj.id === itemId) {
+            const { effectiveObject } = resolveActiveObjectState(obj);
+            return effectiveObject;
+          }
+        }
+      }
+      if (project.itemCombinations) {
+        for (const combo of project.itemCombinations) {
+          if (combo.resultItem && combo.resultItem.id === itemId) {
+            return combo.resultItem;
+          }
+        }
+      }
+      return null;
+    }
+
+    function startTimer() {
+      if (project.settings.timerMode === 'none') return;
+
+      timerInterval = setInterval(() => {
+        secondsElapsed++;
+        updateTimerDisplay();
+
+        if (project.settings.timerMode === 'count_down') {
+          const limit = project.settings.timeLimitSeconds || 300;
+          if (secondsElapsed >= limit) {
+            clearInterval(timerInterval);
+            showTimeoutModal();
+          }
+        }
+      }, 1000);
+    }
+
+    function updateTimerDisplay() {
+      const display = document.getElementById('timer-display');
+      if (!display) return;
+
+      let secs = secondsElapsed;
+      if (project.settings.timerMode === 'count_down') {
+        const limit = project.settings.timeLimitSeconds || 300;
+        secs = Math.max(0, limit - secondsElapsed);
+      }
+
+      const mins = Math.floor(secs / 60);
+      const remSecs = secs % 60;
+      display.innerText = (mins < 10 ? '0' + mins : mins) + ':' + (remSecs < 10 ? '0' + remSecs : remSecs);
+    }
+
+    let displayMode = (project.settings && project.settings.defaultDisplayMode) || 'fit';
+    let panX = 0, panY = 0;
+    let isPanning = false;
+    let panStartX = 0, panStartY = 0;
+    let initialPanX = 0, initialPanY = 0;
+    let hasPanned = false;
+
+    function toggleDisplayMode(e) {
+      if (e) e.stopPropagation();
+      displayMode = displayMode === 'fit' ? 'original' : 'fit';
+      panX = 0;
+      panY = 0;
+      const label = document.getElementById('display-mode-label');
+      if (label) label.innerText = displayMode === 'original' ? '📱 Dopasuj' : '🔍 1:1';
+      updateFrameDimensions();
+    }
+
+    function handleStageMouseDown(e) {
+      if (e.button === 0 || e.button === 1 || e.button === 2) {
+        isPanning = true;
+        hasPanned = false;
+        panStartX = e.clientX;
+        panStartY = e.clientY;
+        initialPanX = panX;
+        initialPanY = panY;
+      }
+    }
+
+    function handleStageTouchStart(e) {
+      if (e.touches && e.touches.length > 0) {
+        isPanning = true;
+        hasPanned = false;
+        panStartX = e.touches[0].clientX;
+        panStartY = e.touches[0].clientY;
+        initialPanX = panX;
+        initialPanY = panY;
+      }
+    }
+
+    window.addEventListener('mousemove', function(e) {
+      if (!isPanning) return;
+      const dx = e.clientX - panStartX;
+      const dy = e.clientY - panStartY;
+      if (Math.hypot(dx, dy) > 5) hasPanned = true;
+      if (hasPanned) {
+        panX = initialPanX + dx;
+        panY = initialPanY + dy;
+        applyFrameTransform();
+      }
+    });
+
+    window.addEventListener('mouseup', function() {
+      isPanning = false;
+    });
+
+    window.addEventListener('touchmove', function(e) {
+      if (!isPanning || !e.touches || e.touches.length === 0) return;
+      const dx = e.touches[0].clientX - panStartX;
+      const dy = e.touches[0].clientY - panStartY;
+      if (Math.hypot(dx, dy) > 5) hasPanned = true;
+      if (hasPanned) {
+        panX = initialPanX + dx;
+        panY = initialPanY + dy;
+        applyFrameTransform();
+      }
+    }, { passive: true });
+
+    window.addEventListener('touchend', function() {
+      isPanning = false;
+    });
+
+    function applyFrameTransform() {
+      const frame = document.getElementById('scene-frame');
+      if (!frame) return;
+      frame.style.transform = 'translate(' + panX + 'px, ' + panY + 'px)';
+    }
+
+    function handleStageClick(e) {
+      if (hasPanned) {
+        hasPanned = false;
+        return;
+      }
+      if (e.target && e.target.closest && e.target.closest('.game-object-container')) {
+        return;
+      }
+      handleMissedClick(e);
+    }
+
+    function updateFrameDimensions() {
+      const container = document.getElementById('game-container') || document.querySelector('.game-container');
+      const frame = document.getElementById('scene-frame');
+      if (!container || !frame) return;
+
+      const scene = getCurrentScene();
+      const naturalW = scene.bgWidth || 1280;
+      const naturalH = scene.bgHeight || 720;
+      let ratio = naturalW / naturalH;
+
+      if (scene.aspectRatio) {
+        const parts = scene.aspectRatio.split('/').map(p => parseFloat(p.trim()));
+        if (parts.length === 2 && parts[0] > 0 && parts[1] > 0) {
+          ratio = parts[0] / parts[1];
+        }
+      }
+
+      if (displayMode === 'original') {
+        frame.style.width = naturalW + 'px';
+        frame.style.height = naturalH + 'px';
+        frame.style.aspectRatio = ratio + '';
+        frame.style.maxWidth = 'none';
+        frame.style.maxHeight = 'none';
+      } else {
+        const containerW = container.clientWidth - 8;
+        const containerH = container.clientHeight - 8;
+        if (containerW <= 0 || containerH <= 0) return;
+
+        const containerRatio = containerW / containerH;
+        let frameW, frameH;
+        if (containerRatio > ratio) {
+          frameH = containerH;
+          frameW = containerH * ratio;
+        } else {
+          frameW = containerW;
+          frameH = containerW / ratio;
+        }
+
+        frame.style.width = Math.floor(frameW) + 'px';
+        frame.style.height = Math.floor(frameH) + 'px';
+        frame.style.aspectRatio = ratio + '';
+        frame.style.maxWidth = '100%';
+        frame.style.maxHeight = '100%';
+      }
+      applyFrameTransform();
+    }
+
+    function renderScene() {
+      checkAndPlayStateTransitions();
+      const scene = getCurrentScene();
+      const frame = document.getElementById('scene-frame');
+      const sceneNameEl = document.getElementById('scene-name-display');
+      if (sceneNameEl) sceneNameEl.innerText = '📍 ' + scene.title;
+
+      updateMusicForScene(scene.bgMusicUrl);
+      updateFrameDimensions();
+
+      frame.style.backgroundImage = scene.bgUrl ? 'url("' + formatImgUrl(scene.bgUrl) + '")' : 'none';
+      if (!scene.bgUrl) {
+        frame.style.backgroundColor = '#1e293b';
+      }
+
+      const isSceneSwitch = renderedSceneId !== scene.id;
+      if (isSceneSwitch) {
+        frame.innerHTML = '';
+        renderedSceneId = scene.id;
+      }
+
+      if (
+        project.settings.victoryConditionType === 'reach_scene' &&
+        Boolean(project.settings.victoryTargetSceneId) &&
+        currentSceneId === project.settings.victoryTargetSceneId &&
+        !isCompleted
+      ) {
+        setTimeout(triggerVictory, 400);
+      }
+
+      const activeElementIds = new Set();
+
+      scene.objects.forEach((obj, index) => {
+        const { effectiveObject } = resolveActiveObjectState(obj);
+        if (effectiveObject.visible === false) {
+          const el = frame.querySelector('[data-object-id="' + obj.id + '"]');
+          if (el) el.remove();
+          return;
+        }
+
+        const isCollectable = effectiveObject.type === 'hidden_object' || effectiveObject.type === 'inventory_item' || (!effectiveObject.type && effectiveObject.interactionType !== 'navigate');
+        if (isCollectable && foundObjectIds.includes(obj.id)) {
+          const el = frame.querySelector('[data-object-id="' + obj.id + '"]');
+          if (el) el.remove();
+          return;
+        }
+
+        activeElementIds.add(obj.id);
+        const isHinted = activeHintObjId === obj.id && effectiveObject.showHintOutline !== false;
+        const isTransitionObj = effectiveObject.type === 'hotspot_scene' || (!effectiveObject.type && effectiveObject.interactionType === 'navigate');
+        const targetScene = isTransitionObj && effectiveObject.targetSceneId ? project.scenes.find(s => s.id === effectiveObject.targetSceneId) : null;
+        const objTitle = isTransitionObj
+          ? '🚪 Przejście do: ' + (targetScene ? targetScene.title : (effectiveObject.targetSceneId || 'Brak skonfigurowanej sceny'))
+          : (effectiveObject.type === 'hotspot_lock' || (!effectiveObject.type && effectiveObject.interactionType === 'lock'))
+          ? '🔒 Zamknięte: ' + effectiveObject.name
+          : effectiveObject.name;
+
+        let container = frame.querySelector('[data-object-id="' + obj.id + '"]');
+
+        if (effectiveObject.imageUrl) {
+          if (!container || !container.classList.contains('game-object-container')) {
+            if (container) container.remove();
+            container = document.createElement('div');
+            container.setAttribute('data-object-id', obj.id);
+            container.className = 'game-object-container' + (isHinted && !effectiveObject.hitboxEnabled ? ' hint-flash' : '');
+
+            const img = document.createElement('img');
+            img.className = 'game-object';
+            img.src = formatImgUrl(effectiveObject.imageUrl);
+            img.style.width = '100%';
+            img.style.height = '100%';
+            img.style.objectFit = 'contain';
+            img.style.cursor = 'default';
+            container.appendChild(img);
+
+            frame.appendChild(container);
+          } else {
+            container.className = 'game-object-container' + (isHinted && !effectiveObject.hitboxEnabled ? ' hint-flash' : '');
+            const img = container.querySelector('img.game-object');
+            if (img && img.getAttribute('src') !== formatImgUrl(effectiveObject.imageUrl)) {
+              img.src = formatImgUrl(effectiveObject.imageUrl);
+            }
+          }
+
+          container.style.left = effectiveObject.x + '%';
+          container.style.top = effectiveObject.y + '%';
+          container.style.width = effectiveObject.width + '%';
+          container.style.height = effectiveObject.height + '%';
+          container.style.transform = 'rotate(' + (effectiveObject.rotation || 0) + 'deg)';
+          container.style.zIndex = isHinted ? 999 : (effectiveObject.zIndex || index + 1);
+          container.style.opacity = effectiveObject.opacity !== undefined ? effectiveObject.opacity : 1;
+          container.title = objTitle;
+
+          // Hitbox setup / update
+          let hitbox = container.querySelector('.hitbox');
+          if (effectiveObject.hitboxEnabled) {
+            if (!hitbox) {
+              hitbox = document.createElement('div');
+              hitbox.className = 'hitbox' + (isHinted ? ' hint-flash' : '');
+              container.appendChild(hitbox);
+            } else {
+              hitbox.className = 'hitbox' + (isHinted ? ' hint-flash' : '');
+            }
+            hitbox.style.left = (effectiveObject.hitboxX || 0) + '%';
+            hitbox.style.top = (effectiveObject.hitboxY || 0) + '%';
+            hitbox.style.width = (effectiveObject.hitboxWidth || 100) + '%';
+            hitbox.style.height = (effectiveObject.hitboxHeight || 100) + '%';
+            hitbox.onclick = (e) => handleObjectClick(e, obj);
+            container.onclick = null;
+          } else {
+            if (hitbox) hitbox.remove();
+            container.onclick = (e) => handleObjectClick(e, obj);
+          }
+        } else {
+          // Pure hitbox (no image)
+          if (!container || !container.classList.contains('hitbox')) {
+            if (container) container.remove();
+            container = document.createElement('div');
+            container.setAttribute('data-object-id', obj.id);
+            container.className = 'hitbox' + (isHinted ? ' hint-flash' : '');
+            frame.appendChild(container);
+          } else {
+            container.className = 'hitbox' + (isHinted ? ' hint-flash' : '');
+          }
+
+          container.style.left = effectiveObject.x + '%';
+          container.style.top = effectiveObject.y + '%';
+          container.style.width = effectiveObject.width + '%';
+          container.style.height = effectiveObject.height + '%';
+          container.style.transform = 'rotate(' + (effectiveObject.rotation || 0) + 'deg)';
+          container.style.zIndex = isHinted ? 999 : (effectiveObject.zIndex || index + 1);
+          container.style.opacity = effectiveObject.opacity !== undefined ? effectiveObject.opacity : 1;
+          container.title = objTitle;
+          container.onclick = (e) => handleObjectClick(e, obj);
+        }
+      });
+
+      // Remove any leftover elements from frame
+      const allDomObjects = frame.querySelectorAll('[data-object-id]');
+      allDomObjects.forEach(el => {
+        const objId = el.getAttribute('data-object-id');
+        if (objId && !activeElementIds.has(objId)) {
+          el.remove();
+        }
+      });
+    }
+
+    function handleObjectClick(e, obj) {
+      if (e) e.stopPropagation();
+      if (hasPanned) return;
+
+      const { effectiveObject } = resolveActiveObjectState(obj);
+      if (effectiveObject.visible === false) return;
+
+      const isVictoryTarget =
+        project.settings.victoryConditionType === 'specific_object_click' &&
+        Boolean(project.settings.victoryTargetObjectId) &&
+        project.settings.victoryTargetObjectId === obj.id;
+
+      const cdReduction = (effectiveHintSettings.rechargeMode === 'cooldown') ? (effectiveHintSettings.findTimeReductionSeconds || 0) : 0;
+      let cdBonusMsg = '';
+      if (cdReduction > 0 && hintCooldownRemaining > 0) {
+        hintCooldownRemaining = Math.max(0, hintCooldownRemaining - cdReduction);
+        cdBonusMsg = ' ⏱️-' + cdReduction + 's ' + t('score');
+        renderHintButton();
+      }
+
+      if (effectiveObject.type === 'hidden_object') {
+        foundObjectIds.push(obj.id);
+        playFindSound();
+        const pts = project.settings.pointsPerObject || 100;
+        score += pts;
+        showToast(t('foundObject', { name: effectiveObject.name, pts: pts }) + cdBonusMsg);
+        renderScene();
+        renderFooter();
+        performAutosave();
+        if (isVictoryTarget) {
+          triggerVictory();
+        } else {
+          checkVictory();
+          checkSceneCompletion();
+        }
+        return;
+      }
+
+      if (effectiveObject.type === 'inventory_item') {
+        foundObjectIds.push(obj.id);
+        inventoryItemIds.push(obj.id);
+        playCollectSound();
+        const pts = project.settings.pointsPerObject || 100;
+        score += pts;
+        showToast(t('addedInventory', { name: effectiveObject.name, pts: pts }) + cdBonusMsg);
+        renderScene();
+        renderFooter();
+        performAutosave();
+        if (isVictoryTarget) {
+          triggerVictory();
+        } else {
+          checkVictory();
+          checkSceneCompletion();
+        }
+        return;
+      }
+
+      if (effectiveObject.type === 'hotspot_lock' || (!effectiveObject.type && (Boolean(effectiveObject.requiredItemId) || effectiveObject.interactionType === 'lock'))) {
+        const isAlreadyUnlocked = unlockedHotspotIds.includes(obj.id);
+        if (isAlreadyUnlocked) {
+          if (isVictoryTarget) {
+            triggerVictory();
+            return;
+          }
+          if (effectiveObject.targetSceneId) {
+            const target = project.scenes.find(s => s.id === effectiveObject.targetSceneId);
+            if (target) {
+              currentSceneId = target.id;
+              playUnlockSound();
+              renderScene();
+              renderFooter();
+              performAutosave();
+              showToast(t('transitionTo', { title: target.title }));
+            }
+          } else {
+            showToast(effectiveObject.unlockedText || t('lockAlreadyUnlocked', { name: effectiveObject.name }));
+          }
+          return;
+        }
+
+        if (!effectiveObject.requiredItemId) {
+          playMisclickSound();
+          showToast(effectiveObject.lockedText || t('lockRequiresKey'));
+          return;
+        }
+
+        // Check if player has selected any item from inventory
+        if (!selectedInventoryItemId) {
+          playMisclickSound();
+          if (effectiveObject.lockedText) {
+            showToast(effectiveObject.lockedText);
+          } else {
+            const reqObj = resolveInventoryItem(effectiveObject.requiredItemId);
+            showToast(t('lockRequiresSpecificItem', { item: reqObj ? reqObj.name : '...' }));
+          }
+          return;
+        }
+
+        // If player has selected a DIFFERENT item from the inventory bar, show mismatch
+        if (selectedInventoryItemId !== effectiveObject.requiredItemId) {
+          playMisclickSound();
+          showToast(t('itemDoesNotFit'));
+          return;
+        }
+
+        // Success: check if item should be consumed from inventory and unlock
+        const shouldConsume = effectiveObject.consumeRequiredItem !== false;
+        if (shouldConsume) {
+          inventoryItemIds = inventoryItemIds.filter(id => id !== effectiveObject.requiredItemId);
+          if (effectiveObject.requiredItemId && !consumedItemIds.includes(effectiveObject.requiredItemId)) {
+            consumedItemIds.push(effectiveObject.requiredItemId);
+          }
+        }
+        selectedInventoryItemId = null;
+        unlockedHotspotIds.push(obj.id);
+        playUnlockSound();
+        const pts = project.settings.pointsPerObject || 100;
+        score += pts;
+        showToast(effectiveObject.unlockedText || t('unlockedSuccess', { name: effectiveObject.name, pts: pts }));
+
+        if (isVictoryTarget) {
+          renderScene();
+          renderFooter();
+          performAutosave();
+          triggerVictory();
+          return;
+        }
+
+        if (effectiveObject.targetSceneId) {
+          const target = project.scenes.find(s => s.id === effectiveObject.targetSceneId);
+          if (target) {
+            currentSceneId = target.id;
+            renderScene();
+            renderFooter();
+            performAutosave();
+            showToast(t('transitionTo', { title: target.title }));
+            return;
+          }
+        }
+        renderScene();
+        renderFooter();
+        performAutosave();
+        return;
+      }
+
+      const isTransition = effectiveObject.type === 'hotspot_scene' || (!effectiveObject.type && effectiveObject.interactionType === 'navigate');
+
+      if (isTransition) {
+        if (isVictoryTarget) {
+          triggerVictory();
+          return;
+        }
+        if (effectiveObject.targetSceneId) {
+          const target = project.scenes.find(s => s.id === effectiveObject.targetSceneId);
+          if (target) {
+            currentSceneId = target.id;
+            playUnlockSound();
+            renderScene();
+            renderFooter();
+            performAutosave();
+            showToast(t('transitionTo', { title: target.title }));
+          } else {
+            playMisclickSound();
+            showToast(t('sceneNotFound'));
+          }
+        } else {
+          playMisclickSound();
+          showToast(t('sceneNotSet', { name: effectiveObject.name }));
+        }
+        return;
+      }
+
+      if (effectiveObject.type === 'note') {
+        if (isVictoryTarget) {
+          triggerVictory();
+          return;
+        }
+        playFindSound();
+        showNoteModal(effectiveObject.noteTitle || effectiveObject.name, effectiveObject.noteContent || t('noteEmptyContent'));
+        return;
+      }
+
+      foundObjectIds.push(obj.id);
+      const isInvItem = effectiveObject.type === 'inventory_item' || effectiveObject.addToInventory;
+      if (isInvItem) {
+        inventoryItemIds.push(obj.id);
+      }
+
+      const pts = project.settings.pointsPerObject || 100;
+      score += pts;
+
+      if (isInvItem) {
+        playCollectSound();
+        showToast(t('addedInventory', { name: effectiveObject.name, pts: pts }) + cdBonusMsg);
+      } else {
+        playFindSound();
+        showToast(t('foundObject', { name: effectiveObject.name, pts: pts }) + cdBonusMsg);
+      }
+      renderScene();
+      renderFooter();
+      performAutosave();
+      if (isVictoryTarget) {
+        triggerVictory();
+      } else {
+        checkVictory();
+      }
+    }
+
+    function handleMissedClick(e) {
+      if (isCompleted || hasPanned) return;
+      misclicks++;
+      playMisclickSound();
+      const isRelax = project.settings.timerMode === 'none';
+      if (project.settings.penaltyOnMisclick) {
+        const penalty = project.settings.penaltySeconds || 5;
+        score = Math.max(0, score - 20);
+        if (!isRelax) {
+          secondsElapsed += penalty;
+          updateTimerDisplay();
+          showToast(t('misclickPenaltyTime', { sec: penalty }));
+        } else {
+          showToast(t('misclickPenaltyScore'));
+        }
+        const scoreEl = document.getElementById('score-display');
+        if (scoreEl) scoreEl.innerText = score;
+      } else {
+        showToast(t('misclickSimple'));
+      }
+    }
+
+    function handleInventoryItemClick(clickedItemId) {
+      if (!selectedInventoryItemId) {
+        selectedInventoryItemId = clickedItemId;
+        renderFooter();
+        return;
+      }
+      if (selectedInventoryItemId === clickedItemId) {
+        selectedInventoryItemId = null;
+        renderFooter();
+        return;
+      }
+
+      const combination = (project.itemCombinations || []).find(
+        (c) =>
+          (c.item1Id === selectedInventoryItemId && c.item2Id === clickedItemId) ||
+          (c.item1Id === clickedItemId && c.item2Id === selectedInventoryItemId)
+      );
+
+      if (combination) {
+        if (inventoryItemIds.includes(combination.resultItem.id)) {
+          selectedInventoryItemId = clickedItemId;
+          showToast(t('itemAlreadyInInventory', { name: combination.resultItem.name }));
+          renderFooter();
+          return;
+        }
+
+        const item1 = resolveInventoryItem(selectedInventoryItemId);
+        const item2 = resolveInventoryItem(clickedItemId);
+
+        const consume1 = combination.consumeItem1 !== false;
+        const consume2 = combination.consumeItem2 !== false;
+
+        inventoryItemIds = inventoryItemIds.filter(id => {
+          if (id === combination.item1Id && consume1) return false;
+          if (id === combination.item2Id && consume2) return false;
+          return true;
+        });
+        inventoryItemIds.push(combination.resultItem.id);
+
+        if (consume1 && combination.item1Id && !consumedItemIds.includes(combination.item1Id)) {
+          consumedItemIds.push(combination.item1Id);
+        }
+        if (consume2 && combination.item2Id && !consumedItemIds.includes(combination.item2Id)) {
+          consumedItemIds.push(combination.item2Id);
+        }
+        if (!completedCombinationIds.includes(combination.id)) {
+          completedCombinationIds.push(combination.id);
+        }
+
+        const bonus = combination.pointsBonus !== undefined ? combination.pointsBonus : 50;
+        score += bonus;
+
+        selectedInventoryItemId = combination.resultItem.id;
+        playCombineSound();
+        const msg = combination.successMessage || t('combinedSuccess', {
+          item1: item1 ? item1.name : 'Item',
+          item2: item2 ? item2.name : 'Item',
+          result: combination.resultItem.name,
+          bonus: bonus
+        });
+        showToast(msg);
+        renderScene();
+        renderFooter();
+        performAutosave();
+      } else {
+        selectedInventoryItemId = clickedItemId;
+        playMisclickSound();
+        showToast(t('cannotCombine'));
+        renderFooter();
+      }
+    }
+
+    function renderFooter() {
+      const scoreEl = document.getElementById('score-display');
+      if (scoreEl) scoreEl.innerText = score;
+
+      const allTargets = getAllTargetObjects();
+      const foundTargetsCount = allTargets.filter(t => foundObjectIds.includes(t.rawObject.id)).length;
+      const totalTargetsCount = allTargets.length;
+      const remainingTargetsCount = totalTargetsCount - foundTargetsCount;
+
+      const remEl = document.getElementById('targets-remaining');
+      if (remEl) remEl.innerText = remainingTargetsCount;
+      const totEl = document.getElementById('targets-total');
+      if (totEl) totEl.innerText = totalTargetsCount;
+      const invCountEl = document.getElementById('inventory-count');
+      if (invCountEl) invCountEl.innerText = inventoryItemIds.length;
+
+      // Targets list
+      const targetsList = document.getElementById('view-targets');
+      if (targetsList) {
+        targetsList.innerHTML = '';
+        allTargets.forEach(({ rawObject, effectiveObject }) => {
+          const isFound = foundObjectIds.includes(rawObject.id);
+          const div = document.createElement('div');
+          div.className = 'target-item' + (isFound ? ' found' : '');
+
+          let html = '';
+          if (project.settings.showItemPicturesInList && effectiveObject.imageUrl) {
+            html += '<img src="' + formatImgUrl(effectiveObject.imageUrl) + '" />';
+          }
+          html += '<span>' + effectiveObject.name + '</span>';
+          if (isFound) html += ' <span>✓</span>';
+
+          div.innerHTML = html;
+          targetsList.appendChild(div);
+        });
+      }
+
+      // Inventory
+      const invContainer = document.getElementById('inventory-slots');
+      if (invContainer) {
+        invContainer.innerHTML = '';
+
+        if (inventoryItemIds.length === 0) {
+          invContainer.innerHTML = '<span style="color:#64748b; font-size:0.75rem; font-style:italic; padding:2px;">' + t('emptyInventory') + '</span>';
+        } else {
+          inventoryItemIds.forEach(itemId => {
+            const itemObj = resolveInventoryItem(itemId);
+            if (!itemObj) return;
+
+            const slot = document.createElement('div');
+            slot.className = 'inventory-slot' + (selectedInventoryItemId === itemId ? ' selected' : '');
+            slot.title = itemObj.name;
+            slot.onclick = () => {
+              handleInventoryItemClick(itemId);
+            };
+
+            const img = document.createElement('img');
+            img.src = formatImgUrl(itemObj.imageUrl);
+            slot.appendChild(img);
+            invContainer.appendChild(slot);
+          });
+        }
+      }
+
+      renderHintButton();
+    }
+
+    function useHint() {
+      if (effectiveHintSettings.rechargeMode === 'disabled') {
+        showToast(t('hintsDisabled'));
+        return;
+      }
+
+      if (effectiveHintSettings.rechargeMode === 'cooldown' && hintCooldownRemaining > 0) {
+        showToast(t('hintRecharging', { sec: hintCooldownRemaining }));
+        return;
+      }
+
+      if (effectiveHintSettings.rechargeMode === 'charges' && remainingHintCharges <= 0) {
+        showToast(t('hintNoChargesLeft'));
+        return;
+      }
+
+      if (
+        effectiveHintSettings.rechargeMode === 'score_cost' &&
+        effectiveHintSettings.blockIfInsufficientScore &&
+        score < (effectiveHintSettings.scorePenaltyOnUse || 50)
+      ) {
+        const penalty = effectiveHintSettings.scorePenaltyOnUse || 50;
+        showToast(t('hintNotEnoughScore', { penalty: penalty, score: score }));
+        return;
+      }
+
+      const scene = getCurrentScene();
+      const uncollectedInScene = scene.objects
+        .map(o => ({ raw: o, ...resolveActiveObjectState(o) }))
+        .filter(({ raw, effectiveObject }) => effectiveObject.visible !== false && effectiveObject.isTarget && !foundObjectIds.includes(raw.id));
+
+      const costSuffix = effectiveHintSettings.rechargeMode === 'score_cost'
+        ? ' (-' + (effectiveHintSettings.scorePenaltyOnUse || 50) + ' ' + t('score') + ')'
+        : '';
+
+      function applyHintCost() {
+        if (effectiveHintSettings.rechargeMode === 'cooldown') {
+          hintCooldownRemaining = effectiveHintSettings.cooldownSeconds || 30;
+        } else if (effectiveHintSettings.rechargeMode === 'charges') {
+          remainingHintCharges = Math.max(0, remainingHintCharges - 1);
+        } else if (effectiveHintSettings.rechargeMode === 'score_cost') {
+          score = Math.max(0, score - (effectiveHintSettings.scorePenaltyOnUse || 50));
+          const scoreEl = document.getElementById('score-display');
+          if (scoreEl) scoreEl.innerText = score;
+        }
+        renderHintButton();
+      }
+
+      if (uncollectedInScene.length > 0) {
+        const selected = uncollectedInScene[Math.floor(Math.random() * uncollectedInScene.length)];
+        const randomTarget = selected.raw;
+        const effectiveTarget = selected.effectiveObject;
+
+        playHintSound();
+        applyHintCost();
+
+        if (effectiveHintSettings.presentation === 'visual') {
+          activeHintObjId = randomTarget.id;
+          showToast(t('hintVisualRevealed') + costSuffix);
+          renderScene();
+          if (hintTimeoutTimer) clearTimeout(hintTimeoutTimer);
+          hintTimeoutTimer = setTimeout(() => {
+            activeHintObjId = null;
+            renderScene();
+          }, 3500);
+        } else if (effectiveHintSettings.presentation === 'text') {
+          const hintText = effectiveTarget.hint || effectiveTarget.name;
+          showToast(t('hintClueText', { text: hintText }) + costSuffix);
+        } else {
+          // hybrid
+          activeHintObjId = randomTarget.id;
+          const hintText = effectiveTarget.hint || effectiveTarget.name;
+          showToast('💡 ' + hintText + costSuffix);
+          renderScene();
+          if (hintTimeoutTimer) clearTimeout(hintTimeoutTimer);
+          hintTimeoutTimer = setTimeout(() => {
+            activeHintObjId = null;
+            renderScene();
+          }, 3500);
+        }
+      } else {
+        // Smart Navigation fallback
+        if (effectiveHintSettings.smartNavigation) {
+          // 1. Matching locked hotspot in current scene where player has the required key item
+          const matchingLockObj = scene.objects
+            .map(o => ({ raw: o, ...resolveActiveObjectState(o) }))
+            .find(({ raw, effectiveObject }) =>
+              effectiveObject.visible !== false &&
+              (effectiveObject.type === 'hotspot_lock' || (!effectiveObject.type && (Boolean(effectiveObject.requiredItemId) || effectiveObject.interactionType === 'lock'))) &&
+              !unlockedHotspotIds.includes(raw.id) &&
+              effectiveObject.requiredItemId &&
+              inventoryItemIds.includes(effectiveObject.requiredItemId)
+            );
+
+          if (matchingLockObj) {
+            const matchingLock = matchingLockObj.raw;
+            const effectiveLock = matchingLockObj.effectiveObject;
+
+            playHintSound();
+            applyHintCost();
+            if (effectiveHintSettings.presentation !== 'text') {
+              activeHintObjId = matchingLock.id;
+              renderScene();
+              if (hintTimeoutTimer) clearTimeout(hintTimeoutTimer);
+              hintTimeoutTimer = setTimeout(() => {
+                activeHintObjId = null;
+                renderScene();
+              }, 3500);
+            }
+            const reqItem = resolveInventoryItem(effectiveLock.requiredItemId);
+            showToast(t('hintUseItemOnLock', { item: reqItem ? reqItem.name : 'Key', lock: effectiveLock.name }) + costSuffix);
+            return;
+          }
+
+          // 2. Inventory combinations available with current items
+          const availableCombo = (project.itemCombinations || []).find(c =>
+            inventoryItemIds.includes(c.item1Id) && inventoryItemIds.includes(c.item2Id)
+          );
+
+          if (availableCombo) {
+            playHintSound();
+            applyHintCost();
+            const it1 = resolveInventoryItem(availableCombo.item1Id);
+            const it2 = resolveInventoryItem(availableCombo.item2Id);
+            showToast(t('hintCombineItems', { item1: it1 ? it1.name : 'Item 1', item2: it2 ? it2.name : 'Item 2' }) + costSuffix);
+            return;
+          }
+
+          // 3. Scene navigation transition to another scene that contains uncollected targets
+          const validExitObj = scene.objects
+            .map(o => ({ raw: o, ...resolveActiveObjectState(o) }))
+            .find(({ raw, effectiveObject }) => {
+              if (effectiveObject.visible === false) return false;
+              if (effectiveObject.type !== 'hotspot_scene' && (!effectiveObject.type && effectiveObject.interactionType !== 'navigate')) return false;
+              if (!effectiveObject.targetSceneId) return false;
+              const targetScene = project.scenes.find(s => s.id === effectiveObject.targetSceneId);
+              if (!targetScene) return false;
+              return targetScene.objects.some(to => {
+                const { effectiveObject: toEff } = resolveActiveObjectState(to);
+                return toEff.isTarget && toEff.visible !== false && !foundObjectIds.includes(to.id);
+              });
+            });
+
+          if (validExitObj) {
+            const validExit = validExitObj.raw;
+            const effectiveExit = validExitObj.effectiveObject;
+            playHintSound();
+            applyHintCost();
+            const targetScene = project.scenes.find(s => s.id === effectiveExit.targetSceneId);
+            if (effectiveHintSettings.presentation !== 'text') {
+              activeHintObjId = validExit.id;
+              renderScene();
+              if (hintTimeoutTimer) clearTimeout(hintTimeoutTimer);
+              hintTimeoutTimer = setTimeout(() => {
+                activeHintObjId = null;
+                renderScene();
+              }, 3500);
+            }
+            showToast(t('hintGoToScene', { scene: targetScene ? targetScene.title : effectiveExit.name }) + costSuffix);
+            return;
+          }
+
+          // 4. Any other scene in project with uncollected targets
+          const scenesWithTargets = project.scenes.filter(s =>
+            s.id !== scene.id && s.objects.some(to => {
+              const { effectiveObject: toEff } = resolveActiveObjectState(to);
+              return toEff.isTarget && toEff.visible !== false && !foundObjectIds.includes(to.id);
+            })
+          );
+
+          if (scenesWithTargets.length > 0) {
+            playHintSound();
+            applyHintCost();
+            showToast(t('hintAllFoundGoTo', { scene: scenesWithTargets[0].title }) + costSuffix);
+            return;
+          }
+        }
+
+        showToast(t('hintNoMoreTargets'));
+      }
+    }
+
+    function triggerVictory() {
+      if (isCompleted) return;
+      clearInterval(timerInterval);
+      setTimeout(showVictoryModal, 300);
+    }
+
+    function checkVictory() {
+      const mode = project.settings.victoryConditionType || 'all_targets_found';
+      if (mode === 'all_targets_found') {
+        const allTargets = getAllTargetObjects();
+        const allFound = allTargets.every(t => foundObjectIds.includes(t.rawObject.id));
+
+        if (allFound) {
+          clearInterval(timerInterval);
+          setTimeout(showVictoryModal, 600);
+        }
+      }
+    }
+
+    function checkSceneCompletion() {
+      const scene = getCurrentScene();
+      if (!scene || scene.completionTrigger !== 'all_targets_collected') return;
+
+      const sceneTargets = scene.objects.filter(
+        o => o.isTarget && (o.type === 'hidden_object' || o.type === 'inventory_item' || (!o.type && o.interactionType !== 'navigate'))
+      );
+
+      if (sceneTargets.length === 0) return;
+
+      const allSceneTargetsFound = sceneTargets.every(t => foundObjectIds.includes(t.id));
+      if (!allSceneTargetsFound) return;
+
+      let targetSceneId = scene.targetSceneOnClearId;
+      if (!targetSceneId) {
+        const currentIndex = project.scenes.findIndex(s => s.id === scene.id);
+        if (currentIndex !== -1 && currentIndex + 1 < project.scenes.length) {
+          targetSceneId = project.scenes[currentIndex + 1].id;
+        }
+      }
+
+      if (targetSceneId && targetSceneId !== scene.id) {
+        const targetScene = project.scenes.find(s => s.id === targetSceneId);
+        if (targetScene) {
+          const toastMsg = scene.clearToastMessage || ('✨ ' + t('transitionTo', { title: targetScene.title }));
+          showToast(toastMsg);
+          playUnlockSound();
+          setTimeout(() => {
+            if (isCompleted) return;
+            currentSceneId = targetScene.id;
+            renderScene();
+            renderFooter();
+            performAutosave();
+          }, 1200);
+        }
+      }
+    }
+
+    function showNoteModal(title, content) {
+      const modalHtml = `
+        <div class="modal-backdrop" onclick="closeNoteModal()">
+          <div class="modal-card" onclick="event.stopPropagation()" style="max-width: 480px; text-align: center;">
+            <div style="font-size: 2.2rem; margin-bottom: 8px;">📜</div>
+            <h2>${escapeHtml(title)}</h2>
+            <div style="background: rgba(0,0,0,0.35); border: 1px solid rgba(212,175,55,0.25); border-radius: 12px; padding: 16px; margin: 16px 0; text-align: left; max-height: 280px; overflow-y: auto; white-space: pre-wrap; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">${escapeHtml(content)}</div>
+            <button class="btn" onclick="closeNoteModal()" style="font-size: 0.95rem; padding: 8px 24px;">${t('close')}</button>
+          </div>
+        </div>
+      `;
+      document.getElementById('modal-container').innerHTML = modalHtml;
+    }
+
+    function closeNoteModal() {
+      document.getElementById('modal-container').innerHTML = '';
+    }
+
+    function showVictoryModal() {
+      isCompleted = true;
+      window.dispatchEvent(new CustomEvent('game:result', { detail: { score, completed: true } }));
+      playVictorySound();
+      const mins = Math.floor(secondsElapsed / 60);
+      const secs = secondsElapsed % 60;
+      const timeStr = (mins > 0 ? mins + 'm ' : '') + secs + 's';
+
+      const modalHtml = `
+        <div class="modal-backdrop">
+          <div class="modal-card">
+            <h2>🏆 ${escapeHtml(project.settings.victoryTitle || t('victoryTitle'))}</h2>
+            <p>${escapeHtml(project.settings.victoryMessage || t('victoryDefaultMsg'))}</p>
+            <div style="background:rgba(0,0,0,0.3); padding:15px; border-radius:10px; margin-bottom:20px; text-align:left;">
+              ${project.settings.timerMode !== 'none' ? `<p>⏱️ ${t('statCompletionTime')} <strong>${timeStr}</strong></p>` : ''}
+              <p>⭐ ${t('statScore')} <strong>${score} ${t('score')}</strong></p>
+              <p>❌ ${t('statMisclicks')} <strong>${misclicks}</strong></p>
+            </div>
+            <button class="btn" onclick="location.reload()" style="font-size:1.1rem; padding:12px 24px;">🔄 ${t('playAgain')}</button>
+          </div>
+        </div>
+      `;
+      document.getElementById('modal-container').innerHTML = modalHtml;
+    }
+
+    function showTimeoutModal() {
+      isCompleted = true;
+      window.dispatchEvent(new CustomEvent('game:result', { detail: { score, completed: false } }));
+      playMisclickSound();
+      const modalHtml = `
+        <div class="modal-backdrop">
+          <div class="modal-card">
+            <h2 style="color:#ef4444;">⏳ ${escapeHtml(t('gameOverTitle'))}</h2>
+            <p>${escapeHtml(project.settings.timeoutMessage || t('gameOverDefaultMsg'))}</p>
+            <button class="btn" onclick="location.reload()" style="font-size:1.1rem; padding:12px 24px; margin-top:20px;">🔄 ${t('tryAgain')}</button>
+          </div>
+        </div>
+      `;
+      document.getElementById('modal-container').innerHTML = modalHtml;
+    }
+
+    // ==========================================
+    // SAVE & LOAD SYSTEM (LocalStorage & File)
+    // ==========================================
+    const SAVE_VERSION = '1.0';
+    let currentSaveTab = 'slots';
+    let autosaveTimeout = null;
+
+    function getProjectSavePrefix() {
+      const safeId = (project.id || project.title || 'hopa_game').replace(/[^a-zA-Z0-9_]/g, '_');
+      return 'hopa_save_' + safeId + '_';
+    }
+
+    function createSaveDataObject(slotType, slotIndex) {
+      const scene = getCurrentScene();
+      const allTargets = getAllTargetObjects();
+      const foundCount = allTargets.filter(t => foundObjectIds.includes(t.rawObject ? t.rawObject.id : t.id)).length;
+
+      return {
+        saveVersion: SAVE_VERSION,
+        projectId: project.id || 'default_project',
+        projectTitle: project.title || 'Gra HOPA',
+        timestamp: Date.now(),
+        saveType: slotType || 'manual',
+        slotIndex: slotIndex !== undefined ? slotIndex : null,
+        summary: {
+          sceneName: scene ? scene.title : 'Lokacja',
+          sceneId: currentSceneId,
+          secondsElapsed: secondsElapsed,
+          score: score,
+          misclicks: misclicks,
+          foundTargetsCount: foundCount,
+          totalTargetsCount: allTargets.length,
+          inventoryCount: inventoryItemIds.length,
+          difficultyPreset: selectedDifficultyPreset
+        },
+        state: {
+          currentSceneId: currentSceneId,
+          foundObjectIds: [...foundObjectIds],
+          inventoryItemIds: [...inventoryItemIds],
+          unlockedHotspotIds: [...unlockedHotspotIds],
+          selectedInventoryItemId: selectedInventoryItemId,
+          score: score,
+          misclicks: misclicks,
+          secondsElapsed: secondsElapsed,
+          isCompleted: isCompleted,
+          difficulty: {
+            preset: selectedDifficultyPreset,
+            isConfirmed: isDifficultyConfirmed,
+            hintCooldownRemaining: hintCooldownRemaining,
+            remainingHintCharges: remainingHintCharges
+          },
+          audio: {
+            soundEnabled: soundEnabled,
+            musicMuted: musicMuted,
+            musicVolume: musicVolume
+          }
+        }
+      };
+    }
+
+    function flashAutosaveIndicator() {
+      const ind = document.getElementById('autosave-indicator');
+      if (!ind) return;
+      ind.style.display = 'inline-flex';
+      if (autosaveTimeout) clearTimeout(autosaveTimeout);
+      autosaveTimeout = setTimeout(() => {
+        ind.style.display = 'none';
+      }, 2000);
+    }
+
+    function performAutosave() {
+      if (isCompleted) return;
+      try {
+        const saveData = createSaveDataObject('auto', 0);
+        const key = getProjectSavePrefix() + 'autosave';
+        localStorage.setItem(key, JSON.stringify(saveData));
+        flashAutosaveIndicator();
+      } catch (err) {
+        console.warn('Autosave failed:', err);
+      }
+    }
+
+    function saveToSlot(slotIndex) {
+      try {
+        const saveData = createSaveDataObject('manual', slotIndex);
+        const key = getProjectSavePrefix() + 'slot_' + slotIndex;
+        localStorage.setItem(key, JSON.stringify(saveData));
+        playCollectSound();
+        showToast(t('savedToSlot', { slot: slotIndex }));
+        if (document.getElementById('save-load-modal-backdrop')) {
+          renderSaveLoadModalContent();
+        }
+      } catch (err) {
+        console.error('Save failed:', err);
+        showToast(t('saveError'));
+      }
+    }
+
+    function getSaveSlot(slotKey) {
+      try {
+        const raw = localStorage.getItem(slotKey);
+        if (!raw) return null;
+        return JSON.parse(raw);
+      } catch (e) {
+        return null;
+      }
+    }
+
+    function deleteSaveSlot(slotIndex, isAuto) {
+      const key = getProjectSavePrefix() + (isAuto ? 'autosave' : ('slot_' + slotIndex));
+      if (!confirm(t('startupNewGameConfirm'))) return;
+      try {
+        localStorage.removeItem(key);
+        showToast(t('saveDeleted'));
+        if (document.getElementById('save-load-modal-backdrop')) {
+          renderSaveLoadModalContent();
+        }
+      } catch (e) {
+        console.error('Delete failed:', e);
+      }
+    }
+
+    function loadFromSlot(slotIndex, isAuto) {
+      const key = getProjectSavePrefix() + (isAuto ? 'autosave' : ('slot_' + slotIndex));
+      const data = getSaveSlot(key);
+      if (!data) {
+        showToast(t('slotEmpty'));
+        return;
+      }
+      applyLoadedSave(data);
+      closeSaveLoadModal();
+    }
+
+    function applyLoadedSave(saveData) {
+      try {
+        if (!saveData || !saveData.state) {
+          throw new Error('Invalid save format');
+        }
+
+        const state = saveData.state;
+        currentSceneId = state.currentSceneId || (project.scenes[0] ? project.scenes[0].id : '');
+        foundObjectIds = Array.isArray(state.foundObjectIds) ? [...state.foundObjectIds] : [];
+        inventoryItemIds = Array.isArray(state.inventoryItemIds) ? [...state.inventoryItemIds] : [];
+        unlockedHotspotIds = Array.isArray(state.unlockedHotspotIds) ? [...state.unlockedHotspotIds] : [];
+        selectedInventoryItemId = state.selectedInventoryItemId || null;
+        score = typeof state.score === 'number' ? state.score : 0;
+        misclicks = typeof state.misclicks === 'number' ? state.misclicks : 0;
+        secondsElapsed = typeof state.secondsElapsed === 'number' ? state.secondsElapsed : 0;
+        isCompleted = Boolean(state.isCompleted);
+
+        if (state.difficulty) {
+          selectedDifficultyPreset = state.difficulty.preset || 'standard';
+          selectedDifficultyChoice = selectedDifficultyPreset;
+          effectiveHintSettings = getEffectiveHintSettings(project.settings || {}, selectedDifficultyPreset);
+          isDifficultyConfirmed = state.difficulty.isConfirmed !== undefined ? state.difficulty.isConfirmed : true;
+          hintCooldownRemaining = state.difficulty.hintCooldownRemaining || 0;
+          remainingHintCharges = state.difficulty.remainingHintCharges !== undefined ? state.difficulty.remainingHintCharges : (effectiveHintSettings.maxCharges || 3);
+        }
+
+        if (state.audio) {
+          if (state.audio.soundEnabled !== undefined) {
+            soundEnabled = state.audio.soundEnabled;
+            const btn = document.getElementById('sfx-toggle-btn');
+            if (btn) btn.innerText = soundEnabled ? t('sounds') : t('soundsOff');
+          }
+          if (state.audio.musicMuted !== undefined) musicMuted = state.audio.musicMuted;
+          if (state.audio.musicVolume !== undefined) musicVolume = state.audio.musicVolume;
+          updateMusicVolume();
+        }
+
+        activeHintObjId = null;
+        if (hintTimeoutTimer) clearTimeout(hintTimeoutTimer);
+
+        renderScene();
+        renderFooter();
+        renderHintButton();
+        updateTimerDisplay();
+
+        if (timerInterval) clearInterval(timerInterval);
+        if (!isCompleted && isDifficultyConfirmed) {
+          startTimer();
+        }
+
+        playUnlockSound();
+        const scene = getCurrentScene();
+        showToast(t('loadedSave', { scene: scene ? scene.title : '...' }));
+      } catch (err) {
+        console.error('Error restoring save state:', err);
+        showToast(t('loadError'));
+      }
+    }
+
+    function exportSaveToFile() {
+      try {
+        const saveData = createSaveDataObject('file');
+        const jsonStr = JSON.stringify(saveData, null, 2);
+        const blob = new Blob([jsonStr], { type: 'application/json' });
+        const safeTitle = (project.title || 'Hopa_Game').replace(/[^a-zA-Z0-9_ -]/g, '_');
+        const now = new Date();
+        const dateStr = now.toISOString().slice(0, 10);
+        const fileName = safeTitle + '_Save_' + dateStr + '.hopasave';
+
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        playCollectSound();
+        showToast(t('saveFileDownloaded', { file: fileName }));
+      } catch (e) {
+        console.error('Export save to file failed:', e);
+        showToast(t('saveFileExportError'));
+      }
+    }
+
+    function handleFileImport(e) {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const content = event.target.result;
+          const parsed = JSON.parse(content);
+          if (parsed.projectId && project.id && parsed.projectId !== project.id) {
+            if (!confirm('Ten zapis pochodzi z innego projektu (' + (parsed.projectTitle || 'Inna gra') + '). Czy na pewno chcesz go wczytać?')) {
+              return;
+            }
+          }
+          applyLoadedSave(parsed);
+          closeSaveLoadModal();
+        } catch (err) {
+          console.error('Failed to parse save file:', err);
+          showToast(t('invalidSaveFile'));
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function openSaveLoadModal(defaultTab) {
+      currentSaveTab = defaultTab || 'slots';
+      const modalEl = document.getElementById('modal-container');
+      if (!modalEl) return;
+
+      modalEl.innerHTML = `
+        <div class="modal-backdrop" id="save-load-modal-backdrop" onclick="closeSaveLoadModal()">
+          <div class="modal-card save-load-modal" onclick="event.stopPropagation()">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <h2 style="margin:0; font-size:1.4rem; color:#fef08a; display:flex; align-items:center; gap:8px;">
+                <span>💾</span> ${t('saveModalTitle')}
+              </h2>
+              <button onclick="closeSaveLoadModal()" style="background:transparent; border:none; color:#94a3b8; font-size:1.2rem; cursor:pointer; padding:4px 8px;">✕</button>
+            </div>
+
+            <div class="save-tab-bar">
+              <button class="save-tab-btn ${currentSaveTab === 'slots' ? 'active' : ''}" id="tab-save-slots" onclick="switchSaveTab('slots')">
+                ${t('saveTabManual')}
+              </button>
+              <button class="save-tab-btn ${currentSaveTab === 'file' ? 'active' : ''}" id="tab-save-file" onclick="switchSaveTab('file')">
+                ${t('saveTabFile')}
+              </button>
+            </div>
+
+            <div id="save-modal-body"></div>
+          </div>
+        </div>
+      `;
+
+      renderSaveLoadModalContent();
+    }
+
+    function switchSaveTab(tab) {
+      currentSaveTab = tab;
+      const t1 = document.getElementById('tab-save-slots');
+      const t2 = document.getElementById('tab-save-file');
+      if (t1) t1.className = 'save-tab-btn' + (tab === 'slots' ? ' active' : '');
+      if (t2) t2.className = 'save-tab-btn' + (tab === 'file' ? ' active' : '');
+      renderSaveLoadModalContent();
+    }
+
+    function renderSaveLoadModalContent() {
+      const bodyEl = document.getElementById('save-modal-body');
+      if (!bodyEl) return;
+
+      if (currentSaveTab === 'file') {
+        bodyEl.innerHTML = `
+          <div style="display:flex; flex-direction:column; gap:16px; padding:10px 0;">
+            <div style="background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:16px; text-align:left;">
+              <div style="font-weight:bold; color:#fde68a; font-size:0.95rem; margin-bottom:4px; display:flex; align-items:center; gap:6px;">
+                <span>💾</span> ${t('exportSaveTitle')}
+              </div>
+              <p style="font-size:0.8rem; color:#94a3b8; margin:0 0 12px 0; line-height:1.4;">
+                ${t('exportSaveDesc')}
+              </p>
+              <button class="btn btn-primary" onclick="exportSaveToFile()" style="font-size:0.85rem; padding:8px 18px;">
+                ${t('exportSaveBtn')}
+              </button>
+            </div>
+
+            <div style="background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:16px; text-align:left;">
+              <div style="font-weight:bold; color:#6ee7b7; font-size:0.95rem; margin-bottom:4px; display:flex; align-items:center; gap:6px;">
+                <span>📂</span> ${t('importSaveTitle')}
+              </div>
+              <p style="font-size:0.8rem; color:#94a3b8; margin:0 0 12px 0; line-height:1.4;">
+                ${t('importSaveDesc')}
+              </p>
+              <label class="btn btn-secondary" style="display:inline-block; font-size:0.85rem; padding:8px 18px; cursor:pointer;">
+                ${t('importSaveBtn')}
+                <input type="file" accept=".hopasave,.json" onchange="handleFileImport(event)" style="display:none;" />
+              </label>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      // 'slots' tab
+      let html = '<div class="save-slots-grid">';
+
+      // Slot 0: Autosave
+      const autoSave = getSaveSlot(getProjectSavePrefix() + 'autosave');
+      html += renderSlotCardHtml(0, autoSave, true);
+
+      // Slots 1, 2, 3: Manual slots
+      for (let i = 1; i <= 3; i++) {
+        const slotData = getSaveSlot(getProjectSavePrefix() + 'slot_' + i);
+        html += renderSlotCardHtml(i, slotData, false);
+      }
+
+      html += '</div>';
+      bodyEl.innerHTML = html;
+    }
+
+    function renderSlotCardHtml(slotIndex, data, isAuto) {
+      if (!data) {
+        return `
+          <div class="save-slot-card empty">
+            <div class="save-slot-header">
+              <div class="save-slot-title">
+                <span>${isAuto ? '⚡' : '💾'}</span>
+                <span>${isAuto ? t('startupLastAuto') : ('Slot ' + slotIndex)}</span>
+              </div>
+              <span style="font-size:0.75rem; color:#64748b;">${t('saveSlotEmpty')}</span>
+            </div>
+            <div style="padding:14px 0; text-align:center; color:#64748b; font-size:0.8rem; font-style:italic;">
+              ${t('saveSlotEmptyDesc')}
+            </div>
+            <div class="save-slot-actions">
+              ${!isAuto ? `
+                <button class="btn btn-save" onclick="saveToSlot(${slotIndex})" title="${t('saveBtnHere')}">
+                  ${t('saveBtnHere')}
+                </button>
+              ` : `
+                <span style="font-size:0.7rem; color:#64748b;">${t('saveSlotAutoDesc')}</span>
+              `}
+            </div>
+          </div>
+        `;
+      }
+
+      const sum = data.summary || {};
+      const mins = Math.floor((sum.secondsElapsed || 0) / 60);
+      const secs = (sum.secondsElapsed || 0) % 60;
+      const timeStr = (mins > 0 ? mins + 'm ' : '') + secs + 's';
+      const dateStr = new Date(data.timestamp || Date.now()).toLocaleString([], {
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
+
+      return `
+        <div class="save-slot-card ${isAuto ? 'autosave-card' : ''}">
+          <div class="save-slot-header">
+            <div class="save-slot-title">
+              <span>${isAuto ? '⚡' : '💾'}</span>
+              <span>${isAuto ? t('startupLastAuto') : ('Slot ' + slotIndex)}</span>
+            </div>
+            <div class="save-slot-date">${dateStr}</div>
+          </div>
+
+          <div class="save-slot-summary">
+            <div>📍 ${t('locationLabel')} <strong>${escapeHtml(sum.sceneName || 'Scena')}</strong></div>
+            <div>🎯 ${t('targetsLabel')} <strong>${sum.foundTargetsCount || 0} / ${sum.totalTargetsCount || 0}</strong> &bull; ${t('inventoryLabel')} <strong>${sum.inventoryCount || 0}</strong></div>
+            <div>⭐ ${t('scoreLabel')} <strong>${sum.score || 0} ${t('score')}</strong> &bull; ⏱️ ${t('timeLabel')} <strong>${timeStr}</strong></div>
+          </div>
+
+          <div class="save-slot-actions">
+            <button class="btn btn-load" onclick="loadFromSlot(${slotIndex}, ${isAuto})" title="${t('loadBtn')}">
+              ${t('loadBtn')}
+            </button>
+            ${!isAuto ? `
+              <button class="btn btn-save" onclick="saveToSlot(${slotIndex})" title="${t('saveBtnOverwrite')}">
+                ${t('saveBtnOverwrite')}
+              </button>
+            ` : ''}
+            <button class="btn btn-delete" onclick="deleteSaveSlot(${slotIndex}, ${isAuto})" title="🗑️">
+              🗑️
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function closeSaveLoadModal() {
+      const modalEl = document.getElementById('modal-container');
+      if (modalEl) modalEl.innerHTML = '';
+      if (!isDifficultyConfirmed && !timerInterval) {
+        const latestInfo = getLatestSaveInfo();
+        if (latestInfo) {
+          showStartupResumeModal(latestInfo);
+        } else {
+          startNewGameFlow(false);
+        }
+      }
+    }
+
+    // Keyboard Shortcuts (Ctrl+S / Cmd+S to save, F6 to open modal, Escape to close)
+    window.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+        e.preventDefault();
+        saveToSlot(1);
+      }
+      if (e.key === 'F6') {
+        e.preventDefault();
+        openSaveLoadModal();
+      }
+      if (e.key === 'Escape') {
+        const modalEl = document.getElementById('modal-container');
+        if (modalEl && modalEl.innerHTML) {
+          modalEl.innerHTML = '';
+        }
+      }
+    });
+
+    let toastTimeout = null;
+
+    function showToast(msg) {
+      const container = document.getElementById('toast-container');
+      if (!container) return;
+      if (toastTimeout) {
+        clearTimeout(toastTimeout);
+        toastTimeout = null;
+      }
+      container.innerHTML = '<div class="toast">' + escapeHtml(msg) + '</div>';
+      toastTimeout = setTimeout(() => {
+        container.innerHTML = '';
+        toastTimeout = null;
+      }, 3000);
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    window.addEventListener('resize', updateFrameDimensions);
+    window.onload = initGame;
+  </script>
+  <script type="module" src="/src/report.ts"></script>
+</body>
+</html>

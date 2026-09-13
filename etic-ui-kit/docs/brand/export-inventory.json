@@ -1,0 +1,1565 @@
+[
+  {
+    "id": "1:2094",
+    "category": "ribbons",
+    "name": "ribbon-cool-loop-01",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 132.093017578125,
+    "height": 237.26507568359375,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 23"
+  },
+  {
+    "id": "1:2123",
+    "category": "ribbons",
+    "name": "ribbon-cool-loop-02",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 203.00692749023438,
+    "height": 160.56752014160156,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 23"
+  },
+  {
+    "id": "1:2152",
+    "category": "ribbons",
+    "name": "ribbon-cool-loop-03",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 117.14927673339844,
+    "height": 164.2883758544922,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 23"
+  },
+  {
+    "id": "1:2172",
+    "category": "ribbons",
+    "name": "ribbon-cool-wave",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 141.4519805908203,
+    "height": 155.179931640625,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 2"
+  },
+  {
+    "id": "1:2183",
+    "category": "ribbons",
+    "name": "ribbon-cool-arc",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 246.98712158203125,
+    "height": 120.35354614257812,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 24"
+  },
+  {
+    "id": "1:2203",
+    "category": "ribbons",
+    "name": "ribbon-cool-twist",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 194.7770233154297,
+    "height": 301.0162048339844,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 2"
+  },
+  {
+    "id": "1:2234",
+    "category": "ribbons",
+    "name": "ribbon-warm-arc-01",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 170.7688446044922,
+    "height": 124.25589752197266,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 1"
+  },
+  {
+    "id": "1:2253",
+    "category": "ribbons",
+    "name": "ribbon-warm-loop-01",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 138.4932098388672,
+    "height": 248.759765625,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 2"
+  },
+  {
+    "id": "1:2282",
+    "category": "ribbons",
+    "name": "ribbon-warm-arc-02",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 233.31710815429688,
+    "height": 113.69231414794922,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 16"
+  },
+  {
+    "id": "1:2302",
+    "category": "ribbons",
+    "name": "ribbon-warm-twist",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 154.13230895996094,
+    "height": 237.927734375,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 2"
+  },
+  {
+    "id": "1:2331",
+    "category": "ribbons",
+    "name": "ribbon-warm-arc-03",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 192,
+    "height": 93.55902862548828,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 2"
+  },
+  {
+    "id": "1:2351",
+    "category": "ribbons",
+    "name": "ribbon-warm-loop-02",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 190.93016052246094,
+    "height": 154.2552032470703,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 23"
+  },
+  {
+    "id": "1:2380",
+    "category": "ribbons",
+    "name": "ribbon-warm-wave",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 148.55804443359375,
+    "height": 162.9756317138672,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 2"
+  },
+  {
+    "id": "1:2459",
+    "category": "waves",
+    "name": "wave-impact",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 798.5658569335938,
+    "height": 775.6495361328125,
+    "images": false,
+    "visible": true,
+    "sourceName": "Layer 25"
+  },
+  {
+    "id": "1:2531",
+    "category": "waves",
+    "name": "wave-warm-long",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 624.1429443359375,
+    "height": 1302.646728515625,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector (Stroke)"
+  },
+  {
+    "id": "1:2532",
+    "category": "waves",
+    "name": "wave-light-short",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 212.52874755859375,
+    "height": 537.9342041015625,
+    "images": false,
+    "visible": true,
+    "sourceName": "Layer 26"
+  },
+  {
+    "id": "1:2535",
+    "category": "waves",
+    "name": "wave-dream-team",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 730.1924438476562,
+    "height": 1119.75244140625,
+    "images": false,
+    "visible": true,
+    "sourceName": "Layer 23"
+  },
+  {
+    "id": "1:2599",
+    "category": "waves",
+    "name": "wave-light-long",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 457.3127746582031,
+    "height": 946.6575317382812,
+    "images": false,
+    "visible": true,
+    "sourceName": "Layer 2"
+  },
+  {
+    "id": "1:2602",
+    "category": "waves",
+    "name": "wave-entrepreneurship",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 373.4794921875,
+    "height": 555.6731567382812,
+    "images": false,
+    "visible": true,
+    "sourceName": "Layer 16"
+  },
+  {
+    "id": "1:2857",
+    "category": "waves",
+    "name": "wave-pattern-01",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 1510.607666015625,
+    "height": 1585.9560546875,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector (Stroke)"
+  },
+  {
+    "id": "1:2861",
+    "category": "waves",
+    "name": "wave-pattern-02",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 1636.283447265625,
+    "height": 1613.8408203125,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector (Stroke)"
+  },
+  {
+    "id": "1:2872",
+    "category": "waves",
+    "name": "wave-pattern-03",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 920.13037109375,
+    "height": 2061.892822265625,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector (Stroke)"
+  },
+  {
+    "id": "1:2873",
+    "category": "waves",
+    "name": "wave-pattern-04",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 2057.087890625,
+    "height": 876.9556884765625,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector (Stroke)"
+  },
+  {
+    "id": "1:2874",
+    "category": "waves",
+    "name": "wave-pattern-05",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 1535.943603515625,
+    "height": 1563.0302734375,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector (Stroke)"
+  },
+  {
+    "id": "1:2675",
+    "category": "organic",
+    "name": "organic-01",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 939.6106567382812,
+    "height": 811.611572265625,
+    "images": true,
+    "visible": true,
+    "sourceName": "Clip path group"
+  },
+  {
+    "id": "1:2684",
+    "category": "organic",
+    "name": "organic-02",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 1177.447021484375,
+    "height": 711.3026123046875,
+    "images": true,
+    "visible": true,
+    "sourceName": "Clip path group"
+  },
+  {
+    "id": "1:2693",
+    "category": "organic",
+    "name": "organic-03",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 375.3957824707031,
+    "height": 311.28564453125,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2694",
+    "category": "organic",
+    "name": "organic-04",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 660.3252563476562,
+    "height": 726.2329711914062,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2695",
+    "category": "organic",
+    "name": "organic-05",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 456.5668640136719,
+    "height": 430.4808044433594,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2696",
+    "category": "organic",
+    "name": "organic-06",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 582.4583129882812,
+    "height": 208.1011962890625,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2697",
+    "category": "organic",
+    "name": "organic-07",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 504.0942077636719,
+    "height": 347.7659912109375,
+    "images": true,
+    "visible": true,
+    "sourceName": "Clip path group"
+  },
+  {
+    "id": "1:2706",
+    "category": "organic",
+    "name": "organic-08",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 1074.43212890625,
+    "height": 839.8500366210938,
+    "images": true,
+    "visible": true,
+    "sourceName": "Clip path group"
+  },
+  {
+    "id": "1:2715",
+    "category": "organic",
+    "name": "organic-09",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 750.5887451171875,
+    "height": 585.0849609375,
+    "images": true,
+    "visible": true,
+    "sourceName": "Clip path group"
+  },
+  {
+    "id": "1:2724",
+    "category": "organic",
+    "name": "organic-10",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 57.4325065612793,
+    "height": 87.00559997558594,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2725",
+    "category": "organic",
+    "name": "organic-11",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 560.155517578125,
+    "height": 262.9651794433594,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2726",
+    "category": "organic",
+    "name": "organic-12",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 1076.8409423828125,
+    "height": 1156.94775390625,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2727",
+    "category": "organic",
+    "name": "organic-13",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 932.5355834960938,
+    "height": 1082.319580078125,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2728",
+    "category": "organic",
+    "name": "organic-14",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 733.35302734375,
+    "height": 900.65087890625,
+    "images": true,
+    "visible": true,
+    "sourceName": "Clip path group"
+  },
+  {
+    "id": "1:2737",
+    "category": "organic",
+    "name": "organic-15",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 410.448486328125,
+    "height": 441.3511962890625,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2738",
+    "category": "organic",
+    "name": "organic-16",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 939.760986328125,
+    "height": 1138.13671875,
+    "images": true,
+    "visible": true,
+    "sourceName": "Clip path group"
+  },
+  {
+    "id": "1:2747",
+    "category": "organic",
+    "name": "organic-17",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 306.17877197265625,
+    "height": 602.6932983398438,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2748",
+    "category": "organic",
+    "name": "organic-18",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 218.46934509277344,
+    "height": 325.92919921875,
+    "images": true,
+    "visible": true,
+    "sourceName": "Clip path group"
+  },
+  {
+    "id": "1:2757",
+    "category": "organic",
+    "name": "organic-19",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 544.2623291015625,
+    "height": 557.0496215820312,
+    "images": true,
+    "visible": true,
+    "sourceName": "Clip path group"
+  },
+  {
+    "id": "1:2766",
+    "category": "organic",
+    "name": "organic-20",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 791.329345703125,
+    "height": 539.5030517578125,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2767",
+    "category": "organic",
+    "name": "organic-21",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 786.4710083007812,
+    "height": 389.54937744140625,
+    "images": true,
+    "visible": true,
+    "sourceName": "Clip path group"
+  },
+  {
+    "id": "1:2776",
+    "category": "organic",
+    "name": "organic-22",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 602.4868774414062,
+    "height": 393.1333923339844,
+    "images": true,
+    "visible": true,
+    "sourceName": "Clip path group"
+  },
+  {
+    "id": "1:2804",
+    "category": "geometric",
+    "name": "geometric-columns",
+    "mode": "auto",
+    "type": "FRAME",
+    "width": 639.6240234375,
+    "height": 640.7521362304688,
+    "images": true,
+    "visible": true,
+    "sourceName": "Frame 36"
+  },
+  {
+    "id": "1:2810",
+    "category": "geometric",
+    "name": "disc-pink-texture",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 213.21380615234375,
+    "height": 213.58984375,
+    "images": true,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2814",
+    "category": "geometric",
+    "name": "semicircle-mint",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 213.20509338378906,
+    "height": 532.3116455078125,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2815",
+    "category": "geometric",
+    "name": "semicircle-white",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 213.21380615234375,
+    "height": 106.79491424560547,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2816",
+    "category": "geometric",
+    "name": "capsule-light-long",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 213.20506286621094,
+    "height": 534.279296875,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:2821",
+    "category": "geometric",
+    "name": "dots-nine",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 319.8118896484375,
+    "height": 320.3760986328125,
+    "images": false,
+    "visible": true,
+    "sourceName": "Layer 2"
+  },
+  {
+    "id": "1:2832",
+    "category": "geometric",
+    "name": "disc-warm-texture",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 219.7025146484375,
+    "height": 220.0900115966797,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 2"
+  },
+  {
+    "id": "1:2843",
+    "category": "geometric",
+    "name": "semicircle-teal",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 319.81201171875,
+    "height": 320.3760681152344,
+    "images": false,
+    "visible": true,
+    "sourceName": "Layer 2"
+  },
+  {
+    "id": "1:2846",
+    "category": "geometric",
+    "name": "gradient-block-01",
+    "mode": "auto",
+    "type": "RECTANGLE",
+    "width": 159.906005859375,
+    "height": 320.3760681152344,
+    "images": false,
+    "visible": true,
+    "sourceName": "Rectangle 4"
+  },
+  {
+    "id": "1:2847",
+    "category": "geometric",
+    "name": "gradient-block-02",
+    "mode": "auto",
+    "type": "RECTANGLE",
+    "width": 159.906005859375,
+    "height": 320.3760681152344,
+    "images": false,
+    "visible": true,
+    "sourceName": "Rectangle 4"
+  },
+  {
+    "id": "1:2849",
+    "category": "geometric",
+    "name": "geometric-ribbon-warm",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 1079.41357421875,
+    "height": 1330.1473388671875,
+    "images": false,
+    "visible": true,
+    "sourceName": "Group 64"
+  },
+  {
+    "id": "1:2409",
+    "category": "compositions",
+    "name": "loop-palette-warm",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 496.13958740234375,
+    "height": 628.9210205078125,
+    "images": true,
+    "visible": true,
+    "sourceName": "Group 95"
+  },
+  {
+    "id": "1:2433",
+    "category": "compositions",
+    "name": "loop-palette-cool",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 479.18817138671875,
+    "height": 653.146728515625,
+    "images": true,
+    "visible": true,
+    "sourceName": "Group 96"
+  },
+  {
+    "id": "1:1158",
+    "category": "compositions",
+    "name": "background-identity",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 1920,
+    "height": 1080,
+    "images": true,
+    "visible": false,
+    "sourceName": "New Background",
+    "status": "incomplete-export"
+  },
+  {
+    "id": "1:874",
+    "category": "compositions",
+    "name": "ribbon-warm-oversized",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 2543.072998046875,
+    "height": 2735.349365234375,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 23"
+  },
+  {
+    "id": "1:1255",
+    "category": "compositions",
+    "name": "ribbon-warm-crossing",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 1243.0721435546875,
+    "height": 1025.7349853515625,
+    "images": true,
+    "visible": false,
+    "sourceName": "Layer 3"
+  },
+  {
+    "id": "1:1276",
+    "category": "compositions",
+    "name": "ribbon-cool-crossing",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 813.830810546875,
+    "height": 1141.307373046875,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 4"
+  },
+  {
+    "id": "1:1461",
+    "category": "compositions",
+    "name": "ribbon-cool-tall",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 827.5234985351562,
+    "height": 1486.3919677734375,
+    "images": true,
+    "visible": true,
+    "sourceName": "Layer 23"
+  },
+  {
+    "id": "1:1535",
+    "category": "compositions",
+    "name": "ribbon-warm-wide",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 1199.7322998046875,
+    "height": 1867.6422119140625,
+    "images": true,
+    "visible": false,
+    "sourceName": "Layer 1"
+  },
+  {
+    "id": "1:3638",
+    "category": "compositions",
+    "name": "organic-composition",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 1424.0635986328125,
+    "height": 1465.6375732421875,
+    "images": true,
+    "visible": true,
+    "sourceName": "Group 89"
+  },
+  {
+    "id": "1:3500",
+    "category": "compositions",
+    "name": "ribbon-stationery",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 1622,
+    "height": 1273,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector 26"
+  },
+  {
+    "id": "1:135",
+    "category": "stickers",
+    "name": "stickers-01",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 515.2998046875,
+    "height": 409,
+    "images": true,
+    "visible": true,
+    "sourceName": "Group 87"
+  },
+  {
+    "id": "1:263",
+    "category": "stickers",
+    "name": "stickers-02",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 515.2998046875,
+    "height": 409,
+    "images": true,
+    "visible": true,
+    "sourceName": "Group 88"
+  },
+  {
+    "id": "1:300",
+    "category": "stickers",
+    "name": "stickers-03",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 287,
+    "height": 197.22061157226562,
+    "images": false,
+    "visible": true,
+    "sourceName": "Group 98"
+  },
+  {
+    "id": "1:318",
+    "category": "stickers",
+    "name": "stickers-04",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 310,
+    "height": 128.04847717285156,
+    "images": true,
+    "visible": true,
+    "sourceName": "Group 99"
+  },
+  {
+    "id": "1:435",
+    "category": "stickers",
+    "name": "stickers-05",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 285.5273742675781,
+    "height": 285.5273742675781,
+    "images": true,
+    "visible": true,
+    "sourceName": "Group 72"
+  },
+  {
+    "id": "1:478",
+    "category": "stickers",
+    "name": "stickers-06",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 285.5273742675781,
+    "height": 285.5273742675781,
+    "images": true,
+    "visible": true,
+    "sourceName": "Group 73"
+  },
+  {
+    "id": "1:516",
+    "category": "stickers",
+    "name": "stickers-07",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 285.5273742675781,
+    "height": 285.5273742675781,
+    "images": true,
+    "visible": true,
+    "sourceName": "Group 74"
+  },
+  {
+    "id": "1:555",
+    "category": "stickers",
+    "name": "stickers-08",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 287,
+    "height": 287,
+    "images": false,
+    "visible": true,
+    "sourceName": "Group 132"
+  },
+  {
+    "id": "1:565",
+    "category": "stickers",
+    "name": "stickers-09",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 287,
+    "height": 287,
+    "images": true,
+    "visible": true,
+    "sourceName": "Group 104"
+  },
+  {
+    "id": "1:682",
+    "category": "stickers",
+    "name": "stickers-10",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 285.5273742675781,
+    "height": 285.5273742675781,
+    "images": true,
+    "visible": true,
+    "sourceName": "Group 78"
+  },
+  {
+    "id": "1:833",
+    "category": "stickers",
+    "name": "stickers-11",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 245.51333618164062,
+    "height": 245.51284790039062,
+    "images": true,
+    "visible": true,
+    "sourceName": "sticker etic"
+  },
+  {
+    "id": "1:5812",
+    "category": "stickers",
+    "name": "stickers-12",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 287,
+    "height": 287,
+    "images": true,
+    "visible": true,
+    "sourceName": "Mask group"
+  },
+  {
+    "id": "1:5931",
+    "category": "stickers",
+    "name": "stickers-13",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 287,
+    "height": 287,
+    "images": true,
+    "visible": true,
+    "sourceName": "Mask group"
+  },
+  {
+    "id": "1:3891",
+    "category": "lettering",
+    "name": "etic-filled-pattern-unit",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 838.3098754882812,
+    "height": 265.1932678222656,
+    "images": true,
+    "visible": true,
+    "sourceName": "Mask group"
+  },
+  {
+    "id": "1:4795",
+    "category": "lettering",
+    "name": "etic-outline-pattern-unit",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 848.1722412109375,
+    "height": 273.38787841796875,
+    "images": true,
+    "visible": true,
+    "sourceName": "Mask group"
+  },
+  {
+    "id": "1:939",
+    "category": "lettering",
+    "name": "etic-lettering-cover",
+    "mode": "auto",
+    "type": "GROUP",
+    "width": 372.8100891113281,
+    "height": 117.9360122680664,
+    "images": false,
+    "visible": true,
+    "sourceName": "ETIC"
+  },
+  {
+    "id": "1:893",
+    "category": "lettering",
+    "name": "presentation-lettering",
+    "mode": "auto",
+    "type": "VECTOR",
+    "width": 390.42901611328125,
+    "height": 69.94236755371094,
+    "images": false,
+    "visible": true,
+    "sourceName": "Vector"
+  },
+  {
+    "id": "1:3352",
+    "category": "cards",
+    "name": "card-story",
+    "mode": "auto",
+    "type": "FRAME",
+    "width": 304,
+    "height": 349,
+    "images": false,
+    "visible": true,
+    "sourceName": "Frame 121"
+  },
+  {
+    "id": "1:1003",
+    "category": "cards",
+    "name": "card-wide",
+    "mode": "auto",
+    "type": "RECTANGLE",
+    "width": 1488,
+    "height": 714,
+    "images": false,
+    "visible": true,
+    "sourceName": "Rectangle 28"
+  },
+  {
+    "id": "1:2863",
+    "category": "cards",
+    "name": "card-label",
+    "mode": "auto",
+    "type": "RECTANGLE",
+    "width": 400.1101989746094,
+    "height": 139.02297973632812,
+    "images": false,
+    "visible": true,
+    "sourceName": "Rectangle 28"
+  },
+  {
+    "id": "1:2092",
+    "category": "cards",
+    "name": "card-ribbons-cool-reference",
+    "mode": "auto",
+    "type": "FRAME",
+    "width": 659.2189331054688,
+    "height": 472.5696716308594,
+    "images": true,
+    "visible": true,
+    "sourceName": "Frame 15"
+  },
+  {
+    "id": "1:2232",
+    "category": "cards",
+    "name": "card-ribbons-warm-reference",
+    "mode": "auto",
+    "type": "FRAME",
+    "width": 679.7406005859375,
+    "height": 504.1588439941406,
+    "images": true,
+    "visible": true,
+    "sourceName": "Frame 16"
+  },
+  {
+    "id": "1:1580",
+    "category": "gradients",
+    "name": "gradient-01",
+    "mode": "gradient",
+    "type": "FRAME",
+    "width": 168.28042602539062,
+    "height": 608.1422119140625,
+    "images": false,
+    "visible": true,
+    "sourceName": "Frame 140"
+  },
+  {
+    "id": "1:1587",
+    "category": "gradients",
+    "name": "gradient-02",
+    "mode": "gradient",
+    "type": "FRAME",
+    "width": 168.28042602539062,
+    "height": 608.1422119140625,
+    "images": false,
+    "visible": true,
+    "sourceName": "Frame 141"
+  },
+  {
+    "id": "1:1594",
+    "category": "gradients",
+    "name": "gradient-03",
+    "mode": "gradient",
+    "type": "FRAME",
+    "width": 168.28042602539062,
+    "height": 608.1422119140625,
+    "images": false,
+    "visible": true,
+    "sourceName": "Frame 142"
+  },
+  {
+    "id": "1:1601",
+    "category": "gradients",
+    "name": "gradient-04",
+    "mode": "gradient",
+    "type": "FRAME",
+    "width": 168.28042602539062,
+    "height": 608.1422119140625,
+    "images": false,
+    "visible": true,
+    "sourceName": "Frame 143"
+  },
+  {
+    "id": "1:1608",
+    "category": "gradients",
+    "name": "gradient-05",
+    "mode": "gradient",
+    "type": "FRAME",
+    "width": 168.28042602539062,
+    "height": 608.1422119140625,
+    "images": false,
+    "visible": true,
+    "sourceName": "Frame 144"
+  },
+  {
+    "id": "1:131",
+    "name": "social-symbol",
+    "type": "FRAME",
+    "width": 31.462190628051758,
+    "height": 31.462190628051758,
+    "children": [],
+    "sourceName": "Frame 131",
+    "category": "icons",
+    "images": false,
+    "visible": true,
+    "status": "empty-mcp-export"
+  },
+  {
+    "id": "1:132",
+    "name": "youtube",
+    "type": "FRAME",
+    "width": 31.462190628051758,
+    "height": 22.09659767150879,
+    "children": [],
+    "sourceName": "youtube",
+    "category": "icons",
+    "images": false,
+    "visible": true,
+    "status": "empty-mcp-export"
+  },
+  {
+    "id": "1:133",
+    "name": "tiktok",
+    "type": "FRAME",
+    "width": 31.82506561279297,
+    "height": 31.462190628051758,
+    "children": [],
+    "sourceName": "Tiktok",
+    "category": "icons",
+    "images": false,
+    "visible": true,
+    "status": "empty-mcp-export"
+  },
+  {
+    "id": "1:6068",
+    "name": "website",
+    "type": "FRAME",
+    "width": 36.84856414794922,
+    "height": 36.55180740356445,
+    "children": [],
+    "sourceName": "website",
+    "category": "icons",
+    "images": false,
+    "visible": true,
+    "status": "empty-mcp-export"
+  },
+  {
+    "id": "1:1490",
+    "name": "card-wide-translucent",
+    "type": "RECTANGLE",
+    "width": 1488,
+    "height": 714,
+    "children": [],
+    "sourceName": "Rectangle 28",
+    "category": "cards",
+    "images": false,
+    "visible": true
+  },
+  {
+    "id": "1:2670",
+    "name": "card-caption",
+    "type": "FRAME",
+    "width": 422,
+    "height": 104,
+    "children": [
+      {
+        "id": "1:2671",
+        "name": "Wavy lines"
+      }
+    ],
+    "sourceName": "Frame 139",
+    "category": "cards",
+    "images": false,
+    "visible": true
+  },
+  {
+    "id": "1:1228",
+    "name": "card-amber-left",
+    "type": "RECTANGLE",
+    "width": 727.6026000976562,
+    "height": 485.09271240234375,
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "gradientStops": [
+          {
+            "color": {
+              "r": 0.9254902005195618,
+              "g": 0.6196078658103943,
+              "b": 0,
+              "a": 1
+            },
+            "position": 0.27332645654678345,
+            "boundVariables": {}
+          },
+          {
+            "color": {
+              "r": 0.9076922535896301,
+              "g": 0.7470191121101379,
+              "b": 0.4215531349182129,
+              "a": 1
+            },
+            "position": 1,
+            "boundVariables": {}
+          }
+        ],
+        "gradientTransform": [
+          [
+            0.45765048265457153,
+            -0.6928967833518982,
+            0.6176231503486633
+          ],
+          [
+            0.693440854549408,
+            0.46532875299453735,
+            -0.07938479632139206
+          ]
+        ]
+      }
+    ],
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "visible": true,
+        "radius": 40.327030181884766,
+        "boundVariables": {},
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.3499999940395355
+        },
+        "offset": {
+          "x": 0,
+          "y": 12.870328903198242
+        },
+        "spread": 0,
+        "blendMode": "NORMAL",
+        "showShadowBehindNode": false
+      }
+    ],
+    "radius": 43.06221389770508,
+    "children": [],
+    "sourceName": "Rectangle 31",
+    "category": "cards",
+    "visible": true,
+    "images": false
+  },
+  {
+    "id": "1:1235",
+    "name": "card-amber-right",
+    "type": "RECTANGLE",
+    "width": 727.6026000976562,
+    "height": 485.09271240234375,
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "gradientStops": [
+          {
+            "color": {
+              "r": 0.9254902005195618,
+              "g": 0.6196078658103943,
+              "b": 0,
+              "a": 1
+            },
+            "position": 0.27332645654678345,
+            "boundVariables": {}
+          },
+          {
+            "color": {
+              "r": 0.9076922535896301,
+              "g": 0.7470191121101379,
+              "b": 0.4215531349182129,
+              "a": 1
+            },
+            "position": 1,
+            "boundVariables": {}
+          }
+        ],
+        "gradientTransform": [
+          [
+            0.45765048265457153,
+            -0.6928967833518982,
+            0.6176231503486633
+          ],
+          [
+            0.693440854549408,
+            0.46532875299453735,
+            -0.07938479632139206
+          ]
+        ]
+      }
+    ],
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "visible": true,
+        "radius": 40.327030181884766,
+        "boundVariables": {},
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.3499999940395355
+        },
+        "offset": {
+          "x": 0,
+          "y": 12.870328903198242
+        },
+        "spread": 0,
+        "blendMode": "NORMAL",
+        "showShadowBehindNode": false
+      }
+    ],
+    "radius": 43.06221389770508,
+    "children": [],
+    "sourceName": "Rectangle 31",
+    "category": "cards",
+    "visible": true,
+    "images": false
+  },
+  {
+    "id": "1:1229",
+    "name": "card-small-tab",
+    "type": "RECTANGLE",
+    "width": 87.51823425292969,
+    "height": 308.88787841796875,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "boundVariables": {}
+      }
+    ],
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "visible": true,
+        "radius": 8.580219268798828,
+        "boundVariables": {},
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.25
+        },
+        "offset": {
+          "x": 0,
+          "y": 3.4320876598358154
+        },
+        "spread": 0,
+        "blendMode": "NORMAL",
+        "showShadowBehindNode": false
+      }
+    ],
+    "radius": 28.31472396850586,
+    "children": [],
+    "sourceName": "Rectangle 32",
+    "category": "cards",
+    "visible": true,
+    "images": false
+  },
+  {
+    "id": "1:2400",
+    "name": "loop-thin-ink",
+    "type": "FRAME",
+    "width": 304.2494201660156,
+    "height": 352.940673828125,
+    "visible": true,
+    "images": false,
+    "children": [
+      {
+        "id": "1:2401",
+        "name": "Layer 2",
+        "type": "GROUP"
+      }
+    ],
+    "sourceName": "Asset 75 1",
+    "category": "waves"
+  },
+  {
+    "id": "1:3281",
+    "name": "ribbon-story-warm",
+    "type": "GROUP",
+    "width": 496.1122131347656,
+    "height": 764.333251953125,
+    "visible": true,
+    "images": true,
+    "children": [
+      {
+        "id": "1:3282",
+        "name": "Layer 1",
+        "type": "GROUP"
+      }
+    ],
+    "sourceName": "Layer 2",
+    "category": "compositions"
+  },
+  {
+    "id": "1:3326",
+    "name": "organic-story-collage",
+    "type": "GROUP",
+    "width": 710.613037109375,
+    "height": 731.3602294921875,
+    "visible": true,
+    "images": true,
+    "children": [
+      {
+        "id": "1:3327",
+        "name": "Vector",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1:3328",
+        "name": "Vector",
+        "type": "VECTOR"
+      },
+      {
+        "id": "1:3329",
+        "name": "Clip path group",
+        "type": "GROUP"
+      },
+      {
+        "id": "1:3338",
+        "name": "Vector",
+        "type": "VECTOR"
+      }
+    ],
+    "sourceName": "Group 88",
+    "category": "compositions"
+  },
+  {
+    "id": "1:3367",
+    "name": "wave-story-slogan",
+    "type": "GROUP",
+    "width": 855.7230834960938,
+    "height": 860.4031982421875,
+    "visible": true,
+    "images": false,
+    "children": [
+      {
+        "id": "1:3368",
+        "name": "Layer 1",
+        "type": "GROUP"
+      }
+    ],
+    "sourceName": "Layer 23",
+    "category": "compositions"
+  },
+  {
+    "id": "1:97",
+    "name": "icon-tiktok",
+    "type": "FRAME",
+    "width": 31.82506561279297,
+    "height": 31.462190628051758,
+    "visible": true,
+    "images": false,
+    "sourceName": "Tiktok",
+    "category": "icons"
+  },
+  {
+    "id": "1:102",
+    "name": "icon-mail",
+    "type": "FRAME",
+    "width": 31.46131134033203,
+    "height": 31.46131134033203,
+    "visible": true,
+    "images": false,
+    "sourceName": "mail",
+    "category": "icons"
+  },
+  {
+    "id": "1:107",
+    "name": "icon-web",
+    "type": "GROUP",
+    "width": 32.4559211730957,
+    "height": 32.4559211730957,
+    "visible": true,
+    "images": false,
+    "sourceName": "Group 148",
+    "category": "icons"
+  },
+  {
+    "id": "1:112",
+    "name": "icon-instagram",
+    "type": "FRAME",
+    "width": 31.462190628051758,
+    "height": 31.462190628051758,
+    "visible": true,
+    "images": false,
+    "sourceName": "instagram",
+    "category": "icons"
+  },
+  {
+    "id": "1:117",
+    "name": "icon-facebook",
+    "type": "FRAME",
+    "width": 31.462190628051758,
+    "height": 31.462190628051758,
+    "visible": true,
+    "images": false,
+    "sourceName": "facebook",
+    "category": "icons"
+  },
+  {
+    "id": "1:123",
+    "name": "icon-youtube",
+    "type": "GROUP",
+    "width": 32.4559211730957,
+    "height": 32.4559211730957,
+    "visible": true,
+    "images": false,
+    "sourceName": "Group 151",
+    "category": "icons"
+  }
+]

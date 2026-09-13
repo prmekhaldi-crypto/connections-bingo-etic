@@ -1,0 +1,2837 @@
+[
+  {
+    "name": "ribbon-cool-loop-01",
+    "category": "ribbons",
+    "path": "ribbons/cool/ribbon-cool-loop-01.webp",
+    "format": "webp",
+    "width": 416,
+    "height": 416,
+    "bytes": 21958,
+    "nodeId": "1:2094",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2094",
+    "usage": "Ruban isolé. Réserver une marge ou une zone de décoration.",
+    "role": "artwork",
+    "sha256": "aad169dd3d70fd397bd7d240b072d1fc1123fdb8f388a9bfc01798e9cd857671",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "cool",
+      "prefer": "Fond beige et accents compatibles ; pas de grand fond rouge.",
+      "avoid": "Ne pas mélanger avec des rubans warm ailleurs sur la même page ; ne pas superposer à un grand fond rouge.",
+      "alternativeForRed": "Choisir un asset chaud existant : ribbon-warm-loop-01, ribbon-warm-loop-02 ou wave-light-short. Ne pas recolorer ce fichier.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "cool",
+    "ribbonForm": "loop",
+    "previousPaths": [
+      "ribbons/ribbon-cool-loop-01.webp"
+    ],
+    "containsRibbonFamilies": [
+      "cool"
+    ]
+  },
+  {
+    "name": "ribbon-cool-loop-02",
+    "category": "ribbons",
+    "path": "ribbons/cool/ribbon-cool-loop-02.webp",
+    "format": "webp",
+    "width": 359,
+    "height": 415,
+    "bytes": 20684,
+    "nodeId": "1:2123",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2123",
+    "usage": "Ruban isolé. Réserver une marge ou une zone de décoration.",
+    "role": "artwork",
+    "sha256": "37937bb90e23295d7f586960fb76b120c85c3b6a668f77e30bdafead6c43c175",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "cool",
+      "prefer": "Fond beige et accents compatibles ; pas de grand fond rouge.",
+      "avoid": "Ne pas mélanger avec des rubans warm ailleurs sur la même page ; ne pas superposer à un grand fond rouge.",
+      "alternativeForRed": "Choisir un asset chaud existant : ribbon-warm-loop-01, ribbon-warm-loop-02 ou wave-light-short. Ne pas recolorer ce fichier.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "cool",
+    "ribbonForm": "loop",
+    "previousPaths": [
+      "ribbons/ribbon-cool-loop-02.webp"
+    ],
+    "containsRibbonFamilies": [
+      "cool"
+    ]
+  },
+  {
+    "name": "ribbon-cool-loop-03",
+    "category": "ribbons",
+    "path": "ribbons/cool/ribbon-cool-loop-03.webp",
+    "format": "webp",
+    "width": 304,
+    "height": 312,
+    "bytes": 14676,
+    "nodeId": "1:2152",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2152",
+    "usage": "Ruban isolé. Réserver une marge ou une zone de décoration.",
+    "role": "artwork",
+    "sha256": "fe1d94908f23a1244bee005464005c22a840af2de5e347c093f19f58fd17329f",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "cool",
+      "prefer": "Fond beige et accents compatibles ; pas de grand fond rouge.",
+      "avoid": "Ne pas mélanger avec des rubans warm ailleurs sur la même page ; ne pas superposer à un grand fond rouge.",
+      "alternativeForRed": "Choisir un asset chaud existant : ribbon-warm-loop-01, ribbon-warm-loop-02 ou wave-light-short. Ne pas recolorer ce fichier.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "cool",
+    "ribbonForm": "loop",
+    "previousPaths": [
+      "ribbons/ribbon-cool-loop-03.webp"
+    ],
+    "containsRibbonFamilies": [
+      "cool"
+    ]
+  },
+  {
+    "name": "ribbon-cool-wave",
+    "category": "ribbons",
+    "path": "ribbons/cool/ribbon-cool-wave.webp",
+    "format": "webp",
+    "width": 191,
+    "height": 407,
+    "bytes": 11004,
+    "nodeId": "1:2172",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2172",
+    "usage": "Ruban isolé. Réserver une marge ou une zone de décoration.",
+    "role": "artwork",
+    "sha256": "5526a68bbe8c872610cf5688f637869c43a8a5efb4190d38f92f7fb64938113c",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "cool",
+      "prefer": "Fond beige et accents compatibles ; pas de grand fond rouge.",
+      "avoid": "Ne pas mélanger avec des rubans warm ailleurs sur la même page ; ne pas superposer à un grand fond rouge.",
+      "alternativeForRed": "Choisir un asset chaud existant : ribbon-warm-loop-01, ribbon-warm-loop-02 ou wave-light-short. Ne pas recolorer ce fichier.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "cool",
+    "ribbonForm": "wave",
+    "previousPaths": [
+      "ribbons/ribbon-cool-wave.webp"
+    ],
+    "containsRibbonFamilies": [
+      "cool"
+    ]
+  },
+  {
+    "name": "ribbon-cool-arc",
+    "category": "ribbons",
+    "path": "ribbons/cool/ribbon-cool-arc.webp",
+    "format": "webp",
+    "width": 440,
+    "height": 360,
+    "bytes": 15094,
+    "nodeId": "1:2183",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2183",
+    "usage": "Ruban isolé. Réserver une marge ou une zone de décoration.",
+    "role": "artwork",
+    "sha256": "92d92448fa42310e7a2c66571772fedae6c386f9dcf1e25c001163c51c335ad7",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "cool",
+      "prefer": "Fond beige et accents compatibles ; pas de grand fond rouge.",
+      "avoid": "Ne pas mélanger avec des rubans warm ailleurs sur la même page ; ne pas superposer à un grand fond rouge.",
+      "alternativeForRed": "Choisir un asset chaud existant : ribbon-warm-loop-01, ribbon-warm-loop-02 ou wave-light-short. Ne pas recolorer ce fichier.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "cool",
+    "ribbonForm": "arc",
+    "previousPaths": [
+      "ribbons/ribbon-cool-arc.webp"
+    ],
+    "containsRibbonFamilies": [
+      "cool"
+    ]
+  },
+  {
+    "name": "ribbon-cool-twist",
+    "category": "ribbons",
+    "path": "ribbons/cool/ribbon-cool-twist.webp",
+    "format": "webp",
+    "width": 560,
+    "height": 512,
+    "bytes": 28862,
+    "nodeId": "1:2203",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2203",
+    "usage": "Ruban isolé. Réserver une marge ou une zone de décoration.",
+    "role": "artwork",
+    "sha256": "538df083dcf1e5aa7158823f0126aca905b8bbd9a05dc5f9bbc84e10e13a1724",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "cool",
+      "prefer": "Fond beige et accents compatibles ; pas de grand fond rouge.",
+      "avoid": "Ne pas mélanger avec des rubans warm ailleurs sur la même page ; ne pas superposer à un grand fond rouge.",
+      "alternativeForRed": "Choisir un asset chaud existant : ribbon-warm-loop-01, ribbon-warm-loop-02 ou wave-light-short. Ne pas recolorer ce fichier.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "cool",
+    "ribbonForm": "twist",
+    "previousPaths": [
+      "ribbons/ribbon-cool-twist.webp"
+    ],
+    "containsRibbonFamilies": [
+      "cool"
+    ]
+  },
+  {
+    "name": "ribbon-warm-arc-01",
+    "category": "ribbons",
+    "path": "ribbons/warm/ribbon-warm-arc-01.webp",
+    "format": "webp",
+    "width": 272,
+    "height": 399,
+    "bytes": 14468,
+    "nodeId": "1:2234",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2234",
+    "usage": "Ruban isolé. Réserver une marge ou une zone de décoration.",
+    "role": "artwork",
+    "sha256": "cb1a73a529bfff391f5102a627e7a7f85b22ad2e6165918f0ceb459bf4463aee",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "arc",
+    "previousPaths": [
+      "ribbons/ribbon-warm-arc-01.webp"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "ribbon-warm-loop-01",
+    "category": "ribbons",
+    "path": "ribbons/warm/ribbon-warm-loop-01.webp",
+    "format": "webp",
+    "width": 521,
+    "height": 368,
+    "bytes": 22860,
+    "nodeId": "1:2253",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2253",
+    "usage": "Ruban isolé. Réserver une marge ou une zone de décoration.",
+    "role": "artwork",
+    "sha256": "04e0479f9ae7ec7f0b5951e3ef63b4364ebff28bb03d03af5ae4e156ec72e952",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "loop",
+    "previousPaths": [
+      "ribbons/ribbon-warm-loop-01.webp"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "ribbon-warm-arc-02",
+    "category": "ribbons",
+    "path": "ribbons/warm/ribbon-warm-arc-02.webp",
+    "format": "webp",
+    "width": 495,
+    "height": 280,
+    "bytes": 12552,
+    "nodeId": "1:2282",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2282",
+    "usage": "Ruban isolé. Réserver une marge ou une zone de décoration.",
+    "role": "artwork",
+    "sha256": "fc8901a535fc6346cdf5173b6be2479ef90ad887d7134299172a5af4970e9852",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "arc",
+    "previousPaths": [
+      "ribbons/ribbon-warm-arc-02.webp"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "ribbon-warm-twist",
+    "category": "ribbons",
+    "path": "ribbons/warm/ribbon-warm-twist.webp",
+    "format": "webp",
+    "width": 384,
+    "height": 487,
+    "bytes": 20882,
+    "nodeId": "1:2302",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2302",
+    "usage": "Ruban isolé. Réserver une marge ou une zone de décoration.",
+    "role": "artwork",
+    "sha256": "1033eb5d036a622771889cde7b9bf77246236eeb022f114de7976f76f52d344c",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "twist",
+    "previousPaths": [
+      "ribbons/ribbon-warm-twist.webp"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "ribbon-warm-arc-03",
+    "category": "ribbons",
+    "path": "ribbons/warm/ribbon-warm-arc-03.webp",
+    "format": "webp",
+    "width": 415,
+    "height": 231,
+    "bytes": 11066,
+    "nodeId": "1:2331",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2331",
+    "usage": "Ruban isolé. Réserver une marge ou une zone de décoration.",
+    "role": "artwork",
+    "sha256": "fde68f7eac59a65e6a9928fe4908a99a4356af2444edb7b4e943720df8dae520",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "arc",
+    "previousPaths": [
+      "ribbons/ribbon-warm-arc-03.webp"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "ribbon-warm-loop-02",
+    "category": "ribbons",
+    "path": "ribbons/warm/ribbon-warm-loop-02.webp",
+    "format": "webp",
+    "width": 360,
+    "height": 352,
+    "bytes": 16736,
+    "nodeId": "1:2351",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2351",
+    "usage": "Ruban isolé. Réserver une marge ou une zone de décoration.",
+    "role": "artwork",
+    "sha256": "c72fc0965d159af670ab66e6818e33c60240d20d0616cecf9126cf82c0ffadd1",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "loop",
+    "previousPaths": [
+      "ribbons/ribbon-warm-loop-02.webp"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "ribbon-warm-wave",
+    "category": "ribbons",
+    "path": "ribbons/warm/ribbon-warm-wave.webp",
+    "format": "webp",
+    "width": 344,
+    "height": 360,
+    "bytes": 10580,
+    "nodeId": "1:2380",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2380",
+    "usage": "Ruban isolé. Réserver une marge ou une zone de décoration.",
+    "role": "artwork",
+    "sha256": "3493df8007e76bca8354519f3aa05550102c7bee08e5ab1e6e8acf6f79a223a7",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "wave",
+    "previousPaths": [
+      "ribbons/ribbon-warm-wave.webp"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "wave-impact",
+    "category": "ribbons",
+    "path": "ribbons/warm/wave-impact.svg",
+    "format": "svg",
+    "width": 820,
+    "height": 796,
+    "bytes": 37563,
+    "nodeId": "1:2459",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2459",
+    "usage": "Courbe isolée. Éviter les contrôles et les textes.",
+    "role": "artwork",
+    "sha256": "ee5760f92175ce48976e11b69b45af9adb554809c7430be1c3535dcc3bfcc22b",
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "slogan",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "previousPaths": [
+      "waves/wave-impact.svg"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "wave-warm-long",
+    "category": "ribbons",
+    "path": "ribbons/warm/wave-warm-long.svg",
+    "format": "svg",
+    "width": 640,
+    "height": 1320,
+    "bytes": 7568,
+    "nodeId": "1:2531",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2531",
+    "usage": "Courbe isolée. Éviter les contrôles et les textes.",
+    "role": "artwork",
+    "sha256": "fd03aa4c7f00a7b2211dfd41319c493b779db4055270a4ee3b09076816c0c6a9",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "wave",
+    "previousPaths": [
+      "waves/wave-warm-long.svg"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "wave-light-short",
+    "category": "ribbons",
+    "path": "ribbons/warm/wave-light-short.svg",
+    "format": "svg",
+    "width": 340,
+    "height": 515,
+    "bytes": 3832,
+    "nodeId": "1:2532",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2532",
+    "usage": "Courbe isolée. Éviter les contrôles et les textes.",
+    "role": "artwork",
+    "sha256": "0388f1606af937f60e0998bb2524227eb43605d73faddf21bebfe35731b00706",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "wave",
+    "previousPaths": [
+      "waves/wave-light-short.svg"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "wave-dream-team",
+    "category": "ribbons",
+    "path": "ribbons/warm/wave-dream-team.svg",
+    "format": "svg",
+    "width": 600,
+    "height": 1251,
+    "bytes": 20710,
+    "nodeId": "1:2535",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2535",
+    "usage": "Courbe isolée. Éviter les contrôles et les textes.",
+    "role": "artwork",
+    "sha256": "f53690641a0727848e967c43d5d44f76a3ee07e3cac25402d1336954703a124a",
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "slogan",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "previousPaths": [
+      "waves/wave-dream-team.svg"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "wave-light-long",
+    "category": "ribbons",
+    "path": "ribbons/warm/wave-light-long.svg",
+    "format": "svg",
+    "width": 1036,
+    "height": 476,
+    "bytes": 2773,
+    "nodeId": "1:2599",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2599",
+    "usage": "Courbe isolée. Éviter les contrôles et les textes.",
+    "role": "artwork",
+    "sha256": "12dc6cd1f2137fbbfc78cfd2e6ff75bb556cfbefc72d8b2e2347b1231dfe37d9",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "wave",
+    "previousPaths": [
+      "waves/wave-light-long.svg"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "wave-entrepreneurship",
+    "category": "ribbons",
+    "path": "ribbons/warm/wave-entrepreneurship.svg",
+    "format": "svg",
+    "width": 372,
+    "height": 564,
+    "bytes": 19887,
+    "nodeId": "1:2602",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2602",
+    "usage": "Courbe isolée. Éviter les contrôles et les textes.",
+    "role": "artwork",
+    "sha256": "3a6dcea32a86db2310423d768b37ccfdbd1aa1946d69a2eecdaef4016624cce9",
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "slogan",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "previousPaths": [
+      "waves/wave-entrepreneurship.svg"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "wave-pattern-01",
+    "category": "ribbons",
+    "path": "ribbons/warm/wave-pattern-01.svg",
+    "format": "svg",
+    "width": 1528,
+    "height": 1608,
+    "bytes": 7386,
+    "nodeId": "1:2857",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2857",
+    "usage": "Courbe isolée. Éviter les contrôles et les textes.",
+    "role": "artwork",
+    "sha256": "3e26cf5d3738a34a6c8c1ba6e52a2833b2502d721a7d1ff95d2f7a6487e37e11",
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "wave",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "previousPaths": [
+      "waves/wave-pattern-01.svg"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "wave-pattern-02",
+    "category": "ribbons",
+    "path": "ribbons/warm/wave-pattern-02.svg",
+    "format": "svg",
+    "width": 1652,
+    "height": 1636,
+    "bytes": 7116,
+    "nodeId": "1:2861",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2861",
+    "usage": "Courbe isolée. Éviter les contrôles et les textes.",
+    "role": "artwork",
+    "sha256": "4f0d77d03c1f8eee8775fd583c19a46eb6ddc6c7c72c446f7c6110f4809ef024",
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "wave",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "previousPaths": [
+      "waves/wave-pattern-02.svg"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "wave-pattern-03",
+    "category": "ribbons",
+    "path": "ribbons/warm/wave-pattern-03.svg",
+    "format": "svg",
+    "width": 936,
+    "height": 2083,
+    "bytes": 7586,
+    "nodeId": "1:2872",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2872",
+    "usage": "Courbe isolée. Éviter les contrôles et les textes.",
+    "role": "artwork",
+    "sha256": "dad9c161b6b2410f6b9fa895e8ea4d31b91683f8e8db722b4a3cec7f8bd5af3b",
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "wave",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "previousPaths": [
+      "waves/wave-pattern-03.svg"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "wave-pattern-04",
+    "category": "ribbons",
+    "path": "ribbons/warm/wave-pattern-04.svg",
+    "format": "svg",
+    "width": 2076,
+    "height": 896,
+    "bytes": 6859,
+    "nodeId": "1:2873",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2873",
+    "usage": "Courbe isolée. Éviter les contrôles et les textes.",
+    "role": "artwork",
+    "sha256": "591a46fa9f4cc0913a4ec80f8f84936ae2a90042b18879885d2299487cf27cd7",
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "wave",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "previousPaths": [
+      "waves/wave-pattern-04.svg"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "wave-pattern-05",
+    "category": "ribbons",
+    "path": "ribbons/warm/wave-pattern-05.svg",
+    "format": "svg",
+    "width": 1552,
+    "height": 1580,
+    "bytes": 7244,
+    "nodeId": "1:2874",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2874",
+    "usage": "Courbe isolée. Éviter les contrôles et les textes.",
+    "role": "artwork",
+    "sha256": "4654d8ece9a65367bd465f1d7d599cf5d5219dd72ffb64077c2c552d5614d23d",
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "wave",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "previousPaths": [
+      "waves/wave-pattern-05.svg"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "organic-01",
+    "category": "organic",
+    "path": "organic/organic-01.webp",
+    "format": "webp",
+    "width": 1497,
+    "height": 1600,
+    "bytes": 525394,
+    "nodeId": "1:2675",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2675",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "c72bb7dae13df931ee34363b0ef910beabd88d43d72c37cdff9769f60babcfb4"
+  },
+  {
+    "name": "organic-02",
+    "category": "organic",
+    "path": "organic/organic-02.webp",
+    "format": "webp",
+    "width": 938,
+    "height": 1600,
+    "bytes": 288336,
+    "nodeId": "1:2684",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2684",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "d78e25fc8f1e9f3bee2a71945086d3525a5e32d615b9e105c673a6f9a2af9878"
+  },
+  {
+    "name": "organic-03",
+    "category": "organic",
+    "path": "organic/organic-03.svg",
+    "format": "svg",
+    "width": 396,
+    "height": 332,
+    "bytes": 1607,
+    "nodeId": "1:2693",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2693",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "b17c64342091bb06057641a1826e9b4131d2f307e5079d0d6e5032c032976026"
+  },
+  {
+    "name": "organic-04",
+    "category": "organic",
+    "path": "organic/organic-04.svg",
+    "format": "svg",
+    "width": 680,
+    "height": 744,
+    "bytes": 2171,
+    "nodeId": "1:2694",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2694",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "46137741e86cabe711bc05467317407eca800b227aff699e20f13f05e5dc0004"
+  },
+  {
+    "name": "organic-05",
+    "category": "organic",
+    "path": "organic/organic-05.svg",
+    "format": "svg",
+    "width": 472,
+    "height": 448,
+    "bytes": 1699,
+    "nodeId": "1:2695",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2695",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "48f9c7e753ce32e60239c70b1952a8ca138c30077f3306c8af811031736b6552"
+  },
+  {
+    "name": "organic-06",
+    "category": "organic",
+    "path": "organic/organic-06.svg",
+    "format": "svg",
+    "width": 604,
+    "height": 224,
+    "bytes": 1799,
+    "nodeId": "1:2696",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2696",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "2cccd17c4993d2728fa861266745026c798822fb703a051313792bdf0be16a53"
+  },
+  {
+    "name": "organic-07",
+    "category": "organic",
+    "path": "organic/organic-07.webp",
+    "format": "webp",
+    "width": 823,
+    "height": 983,
+    "bytes": 222376,
+    "nodeId": "1:2697",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2697",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "04699f43c8d463590e8fee4c210225c6f014b875757824f1643012564905f22f"
+  },
+  {
+    "name": "organic-08",
+    "category": "organic",
+    "path": "organic/organic-08.webp",
+    "format": "webp",
+    "width": 1222,
+    "height": 1600,
+    "bytes": 281472,
+    "nodeId": "1:2706",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2706",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "0afbbf7d5ab33095acfcb04d8db57e210e03c9a883bb9ef67738fc6c51161ba8"
+  },
+  {
+    "name": "organic-09",
+    "category": "organic",
+    "path": "organic/organic-09.webp",
+    "format": "webp",
+    "width": 1320,
+    "height": 1512,
+    "bytes": 78794,
+    "nodeId": "1:2715",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2715",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "d50ac09419001f6b55fbfda6c06a628ada390b11aa59198f9b8ef5d2265ec634"
+  },
+  {
+    "name": "organic-10",
+    "category": "organic",
+    "path": "organic/organic-10.svg",
+    "format": "svg",
+    "width": 76,
+    "height": 104,
+    "bytes": 1505,
+    "nodeId": "1:2724",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2724",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "2249b974095a7b0d3cd7ae54f96f5564c9a6fe2bba771fe9e5ffff58e8ed8a59"
+  },
+  {
+    "name": "organic-11",
+    "category": "organic",
+    "path": "organic/organic-11.svg",
+    "format": "svg",
+    "width": 579,
+    "height": 280,
+    "bytes": 1562,
+    "nodeId": "1:2725",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2725",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "fe9ad31604b83fe0767b1472ebb191282a7d27c5f9310dbde10cdf8e9e4d553f"
+  },
+  {
+    "name": "organic-12",
+    "category": "organic",
+    "path": "organic/organic-12.svg",
+    "format": "svg",
+    "width": 1096,
+    "height": 1176,
+    "bytes": 2145,
+    "nodeId": "1:2726",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2726",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "bff28b1954ecfb0b25b9494f6fa71c3cb794a8bfa64c60ef5a7adc0c365abcc5"
+  },
+  {
+    "name": "organic-13",
+    "category": "organic",
+    "path": "organic/organic-13.svg",
+    "format": "svg",
+    "width": 948,
+    "height": 1104,
+    "bytes": 2228,
+    "nodeId": "1:2727",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2727",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "7079d01adfce4ac20a77468c2b91dcba616c713831622786f4dd0918f986a47e"
+  },
+  {
+    "name": "organic-14",
+    "category": "organic",
+    "path": "organic/organic-14.webp",
+    "format": "webp",
+    "width": 1219,
+    "height": 1600,
+    "bytes": 239296,
+    "nodeId": "1:2728",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2728",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "24b2b80ed43f1cb93e44ba1e901afe5235df25834dd5eab264c5f94464dcdee5"
+  },
+  {
+    "name": "organic-15",
+    "category": "organic",
+    "path": "organic/organic-15.svg",
+    "format": "svg",
+    "width": 432,
+    "height": 460,
+    "bytes": 1743,
+    "nodeId": "1:2737",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2737",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "951f38ec71102b7057c6176f8f05ea743c19e4655c30e133f5b21bd90d0fe399"
+  },
+  {
+    "name": "organic-16",
+    "category": "organic",
+    "path": "organic/organic-16.webp",
+    "format": "webp",
+    "width": 1490,
+    "height": 1600,
+    "bytes": 381722,
+    "nodeId": "1:2738",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2738",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "1b6037373207238b2994460851f68354c4951c5614a8d54bd53572263f94211a"
+  },
+  {
+    "name": "organic-17",
+    "category": "organic",
+    "path": "organic/organic-17.svg",
+    "format": "svg",
+    "width": 324,
+    "height": 619,
+    "bytes": 555,
+    "nodeId": "1:2747",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2747",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "56218b2e3feb685c9871daa47938c9001f5522f4dc3e9c3c7bc1f58749981445"
+  },
+  {
+    "name": "organic-18",
+    "category": "organic",
+    "path": "organic/organic-18.webp",
+    "format": "webp",
+    "width": 512,
+    "height": 648,
+    "bytes": 128190,
+    "nodeId": "1:2748",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2748",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "59e190f73d581f0c45829ed9f5a7adf5c98025bfd2a708eba0318d041806b5d6"
+  },
+  {
+    "name": "organic-19",
+    "category": "organic",
+    "path": "organic/organic-19.webp",
+    "format": "webp",
+    "width": 1055,
+    "height": 1239,
+    "bytes": 447382,
+    "nodeId": "1:2757",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2757",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "f9d659e4e4d2955585afb8a323b1b7a54f1a0ce2a551666aee5cd1988858f915"
+  },
+  {
+    "name": "organic-20",
+    "category": "organic",
+    "path": "organic/organic-20.svg",
+    "format": "svg",
+    "width": 812,
+    "height": 560,
+    "bytes": 1825,
+    "nodeId": "1:2766",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2766",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "d6a979cb2b92db374c2927d67635f9a843b71bb677b2c6bb612002d291021ec6"
+  },
+  {
+    "name": "organic-21",
+    "category": "organic",
+    "path": "organic/organic-21.webp",
+    "format": "webp",
+    "width": 579,
+    "height": 1600,
+    "bytes": 117650,
+    "nodeId": "1:2767",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2767",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "ef33781b27d5111ac1cbff09e7c75586142b121f5b9c165c3227cb65b62c2f6a"
+  },
+  {
+    "name": "organic-22",
+    "category": "organic",
+    "path": "organic/organic-22.webp",
+    "format": "webp",
+    "width": 968,
+    "height": 1127,
+    "bytes": 299178,
+    "nodeId": "1:2776",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2776",
+    "usage": "Forme libre isolée. Les effets et couleurs de cette illustration ne créent pas de nouvelles couleurs officielles.",
+    "role": "artwork",
+    "sha256": "8e650a8db2a78166faca08ef01414e8a7305605a8ea9ef68f34f565e649736dc"
+  },
+  {
+    "name": "geometric-columns",
+    "category": "geometric",
+    "path": "geometric/compositions/geometric-columns.webp",
+    "format": "webp",
+    "width": 1280,
+    "height": 1282,
+    "bytes": 182180,
+    "nodeId": "1:2804",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2804",
+    "usage": "Composition complète. Les éléments qui la constituent sont également disponibles comme primitives ou modules.",
+    "role": "artwork",
+    "sha256": "6d68903e5bf3fb2b3d36b71ed171d95fc9371ff91af1ff7005f265f98bfbc36f",
+    "kind": "composition",
+    "previousPaths": [
+      "geometric/geometric-columns.webp"
+    ]
+  },
+  {
+    "name": "disc-pink-texture",
+    "category": "geometric",
+    "path": "geometric/primitives/disc-pink-texture.webp",
+    "format": "webp",
+    "width": 428,
+    "height": 428,
+    "bytes": 167418,
+    "nodeId": "1:2810",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2810",
+    "usage": "Primitive isolée. Son contour est conservé ; elle ne constitue pas à elle seule une composition complète.",
+    "role": "artwork",
+    "sha256": "cdffb9b0eab4c155d9f53090b6f0ece58e39d396f35be88e7d63dee49954d70f",
+    "kind": "primitive",
+    "previousPaths": [
+      "geometric/disc-pink-texture.webp"
+    ]
+  },
+  {
+    "name": "half-ellipse-mint",
+    "category": "geometric",
+    "path": "geometric/primitives/half-ellipse-mint.svg",
+    "format": "svg",
+    "width": 213,
+    "height": 532,
+    "bytes": 463,
+    "nodeId": "1:2814",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2814",
+    "usage": "Primitive isolée. Son contour est conservé ; elle ne constitue pas à elle seule une composition complète.",
+    "role": "artwork",
+    "sha256": "bca155c42e45f05ba8d646c16a3902ae4ea3cb8fbd389603f9230b78f1988c5f",
+    "aliases": [
+      "semicircle-mint"
+    ],
+    "kind": "primitive",
+    "previousPaths": [
+      "geometric/semicircle-mint.svg"
+    ]
+  },
+  {
+    "name": "half-disc-white",
+    "category": "geometric",
+    "path": "geometric/primitives/half-disc-white.svg",
+    "format": "svg",
+    "width": 213,
+    "height": 107,
+    "bytes": 325,
+    "nodeId": "1:2815",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2815",
+    "usage": "Primitive isolée. Son contour est conservé ; elle ne constitue pas à elle seule une composition complète.",
+    "role": "artwork",
+    "sha256": "70a18303399d64c2349bc338a59888ad2cc35b883cbc9b029cba921eb6890c51",
+    "aliases": [
+      "semicircle-white"
+    ],
+    "kind": "primitive",
+    "previousPaths": [
+      "geometric/semicircle-white.svg"
+    ]
+  },
+  {
+    "name": "capsule-light-long",
+    "category": "geometric",
+    "path": "geometric/primitives/capsule-light-long.svg",
+    "format": "svg",
+    "width": 213,
+    "height": 534,
+    "bytes": 785,
+    "nodeId": "1:2816",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2816",
+    "usage": "Primitive isolée. Son contour est conservé ; elle ne constitue pas à elle seule une composition complète.",
+    "role": "artwork",
+    "sha256": "866ae9656813b99f7814abe3f870d03ff3bfc36321756b63fe0fa42b18a20ddc",
+    "kind": "primitive",
+    "previousPaths": [
+      "geometric/capsule-light-long.svg"
+    ]
+  },
+  {
+    "name": "dots-nine",
+    "category": "geometric",
+    "path": "geometric/modules/dots-nine.svg",
+    "format": "svg",
+    "width": 320,
+    "height": 321,
+    "bytes": 1984,
+    "nodeId": "1:2821",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2821",
+    "usage": "Module composé et recadré selon la planche source. Conserver le cadrage, les proportions et les rapports entre ses parties.",
+    "role": "artwork",
+    "sha256": "dc3830e46c0ebc653474eb0b92aebddf4a1741694d99c8ca36fe9a5058a51d05",
+    "kind": "module",
+    "previousPaths": [
+      "geometric/dots-nine.svg"
+    ]
+  },
+  {
+    "name": "disc-warm-texture",
+    "category": "geometric",
+    "path": "geometric/primitives/disc-warm-texture.webp",
+    "format": "webp",
+    "width": 440,
+    "height": 442,
+    "bytes": 27548,
+    "nodeId": "1:2832",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2832",
+    "usage": "Primitive isolée. Son contour est conservé ; elle ne constitue pas à elle seule une composition complète.",
+    "role": "artwork",
+    "sha256": "62107d324661972ce26b07e7f104db22d1429f78f788cb4b5fb1a9f83269dc1b",
+    "kind": "primitive",
+    "previousPaths": [
+      "geometric/disc-warm-texture.webp"
+    ]
+  },
+  {
+    "name": "d-shape-teal",
+    "category": "geometric",
+    "path": "geometric/primitives/d-shape-teal.svg",
+    "format": "svg",
+    "width": 320,
+    "height": 321,
+    "bytes": 555,
+    "nodeId": "1:2843",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2843",
+    "usage": "Primitive isolée. Son contour est conservé ; elle ne constitue pas à elle seule une composition complète.",
+    "role": "artwork",
+    "sha256": "b324f74540c56061e7a2bfb49f266066d1397d258980da173ff30086c99b89a2",
+    "aliases": [
+      "semicircle-teal"
+    ],
+    "kind": "primitive",
+    "previousPaths": [
+      "geometric/semicircle-teal.svg"
+    ]
+  },
+  {
+    "name": "gradient-block-01",
+    "category": "geometric",
+    "path": "geometric/primitives/gradient-block-01.svg",
+    "format": "svg",
+    "width": 160,
+    "height": 321,
+    "bytes": 431,
+    "nodeId": "1:2846",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2846",
+    "usage": "Primitive isolée. Son contour est conservé ; elle ne constitue pas à elle seule une composition complète.",
+    "role": "artwork",
+    "sha256": "53b286d36e5b2d9a6a06cec41d3ea9147c25be6f1b9e56708d3024fdae4c0e1f",
+    "kind": "primitive",
+    "previousPaths": [
+      "geometric/gradient-block-01.svg"
+    ]
+  },
+  {
+    "name": "gradient-block-02",
+    "category": "geometric",
+    "path": "geometric/primitives/gradient-block-02.svg",
+    "format": "svg",
+    "width": 160,
+    "height": 321,
+    "bytes": 428,
+    "nodeId": "1:2847",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2847",
+    "usage": "Primitive isolée. Son contour est conservé ; elle ne constitue pas à elle seule une composition complète.",
+    "role": "artwork",
+    "sha256": "6022a0bd740d1af92b29bd50ae0892239dfbb753ff382e5030a7bcfae084873b",
+    "kind": "primitive",
+    "previousPaths": [
+      "geometric/gradient-block-02.svg"
+    ]
+  },
+  {
+    "name": "double-disc-warm-free",
+    "category": "geometric",
+    "path": "geometric/compositions/double-disc-warm-free.svg",
+    "format": "svg",
+    "width": 892,
+    "height": 1140,
+    "bytes": 1600,
+    "nodeId": "1:2849",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2849",
+    "usage": "Paire de disques inclinés, extraite sans le recadrage du frame. Pour retrouver le carré de la planche, choisir module-warm-square.",
+    "role": "artwork",
+    "sha256": "ecebcfd1d997534ca9a89808c0db7749069ee42a648d96351426b1db31751292",
+    "aliases": [
+      "geometric-ribbon-warm"
+    ],
+    "kind": "composition",
+    "previousPaths": [
+      "geometric/geometric-ribbon-warm.svg"
+    ]
+  },
+  {
+    "name": "loop-palette-warm",
+    "category": "ribbons",
+    "path": "ribbons/warm/loop-palette-warm.webp",
+    "format": "webp",
+    "width": 608,
+    "height": 1263,
+    "bytes": 48620,
+    "nodeId": "1:2409",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2409",
+    "usage": "Composition existante. Conserver le rapport entre ses éléments.",
+    "role": "artwork",
+    "sha256": "f9e890a5f44fb027815ad68d7453f332fabc9ce57c73ab93fbab7bb94b9fa118",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "loop",
+    "previousPaths": [
+      "compositions/loop-palette-warm.webp"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "loop-palette-cool",
+    "category": "ribbons",
+    "path": "ribbons/cool/loop-palette-cool.webp",
+    "format": "webp",
+    "width": 623,
+    "height": 1255,
+    "bytes": 48526,
+    "nodeId": "1:2433",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2433",
+    "usage": "Composition existante. Conserver le rapport entre ses éléments.",
+    "role": "artwork",
+    "sha256": "77198c31b405324b001a2ae657de04a6c948136e7bbaf4c10df38723c9998c4b",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "cool",
+      "prefer": "Fond beige et accents compatibles ; pas de grand fond rouge.",
+      "avoid": "Ne pas mélanger avec des rubans warm ailleurs sur la même page ; ne pas superposer à un grand fond rouge.",
+      "alternativeForRed": "Choisir un asset chaud existant : ribbon-warm-loop-01, ribbon-warm-loop-02 ou wave-light-short. Ne pas recolorer ce fichier.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "cool",
+    "ribbonForm": "loop",
+    "previousPaths": [
+      "compositions/loop-palette-cool.webp"
+    ],
+    "containsRibbonFamilies": [
+      "cool"
+    ]
+  },
+  {
+    "name": "ribbon-warm-oversized",
+    "category": "ribbons",
+    "path": "ribbons/warm/ribbon-warm-oversized.webp",
+    "format": "webp",
+    "width": 1335,
+    "height": 1600,
+    "bytes": 60732,
+    "nodeId": "1:874",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-874",
+    "usage": "Composition existante. Conserver le rapport entre ses éléments.",
+    "role": "artwork",
+    "sha256": "f26380317d434687d70d510540a6fa23400e56783701f70f124829a38438830d",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "loop",
+    "previousPaths": [
+      "compositions/ribbon-warm-oversized.webp"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "ribbon-cool-crossing",
+    "category": "ribbons",
+    "path": "ribbons/cool/ribbon-cool-crossing.webp",
+    "format": "webp",
+    "width": 1356,
+    "height": 1600,
+    "bytes": 893466,
+    "nodeId": "1:1276",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1276",
+    "usage": "Composition existante. Conserver le rapport entre ses éléments.",
+    "role": "artwork",
+    "sha256": "c04b95d1699a35a6dc84a1907b6d64fee0bd1ef289b6d9ba6f18b535a487946f",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "cool",
+      "prefer": "Fond beige et accents compatibles ; pas de grand fond rouge.",
+      "avoid": "Ne pas mélanger avec des rubans warm ailleurs sur la même page ; ne pas superposer à un grand fond rouge.",
+      "alternativeForRed": "Choisir un asset chaud existant : ribbon-warm-loop-01, ribbon-warm-loop-02 ou wave-light-short. Ne pas recolorer ce fichier.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "cool",
+    "ribbonForm": "loop",
+    "previousPaths": [
+      "compositions/ribbon-cool-crossing.webp"
+    ],
+    "containsRibbonFamilies": [
+      "cool"
+    ]
+  },
+  {
+    "name": "ribbon-cool-tall",
+    "category": "ribbons",
+    "path": "ribbons/cool/ribbon-cool-tall.webp",
+    "format": "webp",
+    "width": 1600,
+    "height": 1483,
+    "bytes": 820154,
+    "nodeId": "1:1461",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1461",
+    "usage": "Composition existante. Conserver le rapport entre ses éléments.",
+    "role": "artwork",
+    "sha256": "ec8f470a01756ebcb9ce38562c4fc8e677fbaa1940f00683bf3aa1f41465620b",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "cool",
+      "prefer": "Fond beige et accents compatibles ; pas de grand fond rouge.",
+      "avoid": "Ne pas mélanger avec des rubans warm ailleurs sur la même page ; ne pas superposer à un grand fond rouge.",
+      "alternativeForRed": "Choisir un asset chaud existant : ribbon-warm-loop-01, ribbon-warm-loop-02 ou wave-light-short. Ne pas recolorer ce fichier.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "cool",
+    "ribbonForm": "loop",
+    "previousPaths": [
+      "compositions/ribbon-cool-tall.webp"
+    ],
+    "containsRibbonFamilies": [
+      "cool"
+    ]
+  },
+  {
+    "name": "organic-composition",
+    "category": "compositions",
+    "path": "compositions/organic-composition.webp",
+    "format": "webp",
+    "width": 1567,
+    "height": 1600,
+    "bytes": 538020,
+    "nodeId": "1:3638",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-3638",
+    "usage": "Composition existante. Conserver le rapport entre ses éléments.",
+    "role": "artwork",
+    "sha256": "c1dac7d385bd2c8e5e84797553d82a3890fb38f3cf1b7cec2867f21cebbb47b4"
+  },
+  {
+    "name": "ribbon-stationery",
+    "category": "ribbons",
+    "path": "ribbons/warm/ribbon-stationery.svg",
+    "format": "svg",
+    "width": 1699,
+    "height": 1332,
+    "bytes": 1239,
+    "nodeId": "1:3500",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-3500",
+    "usage": "Composition existante. Conserver le rapport entre ses éléments.",
+    "role": "artwork",
+    "sha256": "6a96b1eaf88b64c3947bb44686d53dfe7c0527273b1e28af9ebcdc330890e29e",
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "loop",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "previousPaths": [
+      "compositions/ribbon-stationery.svg"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "stickers-01",
+    "category": "stickers",
+    "path": "stickers/stickers-01.webp",
+    "format": "webp",
+    "width": 1215,
+    "height": 999,
+    "bytes": 207858,
+    "nodeId": "1:135",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-135",
+    "usage": "Sticker fini avec ses couleurs de création. Ne remplace pas le logo institutionnel.",
+    "role": "artwork",
+    "sha256": "4ac27f858c2a4edcac43d77c4b544e19fc2e45db462b0037ae65c4d028ea17e6"
+  },
+  {
+    "name": "stickers-02",
+    "category": "stickers",
+    "path": "stickers/stickers-02.webp",
+    "format": "webp",
+    "width": 1215,
+    "height": 999,
+    "bytes": 69186,
+    "nodeId": "1:263",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-263",
+    "usage": "Sticker fini avec ses couleurs de création. Ne remplace pas le logo institutionnel.",
+    "role": "artwork",
+    "sha256": "aea471f03eb9a4dae536d6677619c0201b264c377b110ff5b4de19ef8158adb1",
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "stickers-03",
+    "category": "stickers",
+    "path": "stickers/stickers-03.svg",
+    "format": "svg",
+    "width": 304,
+    "height": 216,
+    "bytes": 32061,
+    "nodeId": "1:300",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-300",
+    "usage": "Sticker fini avec ses couleurs de création. Ne remplace pas le logo institutionnel.",
+    "role": "artwork",
+    "sha256": "00e7195ac1ea7199842cf8d6c8fa48d36c1fb242d8f0988db42c865c7e8a5b88"
+  },
+  {
+    "name": "stickers-04",
+    "category": "stickers",
+    "path": "stickers/stickers-04.webp",
+    "format": "webp",
+    "width": 655,
+    "height": 295,
+    "bytes": 38524,
+    "nodeId": "1:318",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-318",
+    "usage": "Sticker fini avec ses couleurs de création. Ne remplace pas le logo institutionnel.",
+    "role": "artwork",
+    "sha256": "3584e75597451bb42ff94c0665e3878ee668675f191e4136747df774b7a7ebe3"
+  },
+  {
+    "name": "stickers-05",
+    "category": "stickers",
+    "path": "stickers/stickers-05.webp",
+    "format": "webp",
+    "width": 607,
+    "height": 607,
+    "bytes": 33592,
+    "nodeId": "1:435",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-435",
+    "usage": "Sticker fini avec ses couleurs de création. Ne remplace pas le logo institutionnel.",
+    "role": "artwork",
+    "sha256": "5d8b96fa2406bbe32508f1211c4fe9cca953110379201142f278c884b56c3239",
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "stickers-06",
+    "category": "stickers",
+    "path": "stickers/stickers-06.webp",
+    "format": "webp",
+    "width": 607,
+    "height": 607,
+    "bytes": 32964,
+    "nodeId": "1:478",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-478",
+    "usage": "Sticker fini avec ses couleurs de création. Ne remplace pas le logo institutionnel.",
+    "role": "artwork",
+    "sha256": "d61c93cd813838d8657af3a93a6d226bc1d367039c208372258a24868029b06b",
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "stickers-07",
+    "category": "stickers",
+    "path": "stickers/stickers-07.webp",
+    "format": "webp",
+    "width": 607,
+    "height": 607,
+    "bytes": 38314,
+    "nodeId": "1:516",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-516",
+    "usage": "Sticker fini avec ses couleurs de création. Ne remplace pas le logo institutionnel.",
+    "role": "artwork",
+    "sha256": "76af6b43ced7b0087f29c3d364c5ffd577eefe92c9289e2d5d1338fa870702b1",
+    "containsRibbonFamilies": [
+      "cool"
+    ]
+  },
+  {
+    "name": "stickers-08",
+    "category": "stickers",
+    "path": "stickers/stickers-08.svg",
+    "format": "svg",
+    "width": 304,
+    "height": 304,
+    "bytes": 25271,
+    "nodeId": "1:555",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-555",
+    "usage": "Sticker fini avec ses couleurs de création. Ne remplace pas le logo institutionnel.",
+    "role": "artwork",
+    "sha256": "25a79745b3425edaef56b0881943f0abd17213c0b84dab89ca278833d7a514d0",
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "stickers-09",
+    "category": "stickers",
+    "path": "stickers/stickers-09.webp",
+    "format": "webp",
+    "width": 609,
+    "height": 609,
+    "bytes": 50170,
+    "nodeId": "1:565",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-565",
+    "usage": "Sticker fini avec ses couleurs de création. Ne remplace pas le logo institutionnel.",
+    "role": "artwork",
+    "sha256": "f55aaa75fed9539de600acd8dcc8602568952c7dbcca458cee4f21d43397b3e2",
+    "containsRibbonFamilies": [
+      "warm",
+      "cool"
+    ],
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "mixed",
+      "prefer": "Référence de la charte à consulter pour comprendre les formes.",
+      "avoid": "Contient des rubans chauds et froids : ne pas utiliser cette composition sur une page qui doit conserver une seule famille de rubans."
+    }
+  },
+  {
+    "name": "stickers-10",
+    "category": "stickers",
+    "path": "stickers/stickers-10.webp",
+    "format": "webp",
+    "width": 607,
+    "height": 607,
+    "bytes": 133810,
+    "nodeId": "1:682",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-682",
+    "usage": "Sticker fini avec ses couleurs de création. Ne remplace pas le logo institutionnel.",
+    "role": "artwork",
+    "sha256": "4d66fd459bac08d758f96de1a9575cfa0d293ed34e93347dfa026999fdfbceae"
+  },
+  {
+    "name": "stickers-11",
+    "category": "stickers",
+    "path": "stickers/stickers-11.webp",
+    "format": "webp",
+    "width": 527,
+    "height": 527,
+    "bytes": 25370,
+    "nodeId": "1:833",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-833",
+    "usage": "Sticker fini avec ses couleurs de création. Ne remplace pas le logo institutionnel.",
+    "role": "artwork",
+    "sha256": "57cf008211224e48f6d4bd23f89b2c2ecc1711d2f26658476fb861a30df748c7",
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "stickers-12",
+    "category": "stickers",
+    "path": "stickers/stickers-12.webp",
+    "format": "webp",
+    "width": 609,
+    "height": 609,
+    "bytes": 54116,
+    "nodeId": "1:5812",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-5812",
+    "usage": "Sticker fini avec ses couleurs de création. Ne remplace pas le logo institutionnel.",
+    "role": "artwork",
+    "sha256": "4239f6449c62d8ab20fe6b99118f4803bc59e0d84d5ebf2b57ff768cdf6a27ce",
+    "containsRibbonFamilies": [
+      "warm",
+      "cool"
+    ],
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "mixed",
+      "prefer": "Référence de la charte à consulter pour comprendre les formes.",
+      "avoid": "Contient des rubans chauds et froids : ne pas utiliser cette composition sur une page qui doit conserver une seule famille de rubans."
+    }
+  },
+  {
+    "name": "stickers-13",
+    "category": "stickers",
+    "path": "stickers/stickers-13.webp",
+    "format": "webp",
+    "width": 609,
+    "height": 609,
+    "bytes": 187576,
+    "nodeId": "1:5931",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-5931",
+    "usage": "Sticker fini avec ses couleurs de création. Ne remplace pas le logo institutionnel.",
+    "role": "artwork",
+    "sha256": "92fbc97affd54c96eacf01a0bcde8c9815a05c86c2d19216e7c9c53a56716c92"
+  },
+  {
+    "name": "etic-filled-pattern-unit",
+    "category": "lettering",
+    "path": "lettering/etic-filled-pattern-unit.webp",
+    "format": "webp",
+    "width": 1600,
+    "height": 528,
+    "bytes": 183498,
+    "nodeId": "1:3891",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-3891",
+    "usage": "Lettrage fixe exporté. Ne constitue pas une police ni une variante du logo.",
+    "role": "artwork",
+    "sha256": "ac66df93055b172eb283aa99c530d721b1af79496d7ead8f23b5e3992def7343"
+  },
+  {
+    "name": "etic-outline-pattern-unit",
+    "category": "lettering",
+    "path": "lettering/etic-outline-pattern-unit.webp",
+    "format": "webp",
+    "width": 1600,
+    "height": 546,
+    "bytes": 58248,
+    "nodeId": "1:4795",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-4795",
+    "usage": "Lettrage fixe exporté. Ne constitue pas une police ni une variante du logo.",
+    "role": "artwork",
+    "sha256": "7641deac73539b756467573e6be7cd8e93ade7bef359a6a24c1c676b8a8b8327"
+  },
+  {
+    "name": "etic-lettering-cover",
+    "category": "lettering",
+    "path": "lettering/etic-lettering-cover.svg",
+    "format": "svg",
+    "width": 392,
+    "height": 136,
+    "bytes": 880,
+    "nodeId": "1:939",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-939",
+    "usage": "Lettrage fixe exporté. Ne constitue pas une police ni une variante du logo.",
+    "role": "artwork",
+    "sha256": "ed47f5b8fedb6de67162e8b8c4bb526e168fbb32e71dbb8be808d0efe11e8a90"
+  },
+  {
+    "name": "presentation-lettering",
+    "category": "lettering",
+    "path": "lettering/presentation-lettering.svg",
+    "format": "svg",
+    "width": 408,
+    "height": 88,
+    "bytes": 18066,
+    "nodeId": "1:893",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-893",
+    "usage": "Lettrage fixe exporté. Ne constitue pas une police ni une variante du logo.",
+    "role": "artwork",
+    "sha256": "8b2ca030a11701a768768122fa7b7a0ea49fcbf5a098a94d3bddca43e64d8a61"
+  },
+  {
+    "name": "card-story",
+    "category": "cards",
+    "path": "cards/card-story.svg",
+    "format": "svg",
+    "width": 344,
+    "height": 392,
+    "bytes": 1051,
+    "nodeId": "1:3352",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-3352",
+    "usage": "Fond de carte sans texte. Préférer BrandCard pour un contenu interactif.",
+    "role": "surface",
+    "sha256": "6ffcbd7070fd99d3319f5d0a04841e18a69df8408eb394918fa0fe4b61e23950"
+  },
+  {
+    "name": "card-wide",
+    "category": "cards",
+    "path": "cards/card-wide.svg",
+    "format": "svg",
+    "width": 1568,
+    "height": 792,
+    "bytes": 853,
+    "nodeId": "1:1003",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1003",
+    "usage": "Fond de carte sans texte. Préférer BrandCard pour un contenu interactif.",
+    "role": "surface",
+    "sha256": "5e294ad0d9174232686dc028542775529fdc620b60184558ff35efecc2fd8b37"
+  },
+  {
+    "name": "card-label",
+    "category": "cards",
+    "path": "cards/card-label.svg",
+    "format": "svg",
+    "width": 439,
+    "height": 204,
+    "bytes": 1090,
+    "nodeId": "1:2863",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2863",
+    "usage": "Fond de carte sans texte. Préférer BrandCard pour un contenu interactif.",
+    "role": "surface",
+    "sha256": "68043cbd4b78d955abaa6bf660fdb646a1d099d3fe1fe4fabf9ba85471dce005"
+  },
+  {
+    "name": "card-ribbons-cool-reference",
+    "category": "cards",
+    "path": "cards/card-ribbons-cool-reference.webp",
+    "format": "webp",
+    "width": 1521,
+    "height": 1200,
+    "bytes": 143104,
+    "nodeId": "1:2092",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2092",
+    "usage": "Carte composée avec ses rubans et son titre, référence visuelle ; ne pas l’utiliser comme interface interactive.",
+    "role": "reference",
+    "sha256": "40d76725f3c787626985f1d3a2d33d66b88b5c11708e6d4071f9f20792f9c016",
+    "containsRibbonFamilies": [
+      "cool"
+    ]
+  },
+  {
+    "name": "card-ribbons-warm-reference",
+    "category": "cards",
+    "path": "cards/card-ribbons-warm-reference.webp",
+    "format": "webp",
+    "width": 1576,
+    "height": 1296,
+    "bytes": 140584,
+    "nodeId": "1:2232",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2232",
+    "usage": "Carte composée avec ses rubans et son titre, référence visuelle ; ne pas l’utiliser comme interface interactive.",
+    "role": "reference",
+    "sha256": "2b6298dbccebcc488074545a557152099f94d327d45970aefe003f55f6fb5ef8",
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "gradient-01",
+    "category": "gradients",
+    "path": "gradients/gradient-01.svg",
+    "format": "svg",
+    "width": 188,
+    "height": 628,
+    "bytes": 536,
+    "nodeId": "1:1580",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1580",
+    "usage": "Échantillon sans légendes du dégradé officiel. Voir art-gradients.css pour les variantes observées.",
+    "role": "artwork",
+    "sha256": "7ca3ad27901088d26c820c8d6a1df399d915130e840133c545360c088a73278b"
+  },
+  {
+    "name": "gradient-02",
+    "category": "gradients",
+    "path": "gradients/gradient-02.svg",
+    "format": "svg",
+    "width": 188,
+    "height": 628,
+    "bytes": 486,
+    "nodeId": "1:1587",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1587",
+    "usage": "Échantillon sans légendes du dégradé officiel. Voir art-gradients.css pour les variantes observées.",
+    "role": "artwork",
+    "sha256": "e763556abf8b9fa0455a456684d4ccfd78f630348e9f4e0513b48cdc9d4763d8"
+  },
+  {
+    "name": "gradient-03",
+    "category": "gradients",
+    "path": "gradients/gradient-03.svg",
+    "format": "svg",
+    "width": 188,
+    "height": 628,
+    "bytes": 485,
+    "nodeId": "1:1594",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1594",
+    "usage": "Échantillon sans légendes du dégradé officiel. Voir art-gradients.css pour les variantes observées.",
+    "role": "artwork",
+    "sha256": "054b14298a2af436097e4a9d6eb4e782370e0b2d8b306f187b629902c30bfdf0"
+  },
+  {
+    "name": "gradient-04",
+    "category": "gradients",
+    "path": "gradients/gradient-04.svg",
+    "format": "svg",
+    "width": 188,
+    "height": 628,
+    "bytes": 493,
+    "nodeId": "1:1601",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1601",
+    "usage": "Échantillon sans légendes du dégradé officiel. Voir art-gradients.css pour les variantes observées.",
+    "role": "artwork",
+    "sha256": "e921dc32fdff547336d6046ff1489f9e2c9a9462978113d3ecfb291720599db3"
+  },
+  {
+    "name": "gradient-05",
+    "category": "gradients",
+    "path": "gradients/gradient-05.svg",
+    "format": "svg",
+    "width": 188,
+    "height": 628,
+    "bytes": 475,
+    "nodeId": "1:1608",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1608",
+    "usage": "Échantillon sans légendes du dégradé officiel. Voir art-gradients.css pour les variantes observées.",
+    "role": "artwork",
+    "sha256": "032fb938523131b70b262f27769e829e29553a1622d199401d22afafe3b47602"
+  },
+  {
+    "name": "card-wide-translucent",
+    "category": "cards",
+    "path": "cards/card-wide-translucent.svg",
+    "format": "svg",
+    "width": 1568,
+    "height": 792,
+    "bytes": 853,
+    "nodeId": "1:1490",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1490",
+    "usage": "Fond de carte sans texte. Préférer BrandCard pour un contenu interactif.",
+    "role": "surface",
+    "sha256": "1783223d78c8bb6daf160c1dfdc79cb75d79d5a42e57e190213065e51d77e561"
+  },
+  {
+    "name": "card-caption",
+    "category": "cards",
+    "path": "cards/card-caption.svg",
+    "format": "svg",
+    "width": 448,
+    "height": 144,
+    "bytes": 228,
+    "nodeId": "1:2670",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2670",
+    "usage": "Fond de carte sans texte. Préférer BrandCard pour un contenu interactif.",
+    "role": "surface",
+    "sha256": "98ef6cfe1e9187714f858364482a254aa01cbe3298c3bc1243dc76e5d9e3c51c"
+  },
+  {
+    "name": "card-amber-left",
+    "category": "cards",
+    "path": "cards/card-amber-left.svg",
+    "format": "svg",
+    "width": 824,
+    "height": 592,
+    "bytes": 1201,
+    "nodeId": "1:1228",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1228",
+    "usage": "Fond de carte sans texte. Préférer BrandCard pour un contenu interactif.",
+    "role": "surface",
+    "sha256": "7796feb8b038cc32790a51d6f6fb69f85fbc5156b29a9d5ecfa196599ca11d94"
+  },
+  {
+    "name": "card-amber-right",
+    "category": "cards",
+    "path": "cards/card-amber-right.svg",
+    "format": "svg",
+    "width": 832,
+    "height": 600,
+    "bytes": 1115,
+    "nodeId": "1:1235",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1235",
+    "usage": "Fond de carte sans texte. Préférer BrandCard pour un contenu interactif.",
+    "role": "surface",
+    "sha256": "8c9787f7b9f098a96fe881fe0d313f8d7f3fcaf50024437352fb4f64907270e9"
+  },
+  {
+    "name": "card-small-tab",
+    "category": "cards",
+    "path": "cards/card-small-tab.svg",
+    "format": "svg",
+    "width": 336,
+    "height": 124,
+    "bytes": 998,
+    "nodeId": "1:1229",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1229",
+    "usage": "Fond de carte sans texte. Préférer BrandCard pour un contenu interactif.",
+    "role": "surface",
+    "sha256": "4df2849add77fed873a2c343b04678ee37c7648b1dd5181180e36ccc12fe7166"
+  },
+  {
+    "name": "etic-color",
+    "category": "logos",
+    "path": "logos/etic-color.svg",
+    "format": "svg",
+    "width": 266,
+    "height": 211,
+    "bytes": 3126,
+    "nodeId": "1:3653",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-3653",
+    "usage": "Emblème officiel. Conserver les couleurs et la zone 2x.",
+    "role": "logo",
+    "sha256": "f63c70a1e6b15c3502154d32ad424047a3f35b73c16795204ec71b4ccd526072"
+  },
+  {
+    "name": "etic-white",
+    "category": "logos",
+    "path": "logos/etic-white.svg",
+    "format": "svg",
+    "width": 283,
+    "height": 225,
+    "bytes": 3018,
+    "nodeId": "1:1365",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1365",
+    "usage": "Emblème officiel. Conserver les couleurs et la zone 2x.",
+    "role": "logo",
+    "sha256": "327db262a59c2b40aa07d1ececb233a2ee483195a2269315a534878735626229"
+  },
+  {
+    "name": "heading-logo",
+    "category": "lettering",
+    "path": "lettering/heading-logo.svg",
+    "format": "svg",
+    "width": 379,
+    "height": 94,
+    "bytes": 4545,
+    "nodeId": "1:1379",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1379",
+    "usage": "Lettrage fixe exporté. Ne constitue pas une police ni une variante du logo.",
+    "role": "artwork",
+    "sha256": "2c1a18d6fb302378e974be239a0f874be567fdac7c64cfa5862463a1f3f20745"
+  },
+  {
+    "name": "heading-variation",
+    "category": "lettering",
+    "path": "lettering/heading-variation.svg",
+    "format": "svg",
+    "width": 381,
+    "height": 87,
+    "bytes": 11586,
+    "nodeId": "1:1384",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-1384",
+    "usage": "Lettrage fixe exporté. Ne constitue pas une police ni une variante du logo.",
+    "role": "artwork",
+    "sha256": "e60f7862be28b88a9ca633a4c81f1be518c89a8c4fa2430d033d0e1e1c215f09"
+  },
+  {
+    "name": "wave-warm",
+    "category": "ribbons",
+    "path": "ribbons/warm/wave-warm.svg",
+    "format": "svg",
+    "width": 323,
+    "height": 791,
+    "bytes": 2955,
+    "nodeId": "1:2662",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2662",
+    "usage": "Courbe isolée. Éviter les contrôles et les textes.",
+    "role": "artwork",
+    "sha256": "1d76e96fe8a58122da6bf17f2f6322ec791c7b187ab5b5ccc4f8b3bfe0007294",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "wave",
+    "previousPaths": [
+      "decorations/wave-warm.svg"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "shapes-stack",
+    "category": "compositions",
+    "path": "decorations/shapes-stack.svg",
+    "format": "svg",
+    "width": 457,
+    "height": 715,
+    "bytes": 1157,
+    "nodeId": "1:2399",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2399",
+    "usage": "Composition existante. Conserver le rapport entre ses éléments.",
+    "role": "artwork",
+    "sha256": "682a33b0f1087a45b5595c8d47e527e2e8d22e5c8bb3ad4f254e5f83c2c6f367"
+  },
+  {
+    "name": "geometric-pattern",
+    "category": "geometric",
+    "path": "geometric/compositions/geometric-pattern.webp",
+    "format": "webp",
+    "width": 1280,
+    "height": 1282,
+    "bytes": 78984,
+    "nodeId": "1:2817",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2817",
+    "usage": "Composition complète. Les éléments qui la constituent sont également disponibles comme primitives ou modules.",
+    "role": "artwork",
+    "sha256": "2b19702cb1e764cabac9c407bfc5f4c97e07a8f6dcfce59981af986fbfbb1a8a",
+    "kind": "composition",
+    "previousPaths": [
+      "decorations/geometric-pattern.png"
+    ]
+  },
+  {
+    "name": "loop-thin-ink",
+    "category": "ribbons",
+    "path": "ribbons/neutral/loop-thin-ink.svg",
+    "format": "svg",
+    "width": 240,
+    "height": 476,
+    "bytes": 943,
+    "nodeId": "1:2400",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2400",
+    "usage": "Élément isolé de la composition source. Conserver ses proportions et réserver une zone décorative.",
+    "role": "artwork",
+    "sha256": "f9373b77eb93c12768e41975ee86f18bc85e387bc0506d4e9a457e685d7fe357",
+    "kind": "ribbon",
+    "ribbonFamily": "neutral",
+    "ribbonForm": "loop",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "neutral",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Trait neutre pour un détail discret ; il ne définit pas une deuxième famille colorée.",
+      "avoid": "Ne pas utiliser comme substitut systématique aux choix de famille."
+    },
+    "previousPaths": [
+      "waves/loop-thin-ink.svg"
+    ],
+    "containsRibbonFamilies": [
+      "neutral"
+    ]
+  },
+  {
+    "name": "ribbon-story-warm",
+    "category": "ribbons",
+    "path": "ribbons/warm/ribbon-story-warm.webp",
+    "format": "webp",
+    "width": 1151,
+    "height": 1471,
+    "bytes": 68054,
+    "nodeId": "1:3281",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-3281",
+    "usage": "Élément isolé de la composition source. Conserver ses proportions et réserver une zone décorative.",
+    "role": "artwork",
+    "sha256": "c051d885d339e440fd4a475c643222510a89317571b6344c3eff4e0d6a0f5ae1",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page.",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections."
+    },
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "loop",
+    "previousPaths": [
+      "compositions/ribbon-story-warm.webp"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "organic-story-collage",
+    "category": "compositions",
+    "path": "compositions/organic-story-collage.webp",
+    "format": "webp",
+    "width": 1407,
+    "height": 1407,
+    "bytes": 405640,
+    "nodeId": "1:3326",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-3326",
+    "usage": "Élément isolé de la composition source. Conserver ses proportions et réserver une zone décorative.",
+    "role": "artwork",
+    "sha256": "a3a755a78f5293afe9059b10c4f10cbdb432672486cdc3781590b0921d30a0ba"
+  },
+  {
+    "name": "wave-story-slogan",
+    "category": "ribbons",
+    "path": "ribbons/warm/wave-story-slogan.svg",
+    "format": "svg",
+    "width": 480,
+    "height": 752,
+    "bytes": 35214,
+    "nodeId": "1:3367",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-3367",
+    "usage": "Élément isolé de la composition source. Conserver ses proportions et réserver une zone décorative.",
+    "role": "artwork",
+    "sha256": "ddf6419893231a7ced5fd23bf79c82121107cab574f1ec39d5ed4106469ea705",
+    "kind": "ribbon",
+    "ribbonFamily": "warm",
+    "ribbonForm": "slogan",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "previousPaths": [
+      "compositions/wave-story-slogan.svg"
+    ],
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "icon-tiktok",
+    "category": "icons",
+    "path": "icons/icon-tiktok.svg",
+    "format": "svg",
+    "width": 48,
+    "height": 48,
+    "bytes": 2292,
+    "nodeId": "1:97",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-97",
+    "usage": "Pictogramme du banner ETIC, couleurs originales. Utiliser dans un lien nommé ou un IconButton avec label.",
+    "role": "icon",
+    "sha256": "8e20fdff78a1bffebcacd1e291388675bbc52ee2c84b0a2868f602763f627310"
+  },
+  {
+    "name": "icon-mail",
+    "category": "icons",
+    "path": "icons/icon-mail.svg",
+    "format": "svg",
+    "width": 52,
+    "height": 48,
+    "bytes": 2493,
+    "nodeId": "1:102",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-102",
+    "usage": "Pictogramme du banner ETIC, couleurs originales. Utiliser dans un lien nommé ou un IconButton avec label.",
+    "role": "icon",
+    "sha256": "46b2251a9756625de72cce50b2a7575ee996c01ba73db719f34d6d63b238c8f8"
+  },
+  {
+    "name": "icon-web",
+    "category": "icons",
+    "path": "icons/icon-web.svg",
+    "format": "svg",
+    "width": 48,
+    "height": 48,
+    "bytes": 2513,
+    "nodeId": "1:107",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-107",
+    "usage": "Pictogramme du banner ETIC, couleurs originales. Utiliser dans un lien nommé ou un IconButton avec label.",
+    "role": "icon",
+    "sha256": "d3e0aea71c89ced2c9e8c26bcce65a170c95bfbf173f1e74b86bf204c36aba3d"
+  },
+  {
+    "name": "icon-instagram",
+    "category": "icons",
+    "path": "icons/icon-instagram.svg",
+    "format": "svg",
+    "width": 48,
+    "height": 48,
+    "bytes": 5709,
+    "nodeId": "1:112",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-112",
+    "usage": "Pictogramme du banner ETIC, couleurs originales. Utiliser dans un lien nommé ou un IconButton avec label.",
+    "role": "icon",
+    "sha256": "1c492b2d99027064b19cdf0f091fb74df5aa78c4033ffdbf6134ea068de1f38c"
+  },
+  {
+    "name": "icon-facebook",
+    "category": "icons",
+    "path": "icons/icon-facebook.svg",
+    "format": "svg",
+    "width": 52,
+    "height": 48,
+    "bytes": 1146,
+    "nodeId": "1:117",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-117",
+    "usage": "Pictogramme du banner ETIC, couleurs originales. Utiliser dans un lien nommé ou un IconButton avec label.",
+    "role": "icon",
+    "sha256": "88634bc315bacf08ed847ac469cbb801c619b39d136fae4de6ba4f0c03dbef8d"
+  },
+  {
+    "name": "icon-youtube",
+    "category": "icons",
+    "path": "icons/icon-youtube.svg",
+    "format": "svg",
+    "width": 48,
+    "height": 48,
+    "bytes": 2331,
+    "nodeId": "1:123",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-123",
+    "usage": "Pictogramme du banner ETIC, couleurs originales. Utiliser dans un lien nommé ou un IconButton avec label.",
+    "role": "icon",
+    "sha256": "3c3090c5a1206eeb3a3248a5494cd97db8c295e8b7399f688cbf1dd3af14be4a"
+  },
+  {
+    "name": "bar-teal",
+    "nodeId": "1:2807",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2807",
+    "role": "artwork",
+    "format": "svg",
+    "width": 213,
+    "height": 641,
+    "kind": "primitive",
+    "usage": "Primitive isolée. Son contour est conservé ; elle ne constitue pas à elle seule une composition complète.",
+    "path": "geometric/primitives/bar-teal.svg",
+    "bytes": 179,
+    "sha256": "2f431638a203b77620929e84c1b225dc4003bb527316b181a55e4829dd7bc6a1"
+  },
+  {
+    "name": "bar-orange",
+    "nodeId": "1:2808",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2808",
+    "role": "artwork",
+    "format": "svg",
+    "width": 213,
+    "height": 641,
+    "kind": "primitive",
+    "usage": "Primitive isolée. Son contour est conservé ; elle ne constitue pas à elle seule une composition complète.",
+    "path": "geometric/primitives/bar-orange.svg",
+    "bytes": 179,
+    "sha256": "bbaf1b6b5964495719e7d74dabb62f20e6892c532dd14f0d7d18359125fd393a"
+  },
+  {
+    "name": "bar-yellow",
+    "nodeId": "1:2809",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2809",
+    "role": "artwork",
+    "format": "svg",
+    "width": 213,
+    "height": 641,
+    "kind": "primitive",
+    "usage": "Primitive isolée. Son contour est conservé ; elle ne constitue pas à elle seule une composition complète.",
+    "path": "geometric/primitives/bar-yellow.svg",
+    "bytes": 179,
+    "sha256": "b87b526582e56fa6486728f129ba82664cc830793b686910f05150068f74f484"
+  },
+  {
+    "name": "corner-cutout-teal-bottom",
+    "nodeId": "1:2811",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2811",
+    "role": "artwork",
+    "format": "svg",
+    "width": 213,
+    "height": 320,
+    "kind": "primitive",
+    "usage": "Contreforme teal à découpe concave, issue de la colonne source. Ne pas la confondre avec un quart de disque plein.",
+    "path": "geometric/primitives/corner-cutout-teal-bottom.svg",
+    "bytes": 219,
+    "sha256": "4e9a5e5e0cca29d814d364a735f800d819cc3ecc5359de6278663c48ba83813d"
+  },
+  {
+    "name": "corner-cutout-teal-top",
+    "nodeId": "1:2812",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2812",
+    "role": "artwork",
+    "format": "svg",
+    "width": 213,
+    "height": 320,
+    "kind": "primitive",
+    "usage": "Contreforme teal à découpe concave, issue de la colonne source. Ne pas la confondre avec un quart de disque plein.",
+    "path": "geometric/primitives/corner-cutout-teal-top.svg",
+    "bytes": 213,
+    "sha256": "56bcd71535d972f17eaa1113474c9b00172b47042cc7b7e3f8fc72d687fa41e6"
+  },
+  {
+    "name": "half-ellipse-teal",
+    "nodeId": "1:2813",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2813",
+    "role": "artwork",
+    "format": "svg",
+    "width": 213,
+    "height": 532,
+    "kind": "primitive",
+    "usage": "Primitive isolée. Son contour est conservé ; elle ne constitue pas à elle seule une composition complète.",
+    "path": "geometric/primitives/half-ellipse-teal.svg",
+    "bytes": 245,
+    "sha256": "396502c35486425f9ae9588e200cb5f9da76a8d9c0e5eaec8e0d043369f12d3d"
+  },
+  {
+    "name": "dot-yellow",
+    "nodeId": "1:2823",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2823",
+    "role": "artwork",
+    "format": "svg",
+    "width": 107,
+    "height": 107,
+    "kind": "primitive",
+    "usage": "Primitive isolée. Son contour est conservé ; elle ne constitue pas à elle seule une composition complète.",
+    "path": "geometric/primitives/dot-yellow.svg",
+    "bytes": 317,
+    "sha256": "cd7269203a5a32918303582be5676af47706efe52d14539ad819ae34797612a6"
+  },
+  {
+    "name": "half-disc-warm-01",
+    "nodeId": "1:2850",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2850",
+    "role": "artwork",
+    "format": "svg",
+    "width": 456,
+    "height": 580,
+    "kind": "primitive",
+    "usage": "Demi-disque incliné avec le dégradé du nœud source. Pièce primitive du carré chaud ; utiliser module-warm-square pour retrouver son cadrage original.",
+    "path": "geometric/primitives/half-disc-warm-01.svg",
+    "bytes": 472,
+    "sha256": "7cb6a8d63683c0d46e1640d8e94664d19dd8c11df83754992fcd68efac09dcc3"
+  },
+  {
+    "name": "half-disc-warm-02",
+    "nodeId": "1:2851",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2851",
+    "role": "artwork",
+    "format": "svg",
+    "width": 456,
+    "height": 580,
+    "kind": "primitive",
+    "usage": "Demi-disque incliné avec le dégradé du nœud source. Pièce primitive du carré chaud ; utiliser module-warm-square pour retrouver son cadrage original.",
+    "path": "geometric/primitives/half-disc-warm-02.svg",
+    "bytes": 469,
+    "sha256": "58734c0caf3da04f7dcaf0200dc29e721fc009e1b99116414fb947271e768f90"
+  },
+  {
+    "name": "half-disc-warm-03",
+    "nodeId": "1:2852",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2852",
+    "role": "artwork",
+    "format": "svg",
+    "width": 456,
+    "height": 580,
+    "kind": "primitive",
+    "usage": "Demi-disque incliné avec le dégradé du nœud source. Pièce primitive du carré chaud ; utiliser module-warm-square pour retrouver son cadrage original.",
+    "path": "geometric/primitives/half-disc-warm-03.svg",
+    "bytes": 476,
+    "sha256": "9efd4c1a04f52664ddfb5cf110500928149967c1e373de2667ae769ab2f1f270"
+  },
+  {
+    "name": "half-disc-warm-04",
+    "nodeId": "1:2853",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2853",
+    "role": "artwork",
+    "format": "svg",
+    "width": 456,
+    "height": 580,
+    "kind": "primitive",
+    "usage": "Demi-disque incliné avec le dégradé du nœud source. Pièce primitive du carré chaud ; utiliser module-warm-square pour retrouver son cadrage original.",
+    "path": "geometric/primitives/half-disc-warm-04.svg",
+    "bytes": 474,
+    "sha256": "762290b21b7aea1d7cee5aa9746a68953f3fbeda6880ff8f878ef3c6425acedd"
+  },
+  {
+    "name": "module-warm-square",
+    "nodeId": "1:2848",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2848",
+    "role": "artwork",
+    "format": "svg",
+    "width": 641,
+    "height": 641,
+    "kind": "module",
+    "extraction": {
+      "method": "source-frame-without-labels",
+      "frame": "1:2848",
+      "removedTextNodes": [
+        "1:2854",
+        "1:2855"
+      ],
+      "preservesFrameClip": true
+    },
+    "usage": "Module composé et recadré selon la planche source. Conserver le cadrage, les proportions et les rapports entre ses parties.",
+    "path": "geometric/modules/module-warm-square.svg",
+    "bytes": 1668,
+    "sha256": "e620ed8c3fa8e1509415975890452da2cbaa3631eba0484b395433b09f7318c9"
+  },
+  {
+    "name": "ribbon-banner-loop",
+    "nodeId": "1:36",
+    "category": "ribbons",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-36",
+    "role": "artwork",
+    "format": "webp",
+    "width": 1426,
+    "height": 1600,
+    "kind": "ribbon",
+    "usage": "Ruban chaud exporté de son contexte source, sans fond de page. Choisir la même famille de rubans sur toute la page.",
+    "path": "ribbons/warm/ribbon-banner-loop.webp",
+    "ribbonFamily": "warm",
+    "ribbonForm": "loop",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "bytes": 396226,
+    "sha256": "7fb62a6a0fb80b2e3ea68ef3a4918362429cb47c4e56c7a1e8a7284b93b7b1e1",
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "ribbon-banner-arc",
+    "nodeId": "1:56",
+    "category": "ribbons",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-56",
+    "role": "artwork",
+    "format": "webp",
+    "width": 1511,
+    "height": 1600,
+    "kind": "ribbon",
+    "usage": "Ruban chaud exporté de son contexte source, sans fond de page. Choisir la même famille de rubans sur toute la page.",
+    "path": "ribbons/warm/ribbon-banner-arc.webp",
+    "ribbonFamily": "warm",
+    "ribbonForm": "arc",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "bytes": 265230,
+    "sha256": "a59952ed8ac69b4480aa3e8c5900ef215b5a0eabef6ea8a89401828df7c671f3",
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "ribbon-contents-loop",
+    "nodeId": "1:945",
+    "category": "ribbons",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-945",
+    "role": "artwork",
+    "format": "webp",
+    "width": 1600,
+    "height": 1297,
+    "kind": "ribbon",
+    "usage": "Ruban chaud exporté de son contexte source, sans fond de page. Choisir la même famille de rubans sur toute la page.",
+    "path": "ribbons/warm/ribbon-contents-loop.webp",
+    "ribbonFamily": "warm",
+    "ribbonForm": "loop",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "bytes": 748268,
+    "sha256": "22377e1cf7934f365e217343e808ddf05c1b000d7f0e549cf0618815dc208045",
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "ribbon-clearspace-loop",
+    "nodeId": "1:3675",
+    "category": "ribbons",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-3675",
+    "role": "artwork",
+    "format": "webp",
+    "width": 1600,
+    "height": 1518,
+    "kind": "ribbon",
+    "usage": "Ruban chaud exporté de son contexte source, sans fond de page. Choisir la même famille de rubans sur toute la page.",
+    "path": "ribbons/warm/ribbon-clearspace-loop.webp",
+    "ribbonFamily": "warm",
+    "ribbonForm": "loop",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "bytes": 184936,
+    "sha256": "b105d3159eaea29856cd38d02f93f4b94363178685015611b0c941e47331c893",
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "ribbon-clearspace-crossing",
+    "nodeId": "1:3686",
+    "category": "ribbons",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-3686",
+    "role": "artwork",
+    "format": "webp",
+    "width": 1279,
+    "height": 1600,
+    "kind": "ribbon",
+    "usage": "Ruban chaud exporté de son contexte source, sans fond de page. Choisir la même famille de rubans sur toute la page.",
+    "path": "ribbons/warm/ribbon-clearspace-crossing.webp",
+    "ribbonFamily": "warm",
+    "ribbonForm": "loop",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "bytes": 487912,
+    "sha256": "9f122d6a5164105957ca458d59cae2294e3e62849fee4fcee097b632658cf41d",
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "ribbon-card-front",
+    "nodeId": "1:3509",
+    "category": "ribbons",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-3509",
+    "role": "artwork",
+    "format": "webp",
+    "width": 1319,
+    "height": 1383,
+    "kind": "ribbon",
+    "usage": "Ruban chaud exporté de son contexte source, sans fond de page. Choisir la même famille de rubans sur toute la page.",
+    "path": "ribbons/warm/ribbon-card-front.webp",
+    "ribbonFamily": "warm",
+    "ribbonForm": "loop",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "bytes": 97146,
+    "sha256": "137e4b840cd37c147ad6d52fa227af90de91654cde20f44c0489a3489a33f9c7",
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "ribbon-card-back",
+    "nodeId": "1:3546",
+    "category": "ribbons",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-3546",
+    "role": "artwork",
+    "format": "webp",
+    "width": 1100,
+    "height": 1600,
+    "kind": "ribbon",
+    "usage": "Ruban chaud exporté de son contexte source, sans fond de page. Choisir la même famille de rubans sur toute la page.",
+    "path": "ribbons/warm/ribbon-card-back.webp",
+    "ribbonFamily": "warm",
+    "ribbonForm": "loop",
+    "pairingGuidance": {
+      "origin": "project-owner-direction",
+      "scope": "whole-page-ribbon-family",
+      "family": "warm",
+      "pageRule": "Une seule famille de rubans colorés par page : warm (orange/rouge/jaune) OU cool (teal/vert). Ne pas alterner entre sections.",
+      "prefer": "Fond beige, ou bandeau rouge avec parties jaune/orange claires visibles.",
+      "avoid": "Ne pas mélanger avec des rubans cool ailleurs sur la même page."
+    },
+    "bytes": 91600,
+    "sha256": "6f1a1a5bee68654875f96424261e6c636a7a0ae7384bb9b20a83eac910505d0c",
+    "containsRibbonFamilies": [
+      "warm"
+    ]
+  },
+  {
+    "name": "module-dots",
+    "nodeId": "1:2817",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2817",
+    "role": "artwork",
+    "format": "svg",
+    "width": 320,
+    "height": 320,
+    "kind": "module",
+    "extraction": {
+      "method": "source-frame-crop",
+      "frame": "1:2817",
+      "rect": [
+        0,
+        0,
+        319.812,
+        320.376
+      ]
+    },
+    "usage": "Module composé et recadré selon la planche source. Conserver le cadrage, les proportions et les rapports entre ses parties.",
+    "path": "geometric/modules/module-dots.svg",
+    "bytes": 2172,
+    "sha256": "d07a4ecc41168d1fc0a8a04d11388704376904a54602b37929e69b11a1c4dbeb"
+  },
+  {
+    "name": "module-disc-orange",
+    "nodeId": "1:2817",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2817",
+    "role": "artwork",
+    "format": "webp",
+    "width": 640,
+    "height": 641,
+    "kind": "module",
+    "extraction": {
+      "method": "source-frame-crop",
+      "frame": "1:2817",
+      "rect": [
+        319.812,
+        0,
+        319.812,
+        320.376
+      ]
+    },
+    "usage": "Module composé et recadré selon la planche source. Conserver le cadrage, les proportions et les rapports entre ses parties.",
+    "path": "geometric/modules/module-disc-orange.webp",
+    "bytes": 25918,
+    "sha256": "5a7a4e43bd953fa13afd25a8b9f7a2ce1240443a8f4d60c564b1ed6aa50201f2"
+  },
+  {
+    "name": "module-d-teal",
+    "nodeId": "1:2817",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2817",
+    "role": "artwork",
+    "format": "svg",
+    "width": 320,
+    "height": 320,
+    "kind": "module",
+    "extraction": {
+      "method": "source-frame-crop",
+      "frame": "1:2817",
+      "rect": [
+        0,
+        320.376,
+        319.812,
+        320.376
+      ]
+    },
+    "usage": "Module composé et recadré selon la planche source. Conserver le cadrage, les proportions et les rapports entre ses parties.",
+    "path": "geometric/modules/module-d-teal.svg",
+    "bytes": 822,
+    "sha256": "0dbc25a4fd801baff06a800885857d4f83af3e54ce40ae154b5a8e1b75139744"
+  },
+  {
+    "name": "module-stripes-warm",
+    "nodeId": "1:2817",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2817",
+    "role": "artwork",
+    "format": "svg",
+    "width": 320,
+    "height": 320,
+    "kind": "module",
+    "extraction": {
+      "method": "source-frame-crop",
+      "frame": "1:2817",
+      "rect": [
+        319.812,
+        320.376,
+        319.812,
+        320.376
+      ]
+    },
+    "usage": "Module composé et recadré selon la planche source. Conserver le cadrage, les proportions et les rapports entre ses parties.",
+    "path": "geometric/modules/module-stripes-warm.svg",
+    "bytes": 971,
+    "sha256": "2e563b309b936733df3f55cceb7817b94ea72f665df6412a7b18b76995f2b0e9"
+  },
+  {
+    "name": "module-teal-column",
+    "nodeId": "1:2804",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2804",
+    "role": "artwork",
+    "format": "svg",
+    "width": 213,
+    "height": 641,
+    "kind": "module",
+    "extraction": {
+      "method": "source-frame-crop",
+      "frame": "1:2804",
+      "rect": [
+        0,
+        0,
+        213.205,
+        640.752
+      ]
+    },
+    "usage": "Module composé et recadré selon la planche source. Conserver le cadrage, les proportions et les rapports entre ses parties.",
+    "path": "geometric/modules/module-teal-column.svg",
+    "bytes": 1152,
+    "sha256": "7e1954fb21b06dfc8d05e20f071a31f7bc1fdb88ed42cd8bc6e1620e2337db33"
+  },
+  {
+    "name": "module-orange-column",
+    "nodeId": "1:2804",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2804",
+    "role": "artwork",
+    "format": "webp",
+    "width": 426,
+    "height": 1282,
+    "kind": "module",
+    "extraction": {
+      "method": "source-frame-crop",
+      "frame": "1:2804",
+      "rect": [
+        213.205,
+        0,
+        213.214,
+        640.752
+      ]
+    },
+    "usage": "Module composé et recadré selon la planche source. Conserver le cadrage, les proportions et les rapports entre ses parties.",
+    "path": "geometric/modules/module-orange-column.webp",
+    "bytes": 175442,
+    "sha256": "54dfc48f6c72c73dee075cd5f830c4e9ec54d099954497bb611b691dfcba5b1c"
+  },
+  {
+    "name": "module-yellow-column",
+    "nodeId": "1:2804",
+    "category": "geometric",
+    "source": "https://www.figma.com/design/eofQFq1bCM8Ooe5KXBDRsk?node-id=1-2804",
+    "role": "artwork",
+    "format": "svg",
+    "width": 213,
+    "height": 641,
+    "kind": "module",
+    "extraction": {
+      "method": "source-frame-crop",
+      "frame": "1:2804",
+      "rect": [
+        426.419,
+        0,
+        213.205,
+        640.752
+      ]
+    },
+    "usage": "Module composé et recadré selon la planche source. Conserver le cadrage, les proportions et les rapports entre ses parties.",
+    "path": "geometric/modules/module-yellow-column.svg",
+    "bytes": 983,
+    "sha256": "bb4020bc62a1b422df7b09786b49b9bbf23a6195fb8b9b5724d31a1077ef63a3"
+  }
+]

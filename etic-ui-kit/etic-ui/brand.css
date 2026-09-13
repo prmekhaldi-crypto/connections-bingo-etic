@@ -1,0 +1,114 @@
+/* Measured treatments from Figma; see docs/cards.md for exact nodes and adaptation boundaries. */
+.etic-theme {
+  --etic-paper-fill: rgb(255 255 255 / 88%);
+  --etic-paper-radius: 21.4289px;
+  --etic-paper-shadow: 0 2.3166px 34.7495px rgb(0 0 0 / 17%);
+  --etic-story-radius: 22px;
+  --etic-story-shadow: 0 4px 16.3px -3px rgb(0 0 0 / 25%);
+  --etic-wide-radius: 38px;
+  --etic-wide-shadow: 0 4px 60px rgb(0 0 0 / 7%);
+}
+.etic-brand-artwork {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+.etic-brand-artwork[aria-hidden="true"] {
+  pointer-events: none;
+  user-select: none;
+}
+.etic-brand-card {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: var(--etic-space-6);
+  color: var(--etic-ink);
+  background: var(--etic-paper-fill);
+  border-radius: var(--etic-paper-radius);
+  box-shadow: var(--etic-paper-shadow);
+}
+.etic-brand-card--wide {
+  background: rgb(255 255 255 / 96%);
+  border-radius: var(--etic-wide-radius);
+  box-shadow: var(--etic-wide-shadow);
+}
+.etic-brand-card--wide-soft {
+  border-radius: var(--etic-wide-radius);
+  box-shadow: var(--etic-wide-shadow);
+}
+.etic-brand-card--story {
+  border-radius: var(--etic-story-radius);
+  box-shadow: var(--etic-story-shadow);
+}
+.etic-brand-card--label {
+  border-radius: 38px;
+  box-shadow: var(--etic-story-shadow);
+}
+.etic-brand-card--caption {
+  border-radius: 22px;
+  box-shadow: none;
+}
+.etic-brand-heading {
+  margin: 0;
+  font-family: var(--etic-font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
+  font-size: var(--etic-text-2xl);
+  overflow-wrap: anywhere;
+}
+.etic-brand-heading__accent {
+  display: block;
+  font-family: var(--etic-font-playful);
+  font-weight: 400;
+  text-transform: none;
+  line-height: 1.3;
+}
+/* Useful for source-shaped decoration and examples; do not place small text directly on gradients. */
+.etic-brand-surface--beige {
+  background: var(--etic-beige);
+  color: var(--etic-ink);
+}
+.etic-brand-surface--red {
+  background: var(--etic-red);
+  color: white;
+}
+.etic-brand-gradient-1 {
+  background-image: var(--etic-gradient-1);
+}
+.etic-brand-gradient-2 {
+  background-image: var(--etic-gradient-2);
+}
+.etic-brand-gradient-3 {
+  background-image: var(--etic-gradient-3);
+}
+.etic-brand-gradient-4 {
+  background-image: var(--etic-gradient-4);
+}
+.etic-brand-gradient-5 {
+  background-image: var(--etic-gradient-5);
+}
+.etic-brand-safe-content {
+  background: var(--etic-beige);
+  color: var(--etic-ink);
+}
+@media (max-width: 480px) {
+  .etic-brand-card {
+    padding: var(--etic-space-4);
+  }
+}
+
+.etic-brand-card--amber {
+  background: var(--etic-gradient-2);
+  border-radius: 43.0622px;
+  box-shadow: 0 12.8703px 40.327px rgb(0 0 0 / 35%);
+}
+.etic-brand-card__content {
+  padding: var(--etic-space-4);
+  border-radius: 22px;
+}
+.etic-brand-card--tab {
+  background: white;
+  border-radius: 28.3147px;
+  box-shadow: 0 3.4321px 8.5802px rgb(0 0 0 / 25%);
+}

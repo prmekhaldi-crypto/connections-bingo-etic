@@ -1,0 +1,278 @@
+[
+  {
+    "from": "geometric/semicircle-mint.svg",
+    "to": "geometric/primitives/half-ellipse-mint.svg",
+    "oldName": "semicircle-mint",
+    "newName": "half-ellipse-mint"
+  },
+  {
+    "from": "geometric/semicircle-white.svg",
+    "to": "geometric/primitives/half-disc-white.svg",
+    "oldName": "semicircle-white",
+    "newName": "half-disc-white"
+  },
+  {
+    "from": "geometric/capsule-light-long.svg",
+    "to": "geometric/primitives/capsule-light-long.svg",
+    "oldName": "capsule-light-long",
+    "newName": "capsule-light-long"
+  },
+  {
+    "from": "geometric/dots-nine.svg",
+    "to": "geometric/modules/dots-nine.svg",
+    "oldName": "dots-nine",
+    "newName": "dots-nine"
+  },
+  {
+    "from": "geometric/disc-warm-texture.webp",
+    "to": "geometric/primitives/disc-warm-texture.webp",
+    "oldName": "disc-warm-texture",
+    "newName": "disc-warm-texture"
+  },
+  {
+    "from": "geometric/semicircle-teal.svg",
+    "to": "geometric/primitives/d-shape-teal.svg",
+    "oldName": "semicircle-teal",
+    "newName": "d-shape-teal"
+  },
+  {
+    "from": "geometric/gradient-block-01.svg",
+    "to": "geometric/primitives/gradient-block-01.svg",
+    "oldName": "gradient-block-01",
+    "newName": "gradient-block-01"
+  },
+  {
+    "from": "geometric/gradient-block-02.svg",
+    "to": "geometric/primitives/gradient-block-02.svg",
+    "oldName": "gradient-block-02",
+    "newName": "gradient-block-02"
+  },
+  {
+    "from": "geometric/geometric-columns.webp",
+    "to": "geometric/compositions/geometric-columns.webp",
+    "oldName": "geometric-columns",
+    "newName": "geometric-columns"
+  },
+  {
+    "from": "decorations/geometric-pattern.png",
+    "to": "geometric/compositions/geometric-pattern.webp",
+    "oldName": "geometric-pattern",
+    "newName": "geometric-pattern"
+  },
+  {
+    "from": "geometric/disc-pink-texture.webp",
+    "to": "geometric/primitives/disc-pink-texture.webp",
+    "oldName": "disc-pink-texture",
+    "newName": "disc-pink-texture"
+  },
+  {
+    "from": "ribbons/ribbon-cool-loop-01.webp",
+    "to": "ribbons/cool/ribbon-cool-loop-01.webp",
+    "oldName": "ribbon-cool-loop-01",
+    "newName": "ribbon-cool-loop-01"
+  },
+  {
+    "from": "ribbons/ribbon-cool-loop-02.webp",
+    "to": "ribbons/cool/ribbon-cool-loop-02.webp",
+    "oldName": "ribbon-cool-loop-02",
+    "newName": "ribbon-cool-loop-02"
+  },
+  {
+    "from": "ribbons/ribbon-cool-loop-03.webp",
+    "to": "ribbons/cool/ribbon-cool-loop-03.webp",
+    "oldName": "ribbon-cool-loop-03",
+    "newName": "ribbon-cool-loop-03"
+  },
+  {
+    "from": "ribbons/ribbon-cool-wave.webp",
+    "to": "ribbons/cool/ribbon-cool-wave.webp",
+    "oldName": "ribbon-cool-wave",
+    "newName": "ribbon-cool-wave"
+  },
+  {
+    "from": "ribbons/ribbon-cool-arc.webp",
+    "to": "ribbons/cool/ribbon-cool-arc.webp",
+    "oldName": "ribbon-cool-arc",
+    "newName": "ribbon-cool-arc"
+  },
+  {
+    "from": "ribbons/ribbon-cool-twist.webp",
+    "to": "ribbons/cool/ribbon-cool-twist.webp",
+    "oldName": "ribbon-cool-twist",
+    "newName": "ribbon-cool-twist"
+  },
+  {
+    "from": "ribbons/ribbon-warm-arc-01.webp",
+    "to": "ribbons/warm/ribbon-warm-arc-01.webp",
+    "oldName": "ribbon-warm-arc-01",
+    "newName": "ribbon-warm-arc-01"
+  },
+  {
+    "from": "ribbons/ribbon-warm-loop-01.webp",
+    "to": "ribbons/warm/ribbon-warm-loop-01.webp",
+    "oldName": "ribbon-warm-loop-01",
+    "newName": "ribbon-warm-loop-01"
+  },
+  {
+    "from": "ribbons/ribbon-warm-arc-02.webp",
+    "to": "ribbons/warm/ribbon-warm-arc-02.webp",
+    "oldName": "ribbon-warm-arc-02",
+    "newName": "ribbon-warm-arc-02"
+  },
+  {
+    "from": "ribbons/ribbon-warm-twist.webp",
+    "to": "ribbons/warm/ribbon-warm-twist.webp",
+    "oldName": "ribbon-warm-twist",
+    "newName": "ribbon-warm-twist"
+  },
+  {
+    "from": "ribbons/ribbon-warm-arc-03.webp",
+    "to": "ribbons/warm/ribbon-warm-arc-03.webp",
+    "oldName": "ribbon-warm-arc-03",
+    "newName": "ribbon-warm-arc-03"
+  },
+  {
+    "from": "ribbons/ribbon-warm-loop-02.webp",
+    "to": "ribbons/warm/ribbon-warm-loop-02.webp",
+    "oldName": "ribbon-warm-loop-02",
+    "newName": "ribbon-warm-loop-02"
+  },
+  {
+    "from": "ribbons/ribbon-warm-wave.webp",
+    "to": "ribbons/warm/ribbon-warm-wave.webp",
+    "oldName": "ribbon-warm-wave",
+    "newName": "ribbon-warm-wave"
+  },
+  {
+    "from": "waves/wave-impact.svg",
+    "to": "ribbons/warm/wave-impact.svg",
+    "oldName": "wave-impact",
+    "newName": "wave-impact"
+  },
+  {
+    "from": "waves/wave-warm-long.svg",
+    "to": "ribbons/warm/wave-warm-long.svg",
+    "oldName": "wave-warm-long",
+    "newName": "wave-warm-long"
+  },
+  {
+    "from": "waves/wave-light-short.svg",
+    "to": "ribbons/warm/wave-light-short.svg",
+    "oldName": "wave-light-short",
+    "newName": "wave-light-short"
+  },
+  {
+    "from": "waves/wave-dream-team.svg",
+    "to": "ribbons/warm/wave-dream-team.svg",
+    "oldName": "wave-dream-team",
+    "newName": "wave-dream-team"
+  },
+  {
+    "from": "waves/wave-light-long.svg",
+    "to": "ribbons/warm/wave-light-long.svg",
+    "oldName": "wave-light-long",
+    "newName": "wave-light-long"
+  },
+  {
+    "from": "waves/wave-entrepreneurship.svg",
+    "to": "ribbons/warm/wave-entrepreneurship.svg",
+    "oldName": "wave-entrepreneurship",
+    "newName": "wave-entrepreneurship"
+  },
+  {
+    "from": "waves/wave-pattern-01.svg",
+    "to": "ribbons/warm/wave-pattern-01.svg",
+    "oldName": "wave-pattern-01",
+    "newName": "wave-pattern-01"
+  },
+  {
+    "from": "waves/wave-pattern-02.svg",
+    "to": "ribbons/warm/wave-pattern-02.svg",
+    "oldName": "wave-pattern-02",
+    "newName": "wave-pattern-02"
+  },
+  {
+    "from": "waves/wave-pattern-03.svg",
+    "to": "ribbons/warm/wave-pattern-03.svg",
+    "oldName": "wave-pattern-03",
+    "newName": "wave-pattern-03"
+  },
+  {
+    "from": "waves/wave-pattern-04.svg",
+    "to": "ribbons/warm/wave-pattern-04.svg",
+    "oldName": "wave-pattern-04",
+    "newName": "wave-pattern-04"
+  },
+  {
+    "from": "waves/wave-pattern-05.svg",
+    "to": "ribbons/warm/wave-pattern-05.svg",
+    "oldName": "wave-pattern-05",
+    "newName": "wave-pattern-05"
+  },
+  {
+    "from": "geometric/geometric-ribbon-warm.svg",
+    "to": "geometric/compositions/double-disc-warm-free.svg",
+    "oldName": "double-disc-warm-free",
+    "newName": "double-disc-warm-free"
+  },
+  {
+    "from": "compositions/loop-palette-warm.webp",
+    "to": "ribbons/warm/loop-palette-warm.webp",
+    "oldName": "loop-palette-warm",
+    "newName": "loop-palette-warm"
+  },
+  {
+    "from": "compositions/loop-palette-cool.webp",
+    "to": "ribbons/cool/loop-palette-cool.webp",
+    "oldName": "loop-palette-cool",
+    "newName": "loop-palette-cool"
+  },
+  {
+    "from": "compositions/ribbon-warm-oversized.webp",
+    "to": "ribbons/warm/ribbon-warm-oversized.webp",
+    "oldName": "ribbon-warm-oversized",
+    "newName": "ribbon-warm-oversized"
+  },
+  {
+    "from": "compositions/ribbon-cool-crossing.webp",
+    "to": "ribbons/cool/ribbon-cool-crossing.webp",
+    "oldName": "ribbon-cool-crossing",
+    "newName": "ribbon-cool-crossing"
+  },
+  {
+    "from": "compositions/ribbon-cool-tall.webp",
+    "to": "ribbons/cool/ribbon-cool-tall.webp",
+    "oldName": "ribbon-cool-tall",
+    "newName": "ribbon-cool-tall"
+  },
+  {
+    "from": "compositions/ribbon-stationery.svg",
+    "to": "ribbons/warm/ribbon-stationery.svg",
+    "oldName": "ribbon-stationery",
+    "newName": "ribbon-stationery"
+  },
+  {
+    "from": "decorations/wave-warm.svg",
+    "to": "ribbons/warm/wave-warm.svg",
+    "oldName": "wave-warm",
+    "newName": "wave-warm"
+  },
+  {
+    "from": "waves/loop-thin-ink.svg",
+    "to": "ribbons/neutral/loop-thin-ink.svg",
+    "oldName": "loop-thin-ink",
+    "newName": "loop-thin-ink"
+  },
+  {
+    "from": "compositions/ribbon-story-warm.webp",
+    "to": "ribbons/warm/ribbon-story-warm.webp",
+    "oldName": "ribbon-story-warm",
+    "newName": "ribbon-story-warm"
+  },
+  {
+    "from": "compositions/wave-story-slogan.svg",
+    "to": "ribbons/warm/wave-story-slogan.svg",
+    "oldName": "wave-story-slogan",
+    "newName": "wave-story-slogan"
+  }
+]

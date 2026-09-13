@@ -1,0 +1,1396 @@
+/* =====================================================================
+   FUN FACTS ALGERIENNES — feuille de style
+   Mini-jeu du Bingo Eticien | Club ETIC, ESI Alger
+   Toutes les valeurs de couleur et de typographie viennent du dossier
+   "[ ETIC ] - VI" (Identite Visuelle 2025-2026). Aucune couleur inventee.
+   ===================================================================== */
+
+
+/* =====================================================================
+   1. JETONS DE MARQUE (design tokens)
+   Source : VI p.12 (palette + degrades), p.13 (combinaisons autorisees),
+            p.16 / p.18 / p.19 (typographies et hierarchie).
+   ===================================================================== */
+:root {
+
+  /* --- Couleurs solides, relevees sur la palette VI p.12 --- */
+  --etic-red:    #C1333F;  /* rouge de marque  (Gradient 1, haut) */
+  --etic-orange: #EC9E00;  /* orange           (Gradient 1/2, bas) */
+  --etic-yellow: #FFCA00;  /* jaune            (Gradient 3, bas) */
+  --etic-gold:   #E7BE6B;  /* or doux          (Gradient 2, haut) */
+  --etic-beige:  #FFFAFA;  /* beige de fond    (Gradient 3, haut) */
+  --etic-teal:   #02A9A2;  /* teal du logo     (Gradient 4/5, haut) */
+  --etic-cyan:   #00DABF;  /* cyan             (Gradient 4, bas) */
+  --etic-green:  #1AAF5D;  /* vert             (Gradient 5, bas) */
+
+  /* Noir de la charte : echantillonne sur les textes des planches VI.
+     Le guide dit "Black" sans donner de hex (p.13). */
+  --etic-black:  #231F20;
+
+  /* --- Les 5 degrades officiels, VI p.12 --- */
+  --etic-gradient-1: linear-gradient(180deg, #C1333F 0%, #EC9E00 100%);
+  --etic-gradient-2: linear-gradient(180deg, #E7BE6B 0%, #EC9E00 100%);
+  --etic-gradient-3: linear-gradient(180deg, #FFFAFA 0%, #FFCA00 100%);
+  --etic-gradient-4: linear-gradient(180deg, #02A9A2 0%, #00DABF 100%);
+  --etic-gradient-5: linear-gradient(180deg, #02A9A2 0%, #1AAF5D 100%);
+
+  /* ------------------------------------------------------------------
+     >>> A COMPLETER PAR GHANO — COULEURS D'ETAT <<<
+     Le dossier VI ne definit aucune couleur "correct" / "incorrect".
+     Les deux valeurs ci-dessous sont des EMPRUNTS TEMPORAIRES a la
+     palette existante, pour que le jeu soit jouable des maintenant.
+     Remplace-les des que la charte est completee : tout le jeu suit.
+     ------------------------------------------------------------------ */
+  --etic-correct:      var(--etic-green); /* provisoire : vert Gradient 5 */
+  --etic-correct-soft: rgba(26, 175, 93, 0.12);
+  --etic-wrong:        var(--etic-red);   /* provisoire : rouge de marque */
+  --etic-wrong-soft:   rgba(193, 51, 63, 0.12);
+
+  /* --- Typographies (VI p.16, p.18, p.19) ---
+     Gotham et Humming ne sont pas fournies dans le dossier VI et sont
+     commerciales : on charge leurs substituts libres les plus proches
+     (voir le commentaire dans index.html). Gotham/Humming restent en
+     tete de pile : si tu installes les vraies polices ou deposes des
+     .woff2 dans ./fonts/, elles reprennent automatiquement la main. */
+  --font-primary: "Gotham", "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-script:  "Humming", "Caveat", "Brush Script MT", cursive;
+  --font-arabic:  "Noto Sans Arabic", sans-serif;
+
+  /* Graisses nommees comme dans la charte (Light -> Black, VI p.16) */
+  --w-light: 300;
+  --w-regular: 400;
+  --w-medium: 500;
+  --w-bold: 700;
+  --w-black: 900;
+
+  /* --- Rythme, rayons, ombres --- */
+  --radius-card: 28px;   /* echo du squircle du logo (VI p.6) */
+  --radius-pill: 999px;  /* echo des capsules de la planche palette (p.12) */
+  --radius-sm: 14px;
+  --shadow-soft: 0 18px 40px -24px rgba(35, 31, 32, 0.45);
+  --shadow-lift: 0 26px 60px -28px rgba(35, 31, 32, 0.55);
+
+  /* --- Courbes d'animation ---
+     Les courbes natives de CSS (ease, ease-out) sont trop molles : elles
+     n'ont pas le depart franc qui rend un mouvement credible. On garde
+     donc trois courbes maison, et on n'utilise jamais ease-in, qui
+     demarre lentement et fait paraitre l'interface a la traine. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);        /* entrees et sorties */
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);    /* deplacements a l'ecran */
+  --ease-spring: cubic-bezier(0.34, 1.35, 0.64, 1);  /* rebond discret, reserve aux moments rares */
+
+  /* Duree du chrono : ecrite par le JS, lue par les animations CSS */
+  --timer-duration: 8s;
+}
+
+
+/* =====================================================================
+   2. RESET ET BASES
+   ===================================================================== */
+
+/* Reset de boite : simplifie tous les calculs de largeur/padding */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* On remet a zero les marges par defaut du navigateur */
+html,
+body,
+h1, h2, p, dl, dd, ul, ol, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/* Les listes du jeu sont des structures, pas des puces visuelles */
+ul, ol {
+  list-style: none;
+}
+
+html {
+  /* Empeche iOS de regrossir le texte en paysage */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  /* Fond blanc pur (demande : "background full white") */
+  background: #FFFFFF;
+  color: var(--etic-black);
+  font-family: var(--font-primary);
+  font-weight: var(--w-regular);
+  /* Taille fluide : confortable sur mobile, plus genereuse sur desktop */
+  font-size: clamp(15px, 1.1vw + 12px, 17px);
+  line-height: 1.55;
+  min-height: 100dvh;
+  /* Le jeu est centre dans la fenetre, quel que soit le format */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 3vw, 32px);
+  /* Rend le decor de fond solidaire de la fenetre */
+  position: relative;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Contenu reserve aux lecteurs d'ecran : present dans l'arbre
+   d'accessibilite, invisible a l'ecran. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Anneau de focus visible et contraste, pour la navigation au clavier */
+:focus-visible {
+  outline: 3px solid var(--etic-teal);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+
+/* =====================================================================
+   3. DECOR DE FOND
+   Deux nappes de couleur peintes sur le calque + les rubans reels de la
+   planche "Ribbons Shapes" (VI p.21, assets/ribbon-*.svg), repartis en un
+   plan lointain et un plan proche pour creer de la profondeur, + la
+   texture de bruit (VI p.4). Aucune forme n'est redessinee : les rubans
+   sont les fichiers exportes du Figma de la VI.
+   ===================================================================== */
+
+/* Calque decoratif, sous le jeu, jamais cliquable */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* --- Nappes de couleur ---
+   Meme composition que "Devine le Prix" : un beige franc, deux halos de
+   couleur tres flous, et les formes ondulees de la charte aux deux coins
+   opposes. Les nappes sont peintes en une seule couche sur le calque. */
+.backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Nappes desactivees : fond blanc pur. Pour les retablir, remettre
+     les trois radial-gradient (orange en haut a droite, teal en bas a
+     gauche, vignette sombre au centre). */
+  background: none;
+}
+
+/* --- Formes de la charte (assets/etic_wavy.svg, VI p.21) ---
+   Deux exemplaires du meme fichier, l'un en haut a droite, l'autre
+   retourne en bas a gauche : le motif deborde du cadre, donc il se lit
+   comme un decor plus grand que l'ecran. */
+.bg-shape {
+  position: absolute;
+}
+
+.shape-wavy {
+  top: -60px;
+  right: -80px;
+  width: clamp(320px, 52vw, 580px);
+  height: clamp(320px, 52vw, 580px);
+  background-image: url("assets/etic_wavy.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* Opacite pleine sur fond blanc (demande). */
+  opacity: 1;
+  /* Derive tres lente : le decor reste un fond, jamais un sujet. */
+  animation: wavy-drift 34s var(--ease-in-out) -3s infinite alternate;
+  will-change: transform;
+}
+
+.shape-wavy-bottom {
+  bottom: -90px;
+  left: -80px;
+  width: clamp(280px, 46vw, 500px);
+  height: clamp(280px, 46vw, 500px);
+  background-image: url("assets/etic_wavy.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  /* Opacite pleine sur fond blanc (demande). */
+  opacity: 1;
+  animation: wavy-drift-bottom 40s var(--ease-in-out) -17s infinite alternate;
+  will-change: transform;
+}
+
+/* L'etat de repos vit dans la keyframe "from" : une seule description de
+   la transformation, donc aucun saut au demarrage du cycle. */
+@keyframes wavy-drift {
+  from { transform: rotate(0deg) translate3d(0, 0, 0); }
+  to   { transform: rotate(5deg) translate3d(-2%, 2%, 0); }
+}
+
+@keyframes wavy-drift-bottom {
+  from { transform: rotate(180deg) translate3d(0, 0, 0); }
+  to   { transform: rotate(186deg) translate3d(-2%, -2%, 0); }
+}
+
+/* --- Halos de couleur ---
+   Deux disques flous, rouge en bas a gauche et teal a droite. */
+.shape-glow-red {
+  bottom: -150px;
+  left: -150px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: var(--etic-red);
+  filter: blur(120px);
+  opacity: 0.10;
+}
+
+.shape-glow-teal {
+  top: 30%;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: var(--etic-teal);
+  filter: blur(120px);
+  opacity: 0.08;
+}
+
+/* --- Reactions du decor au jeu ---
+   Le JS pose data-pulse="correct" ou "wrong" sur .backdrop pendant le
+   feedback. Seuls les halos repondent : les formes ondulees continuent
+   de deriver, ce qui garde la profondeur pendant la reaction. */
+.backdrop[data-pulse="correct"] .shape-glow-teal {
+  animation: glow-cheer 0.52s var(--ease-spring) both;
+}
+
+.backdrop[data-pulse="wrong"] .shape-glow-red {
+  animation: glow-flinch 0.34s var(--ease-out) both;
+}
+
+/* Bonne reponse : le halo froid enfle et s'eclaircit. */
+@keyframes glow-cheer {
+  0%   { transform: scale(1);    opacity: 0.08; }
+  50%  { transform: scale(1.18); opacity: 0.22; }
+  100% { transform: scale(1);    opacity: 0.08; }
+}
+
+/* Mauvaise reponse : le halo chaud se crispe, sans secouer l'ecran. */
+@keyframes glow-flinch {
+  0%, 100% { transform: scale(1);    opacity: 0.10; }
+  45%      { transform: scale(0.92); opacity: 0.24; }
+}
+
+/* Texture de bruit ("noise textures", VI p.4).
+   Genere en SVG inline : zero fichier, zero dependance. */
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.045;
+  /* Fond blanc pur : texture masquee. Retirer cette ligne pour la retablir. */
+  display: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  mix-blend-mode: multiply;
+}
+
+
+/* =====================================================================
+   4. CADRE DE JEU ET EN-TETE
+   ===================================================================== */
+
+/* Le cadre du jeu : largeur bornee pour rester lisible sur desktop,
+   pleine largeur sur mobile (approche mobile-first). */
+.game {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 3vw, 22px);
+}
+
+/* Bandeau superieur : logo + rappel de la case de bingo */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Logo ETIC officiel (copie de assets/logo-etic.svg, VI p.6) */
+.logo {
+  width: 54px;
+  height: auto;
+  flex: none;
+  overflow: visible; /* les 4 carres de valeurs debordent un peu du cadre */
+}
+
+/* Le sceau teal respire tres doucement : le logo reste vivant sans bouger. */
+.logo__seal {
+  transform-origin: 50% 50%;
+  animation: seal-breathe 6s var(--ease-out) infinite alternate;
+}
+
+@keyframes seal-breathe {
+  from { transform: scale(1); }
+  to   { transform: scale(1.035); }
+}
+
+/* Les 4 carres = les 4 valeurs du club (VI p.6).
+   Ils se posent un a un au chargement, dans l'ordre de lecture du logo. */
+.logo__value {
+  transform-origin: 50% 50%;
+  animation: value-land 0.42s var(--ease-spring) both;
+}
+
+/* Cascade courte : 55 ms entre deux carres. Au-dela, l'en-tete parait lente. */
+.logo__value--1 { animation-delay: 0.06s; }
+.logo__value--2 { animation-delay: 0.115s; }
+.logo__value--3 { animation-delay: 0.17s; }
+.logo__value--4 { animation-delay: 0.225s; }
+
+/* On ne part jamais de scale(0) : rien n'apparait de nulle part dans la
+   vraie vie. Le carre est deja la, simplement plus petit et transparent. */
+@keyframes value-land {
+  from { opacity: 0; transform: scale(0.86) rotate(-12deg); }
+  to   { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* A chaque bonne reponse, le JS pose data-pulse="correct" sur .backdrop.
+   .backdrop precede .game dans le HTML, donc le combinateur ~ permet de
+   remonter l'information jusqu'au logo sans toucher au JS du logo. */
+.backdrop[data-pulse="correct"] ~ .game .logo__value {
+  animation: value-pop 0.34s var(--ease-spring) both;
+}
+
+.backdrop[data-pulse="correct"] ~ .game .logo__value--1 { animation-delay: 0s; }
+.backdrop[data-pulse="correct"] ~ .game .logo__value--2 { animation-delay: 0.04s; }
+.backdrop[data-pulse="correct"] ~ .game .logo__value--3 { animation-delay: 0.08s; }
+.backdrop[data-pulse="correct"] ~ .game .logo__value--4 { animation-delay: 0.12s; }
+
+/* Un gonflement de 20 % suffit a lire l'applaudissement. Au-dela, le logo
+   se met a sauter et devient le sujet de l'ecran, ce qu'il n'est pas. */
+@keyframes value-pop {
+  0%, 100% { transform: scale(1); }
+  45%      { transform: scale(1.2); }
+}
+
+.topbar__label {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+/* Sur-titre : petites capitales, orange, comme les en-tetes des planches VI */
+.topbar__kicker {
+  font-size: 0.72rem;
+  font-weight: var(--w-bold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--etic-orange);
+}
+
+.topbar__case {
+  font-size: 0.8rem;
+  font-weight: var(--w-medium);
+  color: rgba(35, 31, 32, 0.6);
+}
+
+
+/* =====================================================================
+   5. SYSTEME D'ECRANS
+   Un seul ecran visible a la fois. Les ecrans inactifs sont retires du
+   flux ET de l'arbre d'accessibilite, pour eviter le focus fantome.
+   ===================================================================== */
+
+.screen {
+  display: none;
+}
+
+/* L'ecran actif apparait avec une montee douce */
+.screen--active {
+  display: block;
+  animation: screen-in 0.28s var(--ease-out) both;
+}
+
+@keyframes screen-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* =====================================================================
+   6. CARTES ET TYPOGRAPHIE
+   ===================================================================== */
+
+.card {
+  /* Carte blanche pleine, comme les "white cards" de la planche VI p.21.
+     Pas de verre depoli : la charte pose des surfaces franches sur le
+     beige, et un fond translucide rendrait le decor illisible derriere
+     le texte tout en coutant une passe de flou a chaque image. */
+  background: #FFFFFF;
+  /* Contour charbon epais + ombre portee nette : le traitement "sticker"
+     de la charte, deja utilise par "Devine le Prix". */
+  border: 2.5px solid var(--etic-black);
+  border-radius: var(--radius-card);
+  box-shadow: 5px 5px 0 var(--etic-black), var(--shadow-soft);
+  padding: clamp(22px, 6vw, 36px);
+  text-align: center;
+  /* Reference de positionnement et contexte d'empilement : les elements
+     decoratifs de la carte (ruban d'accent, gerbe finale) se placent en
+     z-index negatif, donc au-dessus du fond blanc mais sous le texte. */
+  position: relative;
+  z-index: 0;
+  /* Les stickers d'angle debordent volontairement : le decoupage est
+     porte par .card__clip et .cheer, pas par la carte elle-meme. */
+  overflow: visible;
+}
+
+/* Calque de decoupage interne : tout ce qu'il contient est coupe net par
+   l'arrondi de la carte, sans empecher les stickers de deborder. */
+.card__clip {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  pointer-events: none;
+}
+
+/* Grand titre : Gotham Black, tout en capitales (hierarchie VI p.19) */
+.title-xl {
+  font-weight: var(--w-black);
+  font-size: clamp(2rem, 9vw, 3rem);
+  line-height: 0.95;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  /* Texte en Gradient 1 : combinaison autorisee sur beige (VI p.13) */
+  background: var(--etic-gradient-1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Sous-titre manuscrit : role de "Sub-Title" dans la hierarchie (VI p.19),
+   en orange, comme sur toutes les planches de la charte. */
+.script {
+  font-family: var(--font-script);
+  font-weight: var(--w-bold);
+  font-size: clamp(1.45rem, 5.5vw, 1.9rem);
+  line-height: 1;
+  color: var(--etic-orange);
+}
+
+.script--start {
+  margin-bottom: 6px;
+}
+
+.script--result {
+  margin-bottom: 2px;
+}
+
+/* Chapeau : le texte d'accroche sous le titre */
+.lede {
+  margin-top: 14px;
+  font-size: 0.98rem;
+  font-weight: var(--w-medium);
+  color: rgba(35, 31, 32, 0.78);
+}
+
+.lede strong {
+  font-weight: var(--w-black);
+  color: var(--etic-red);
+}
+
+/* Note secondaire, plus discrete que le chapeau */
+.hint {
+  margin-top: 16px;
+  font-size: 0.82rem;
+  color: rgba(35, 31, 32, 0.5);
+}
+
+/* Ruban d'accent de la carte d'accueil : l'asset de la charte sert ici de
+   composition, pas de papier peint. Il deborde volontairement du coin.
+   La carte est en overflow: hidden, donc il est coupe net par l'arrondi. */
+.card__accent {
+  position: absolute;
+  top: -26px;
+  right: -34px;
+  width: clamp(120px, 30vw, 168px);
+  opacity: 0.22;
+  transform: rotate(14deg);
+  pointer-events: none;
+}
+
+
+/* =====================================================================
+   6 bis. STICKERS D'ANGLE (assets VI, planche "Stickers")
+   Les trois memes stickers que "Devine le Prix", poses a cheval sur les
+   coins des cartes. Purement decoratifs, donc jamais cliquables.
+   ===================================================================== */
+
+.card-sticker {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  transition: transform 0.35s var(--ease-spring);
+}
+
+.card-sticker img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(35, 31, 32, 0.20));
+}
+
+.card-sticker.sticker-star {
+  top: -18px;
+  right: -16px;
+  width: 50px;
+  height: 50px;
+  transform: rotate(14deg);
+}
+
+.card-sticker.sticker-oval {
+  top: -16px;
+  left: -14px;
+  width: 44px;
+  height: 44px;
+  transform: rotate(-10deg);
+}
+
+.card-sticker.sticker-cube {
+  bottom: -16px;
+  right: -12px;
+  width: 44px;
+  height: 44px;
+  transform: rotate(12deg);
+}
+
+/* Au survol de la carte, les stickers se redressent legerement. */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .sticker-star,
+  .qcard:hover .sticker-star { transform: rotate(22deg) scale(1.1); }
+
+  .card:hover .sticker-oval,
+  .qcard:hover .sticker-oval { transform: rotate(-18deg) scale(1.1); }
+
+  .card:hover .sticker-cube,
+  .qcard:hover .sticker-cube { transform: rotate(-16deg) scale(1.1); }
+}
+
+
+/* =====================================================================
+   7. ECRAN D'ACCUEIL — pastilles de regles
+   ===================================================================== */
+
+.rules {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 22px;
+}
+
+/* Capsule dans le Gradient 2 de la charte (VI p.12) */
+.rule {
+  background: var(--etic-gradient-2);
+  border-radius: var(--radius-sm);
+  padding: 14px 8px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  box-shadow: var(--shadow-soft);
+  animation: pop-in 0.34s var(--ease-spring) both;
+}
+
+/* Cascade de 50 ms : assez pour se lire, assez court pour ne pas retarder
+   le geste du joueur, qui peut cliquer "Commencer" pendant l'animation. */
+.rule:nth-child(1) { animation-delay: 0.06s; }
+.rule:nth-child(2) { animation-delay: 0.11s; }
+.rule:nth-child(3) { animation-delay: 0.16s; }
+
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.rule__num {
+  font-size: 1.5rem;
+  font-weight: var(--w-black);
+  line-height: 1;
+}
+
+.rule__num em {
+  font-style: normal;
+  font-size: 0.8rem;
+  font-weight: var(--w-bold);
+}
+
+.rule__txt {
+  font-size: 0.66rem;
+  font-weight: var(--w-bold);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  opacity: 0.92;
+}
+
+
+/* =====================================================================
+   8. BOUTON PRINCIPAL
+   ===================================================================== */
+
+.btn {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bouton plein dans le Gradient 1. Le degrade fait deux fois la hauteur
+   du bouton : au survol, on fait glisser sa position plutot que de
+   changer la couleur, ce qui donne un fondu propre. */
+.btn--primary {
+  margin-top: 22px;
+  width: 100%;
+  padding: 17px 28px;
+  border-radius: var(--radius-pill);
+  background: var(--etic-gradient-1);
+  background-size: 100% 220%;
+  background-position: 0% 0%;
+  color: var(--etic-beige);
+  font-weight: var(--w-black);
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-lift);
+  transition:
+    transform 0.16s var(--ease-out),
+    background-position 0.24s var(--ease-out),
+    box-shadow 0.2s var(--ease-out);
+}
+
+/* Le survol est reserve aux pointeurs fins. Sur un telephone, un :hover
+   non filtre se declenche au doigt et reste colle apres le tap. */
+@media (hover: hover) and (pointer: fine) {
+  /* Le degrade glisse vers l'orange et le bouton se souleve */
+  .btn--primary:hover {
+    background-position: 0% 100%;
+    transform: translateY(-2px);
+  }
+}
+
+/* Au clic : enfoncement net, pour un retour tactile credible.
+   L'appui doit repondre partout, y compris au doigt : pas de media query. */
+.btn--primary:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+
+/* =====================================================================
+   9. HUD DU QUIZ — progression, chrono, score
+   ===================================================================== */
+
+.hud {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+/* Pastilles de progression : une par question */
+.pips {
+  display: flex;
+  /* Jamais de retour a la ligne : dix pastilles sur deux rangees se lisent
+     comme un bug d'affichage, pas comme une progression. */
+  flex-wrap: nowrap;
+  gap: 5px;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+/* Etat par defaut : petite pastille creuse */
+.pip {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(35, 31, 32, 0.14);
+  transition: width 0.2s var(--ease-out), background 0.2s var(--ease-out), transform 0.2s var(--ease-spring);
+}
+
+/* Question en cours : pastille orange elargie en capsule */
+.pip--current {
+  width: 18px;
+  border-radius: var(--radius-pill);
+  background: var(--etic-orange);
+}
+
+/* Question deja repondue juste */
+.pip--correct {
+  background: var(--etic-correct);
+  transform: scale(1.12);
+}
+
+/* Question deja ratee (ou temps ecoule) */
+.pip--wrong {
+  background: var(--etic-wrong);
+  transform: scale(1.12);
+}
+
+/* --- Chrono circulaire --- */
+.timer {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+
+.timer svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  /* L'anneau doit partir du haut : on fait pivoter tout le SVG d'un quart de tour. */
+  transform: rotate(-90deg);
+}
+
+/* Piste de fond : elle rappelle qu'il y a un tour complet a parcourir */
+.timer__track {
+  fill: none;
+  stroke: rgba(35, 31, 32, 0.1);
+  stroke-width: 8;
+}
+
+/* Anneau de progression : le JS ecrit stroke-dasharray/dashoffset */
+.timer__ring {
+  fill: none;
+  stroke: var(--etic-teal);
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke 0.3s linear;
+}
+
+/* Derniere ligne droite : l'anneau vire a l'orange puis au rouge */
+.timer.is-warning .timer__ring { stroke: var(--etic-orange); }
+.timer.is-warning .timer__value { color: var(--etic-orange); }
+
+.timer.is-critical .timer__ring { stroke: var(--etic-red); }
+.timer.is-critical .timer__value { color: var(--etic-red); }
+.timer.is-critical { animation: pulse 0.6s var(--ease-out) infinite; }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.07); }
+}
+
+.timer__value {
+  position: relative;
+  font-weight: var(--w-black);
+  font-size: 1.2rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--etic-teal);
+  transition: color 0.3s linear;
+}
+
+/* --- Puce de score courant --- */
+.score-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.1;
+  flex: none;
+}
+
+.score-chip__label {
+  font-size: 0.6rem;
+  font-weight: var(--w-bold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(35, 31, 32, 0.45);
+}
+
+.score-chip__value {
+  font-size: 1.35rem;
+  font-weight: var(--w-black);
+  font-variant-numeric: tabular-nums;
+  color: var(--etic-red);
+  display: inline-block;
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.score-chip__value.is-bumped {
+  animation: bump 0.45s var(--ease-spring);
+}
+
+@keyframes bump {
+  0%, 100% { transform: scale(1); }
+  40%      { transform: scale(1.22); }
+}
+
+
+/* =====================================================================
+   10. CARTE QUESTION ET TRANSITIONS
+   ===================================================================== */
+
+/* La piste garde une hauteur stable pendant le croisement des deux cartes */
+.stage {
+  position: relative;
+  min-height: 250px;
+}
+
+.qcard {
+  position: relative;
+  background: #FFFFFF;
+  border: 2.5px solid var(--etic-black);
+  border-radius: var(--radius-card);
+  box-shadow: 5px 5px 0 var(--etic-black), var(--shadow-soft);
+  padding: clamp(20px, 5.5vw, 30px);
+  display: flex;
+  flex-direction: column;
+  /* La bordure de gauche, plus epaisse, prend la couleur du verdict
+     apres la reponse. Elle reste charbon tant qu'on n'a pas repondu. */
+  border-left-width: 6px;
+  transition:
+    border-color 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out);
+}
+
+/* Entree : la carte arrive depuis la droite */
+.qcard--enter {
+  animation: card-in 0.45s var(--ease-out) both;
+}
+
+@keyframes card-in {
+  from { opacity: 0; transform: translateX(46px) scale(0.97); }
+  to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+/* Sortie : la carte s'echappe vers la gauche. Elle quitte le flux pour
+   ne plus peser sur la hauteur de la piste pendant le croisement. */
+.qcard--exit {
+  position: absolute;
+  inset: 0;
+  animation: card-out 0.35s var(--ease-out) both;
+  pointer-events: none;
+}
+
+@keyframes card-out {
+  from { opacity: 1; transform: translateX(0) scale(1); }
+  to   { opacity: 0; transform: translateX(-46px) scale(0.97); }
+}
+
+/* Ligne d'en-tete de la carte : numero a gauche, categorie a droite */
+.qcard__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.qcard__index {
+  font-size: 0.68rem;
+  font-weight: var(--w-bold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(35, 31, 32, 0.4);
+}
+
+.qcard__tag {
+  font-size: 0.62rem;
+  font-weight: var(--w-black);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  /* Meme pastille que la "category-tag" de "Devine le Prix" : fond orange
+     pale, contour assorti. */
+  color: var(--etic-orange);
+  background: rgba(236, 158, 0, 0.12);
+  border: 1.5px solid rgba(236, 158, 0, 0.4);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+/* Une question du club se distingue au premier coup d'oeil */
+.qcard__tag--insider {
+  background: rgba(2, 169, 162, 0.12);
+  border-color: rgba(2, 169, 162, 0.4);
+  color: var(--etic-teal);
+}
+
+/* --- Vitrine : pastille d'icone + affirmation ---
+   Reprise de la composition "item-showcase" de "Devine le Prix". */
+.qcard__showcase {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #FFFDF9;
+  border: 2px solid rgba(35, 31, 32, 0.12);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+/* Pastille d'icone : carre charbon a ombre nette, comme l'avatar objet. */
+.qcard__avatar {
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FFFFFF 0%, rgba(236, 158, 0, 0.08) 100%);
+  border: 2.5px solid var(--etic-black);
+  border-radius: var(--radius-sm);
+  box-shadow: 3px 3px 0 var(--etic-black);
+  transition: transform 0.25s var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .qcard:hover .qcard__avatar { transform: scale(1.04) rotate(-2deg); }
+}
+
+.qcard__emoji {
+  font-size: 2.4rem;
+  line-height: 1;
+  user-select: none;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* La pastille prend la couleur du verdict en meme temps que la carte. */
+.qcard.is-correct .qcard__avatar { border-color: var(--etic-correct); box-shadow: 3px 3px 0 var(--etic-correct); }
+.qcard.is-wrong   .qcard__avatar { border-color: var(--etic-wrong);   box-shadow: 3px 3px 0 var(--etic-wrong); }
+
+.qcard__statement {
+  flex: 1;
+  font-size: clamp(1.05rem, 4.2vw, 1.3rem);
+  font-weight: var(--w-bold);
+  line-height: 1.35;
+  text-align: left;
+}
+
+/* --- Panneau de feedback ---
+   On anime une hauteur "auto" proprement, en repliant une rangee de grille
+   de 1fr a 0fr : c'est la seule facon d'obtenir une transition fluide sans
+   connaitre la hauteur du contenu a l'avance. */
+.qcard__feedback {
+  margin-top: 16px;
+  border-radius: var(--radius-sm);
+  background: rgba(35, 31, 32, 0.04);
+  text-align: left;
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  padding: 0 16px;
+  transition:
+    grid-template-rows 0.28s var(--ease-out),
+    opacity 0.22s var(--ease-out),
+    padding 0.28s var(--ease-out),
+    background 0.22s var(--ease-out);
+}
+
+/* Le contenu doit etre ecrase tant que la rangee vaut 0fr */
+.qcard__feedback-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Ouvert : la rangee se deploie a sa hauteur naturelle */
+.qcard.is-answered .qcard__feedback {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  padding: 14px 16px;
+}
+
+.qcard__verdict {
+  display: block;
+  font-weight: var(--w-black);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.qcard__explanation {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: rgba(35, 31, 32, 0.75);
+}
+
+/* Etat "bonne reponse" : bordure, fond et verdict verts */
+.qcard.is-correct {
+  border-left-color: var(--etic-correct);
+  /* Petit rebond de satisfaction */
+  animation: card-correct 0.5s var(--ease-spring);
+}
+
+.qcard.is-correct .qcard__feedback { background: var(--etic-correct-soft); }
+.qcard.is-correct .qcard__verdict { color: var(--etic-correct); }
+
+@keyframes card-correct {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(1.025); }
+  100% { transform: scale(1); }
+}
+
+/* Etat "mauvaise reponse" : bordure et verdict rouges + secousse breve */
+.qcard.is-wrong {
+  border-left-color: var(--etic-wrong);
+  animation: card-wrong 0.42s var(--ease-out);
+}
+
+.qcard.is-wrong .qcard__feedback { background: var(--etic-wrong-soft); }
+.qcard.is-wrong .qcard__verdict { color: var(--etic-wrong); }
+
+@keyframes card-wrong {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-8px); }
+  40%      { transform: translateX(7px); }
+  60%      { transform: translateX(-4px); }
+  80%      { transform: translateX(2px); }
+}
+
+
+/* =====================================================================
+   11. BOUTONS VRAI / FAUX
+   ===================================================================== */
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn-answer {
+  font-family: inherit;
+  cursor: pointer;
+  background: #FFFFFF;
+  border: 2px solid rgba(35, 31, 32, 0.1);
+  border-radius: var(--radius-sm);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-weight: var(--w-black);
+  font-size: 0.98rem;
+  letter-spacing: 0.1em;
+  /* Le transform est plus court que la couleur : la main doit sentir la
+     reponse avant que l'oeil ne voie le remplissage se terminer. */
+  transition:
+    transform 0.14s var(--ease-out),
+    box-shadow 0.2s var(--ease-out),
+    background 0.2s var(--ease-out),
+    color 0.2s var(--ease-out),
+    border-color 0.2s var(--ease-out),
+    opacity 0.2s var(--ease-out);
+}
+
+.btn-answer__icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* Repos : chaque bouton porte deja sa couleur d'intention */
+.btn-answer--true  { color: var(--etic-teal); border-color: rgba(2, 169, 162, 0.28); }
+.btn-answer--false { color: var(--etic-red);  border-color: rgba(193, 51, 63, 0.28); }
+
+/* Survol : le bouton se remplit de sa couleur. Uniquement a la souris,
+   sinon le remplissage reste fige sur mobile apres le tap. */
+@media (hover: hover) and (pointer: fine) {
+  .btn-answer:not(:disabled):hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .btn-answer--true:not(:disabled):hover {
+    background: var(--etic-gradient-5);
+    color: var(--etic-beige);
+    border-color: transparent;
+  }
+
+  .btn-answer--false:not(:disabled):hover {
+    background: var(--etic-gradient-1);
+    color: var(--etic-beige);
+    border-color: transparent;
+  }
+}
+
+/* L'appui, lui, doit repondre sur tous les supports. */
+.btn-answer:not(:disabled):active {
+  transform: translateY(0) scale(0.96);
+}
+
+/* Boutons verrouilles pendant l'affichage du feedback */
+.btn-answer:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+
+/* Le choix du joueur reste pleinement visible malgre le verrouillage */
+.btn-answer.is-picked { opacity: 1; }
+
+.btn-answer.is-picked.is-correct {
+  background: var(--etic-gradient-5);
+  color: var(--etic-beige);
+  border-color: transparent;
+}
+
+.btn-answer.is-picked.is-wrong {
+  background: var(--etic-gradient-1);
+  color: var(--etic-beige);
+  border-color: transparent;
+}
+
+/* Si le joueur s'est trompe, la bonne case se signale sans se remplir */
+.btn-answer.is-revealed {
+  opacity: 1;
+  border-color: var(--etic-correct);
+  color: var(--etic-correct);
+  animation: reveal-blink 0.6s var(--ease-out) 2;
+}
+
+@keyframes reveal-blink {
+  0%, 100% { background: #FFFFFF; }
+  50%      { background: var(--etic-correct-soft); }
+}
+
+
+/* =====================================================================
+   12. ECRAN DE RESULTAT
+   ===================================================================== */
+
+/* --- Gerbe de rubans (assets VI p.21) ---
+   Le JS depose quelques rubans de la charte au-dessus de la carte de
+   resultat : chauds si la case est ratee, froids si elle est validee.
+   La couche ne capte aucun clic et reste invisible aux lecteurs d'ecran. */
+.cheer {
+  position: absolute;
+  inset: 0;
+  /* z-index negatif : la gerbe passe AU-DESSUS du fond de la carte mais
+     RESTE SOUS le texte, donc le score reste parfaitement lisible. */
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+/* Un ruban de la gerbe. Sa trajectoire est decrite par les variables
+   posees en ligne par le JS (position d'arrivee, angle, taille, retard). */
+.cheer__ribbon {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--w);
+  height: auto;
+  opacity: 0;
+  animation: cheer-in 0.62s var(--ease-spring) var(--delay) both;
+}
+
+/* Entree : le ruban se deplie sur place plutot que de surgir de nulle part.
+   Il part deja visible a 70 % de sa taille, tourne d'un quart de tour, puis
+   se stabilise a faible opacite pour ne pas manger la lecture du score. */
+@keyframes cheer-in {
+  0%   { opacity: 0;    transform: translate(-50%, -50%) scale(0.7) rotate(calc(var(--r) - 45deg)); }
+  55%  { opacity: 0.7;  transform: translate(-50%, -50%) scale(1.08) rotate(calc(var(--r) + 6deg)); }
+  100% { opacity: 0.34; transform: translate(-50%, -50%) scale(1) rotate(var(--r)); }
+}
+
+/* Badge de verdict, au-dessus du score */
+.verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  font-weight: var(--w-black);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--etic-beige);
+  animation: pop-in 0.34s var(--ease-spring) 0.08s both;
+}
+
+/* Case validee : fond Gradient 5 (fond autorise, VI p.13) */
+.verdict--passed { background: var(--etic-gradient-5); }
+
+/* Case ratee : fond Gradient 1 */
+.verdict--failed { background: var(--etic-gradient-1); }
+
+.verdict__icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Le compteur de score : chiffres a chasse fixe pour eviter le tremblement
+   pendant l'incrementation. */
+.odometer {
+  font-variant-numeric: tabular-nums;
+  display: inline-block;
+}
+
+/* Detail du calcul */
+.breakdown {
+  margin-top: 22px;
+  border-top: 1px solid rgba(35, 31, 32, 0.1);
+}
+
+.breakdown__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(35, 31, 32, 0.08);
+  animation: fade-up 0.32s var(--ease-out) both;
+}
+
+.breakdown__row:nth-child(1) { animation-delay: 0.3s; }
+.breakdown__row:nth-child(2) { animation-delay: 0.36s; }
+.breakdown__row:nth-child(3) { animation-delay: 0.42s; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.breakdown__row dt {
+  font-size: 0.85rem;
+  color: rgba(35, 31, 32, 0.6);
+}
+
+.breakdown__row dd {
+  margin: 0;
+  font-weight: var(--w-bold);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Barre du seuil de validation --- */
+.threshold {
+  margin-top: 20px;
+  animation: fade-up 0.32s var(--ease-out) 0.5s both;
+}
+
+.threshold__bar {
+  position: relative;
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(35, 31, 32, 0.1);
+  overflow: hidden;
+}
+
+/* Remplissage : la barre fait toute la largeur et c'est son scaleX que le
+   JS pilote. Animer width ferait recalculer la mise en page a chaque image ;
+   scaleX ne touche qu'a la composition, donc reste sur le GPU. */
+.threshold__fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--radius-pill);
+  background: var(--etic-gradient-5);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.7s var(--ease-out) 0.5s, background 0.2s var(--ease-out);
+}
+
+/* Quand la case est ratee, le remplissage passe en Gradient 1 */
+.threshold__fill.is-failed { background: var(--etic-gradient-1); }
+
+/* Repere vertical du seuil, place a 60 % = 6 bonnes reponses sur 10.
+   Inset a 0 : la barre est en overflow:hidden, un depassement serait rogne. */
+.threshold__notch {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 60%;
+  width: 2px;
+  background: var(--etic-black);
+  opacity: 0.45;
+}
+
+.threshold__mark {
+  display: block;
+  margin-top: 7px;
+  font-size: 0.7rem;
+  font-weight: var(--w-medium);
+  letter-spacing: 0.06em;
+  color: rgba(35, 31, 32, 0.5);
+}
+
+
+/* =====================================================================
+   13. ADAPTATIONS DESKTOP
+   ===================================================================== */
+
+@media (min-width: 720px) {
+  /* Le chrono peut respirer davantage */
+  .timer { width: 74px; height: 74px; }
+  .timer__value { font-size: 1.4rem; }
+
+  /* Le bouton principal n'a plus besoin de la pleine largeur */
+  .btn--primary {
+    width: auto;
+    min-width: 260px;
+    padding: 17px 42px;
+  }
+
+  /* Sur grand ecran, le decor occupe beaucoup plus de surface qu'un
+     telephone : on l'attenue pour qu'il reste un fond, pas des confettis. */
+  .shape-wavy { opacity: 0.18; }
+  .shape-wavy-bottom { opacity: 0.15; }
+}
+
+
+/* =====================================================================
+   14. PREFERENCES D'ACCESSIBILITE
+   ===================================================================== */
+
+/* Mouvement reduit : on coupe tout ce qui bouge, on garde les etats.
+   Le jeu reste integralement jouable, seules les animations tombent. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  /* Le remplissage du seuil doit rester visible sans sa transition */
+  .threshold__fill { transition: none; }
+
+  /* Le decor de fond ne bouge plus du tout : il devient une image fixe. */
+  .shape-wavy,
+  .shape-wavy-bottom { animation: none; }
+}
+
+/* Contraste eleve : on renforce les bordures des surfaces */
+@media (prefers-contrast: more) {
+  /* Les cartes portent deja un contour charbon plein : seuls les boutons
+     de reponse ont besoin d'etre renforces. */
+  .btn-answer {
+    border-color: rgba(35, 31, 32, 0.35);
+  }
+
+  .lede,
+  .hint,
+  .qcard__explanation {
+    color: var(--etic-black);
+  }
+}

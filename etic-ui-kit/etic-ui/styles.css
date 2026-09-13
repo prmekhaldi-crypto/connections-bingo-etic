@@ -1,0 +1,204 @@
+@import "./tokens.css";
+@import "./brand.css";
+@import "./art-gradients.css";
+/* Only named etic classes receive styles. No reset or descendant button/canvas rules. */
+.etic-button,
+.etic-card,
+.etic-panel,
+.etic-status {
+  box-sizing: border-box;
+}
+.etic-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--etic-space-2);
+  min-height: 48px;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid var(--etic-action);
+  border-radius: var(--etic-radius-sm);
+  background: var(--etic-action);
+  color: var(--etic-on-action);
+  font: inherit;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform var(--etic-duration) var(--etic-ease),
+    box-shadow var(--etic-duration) var(--etic-ease);
+}
+.etic-button:hover:not(:disabled) {
+  box-shadow: 0 3px 0 var(--etic-ink);
+  transform: translateY(-2px);
+}
+.etic-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+.etic-button--secondary {
+  background: var(--etic-surface);
+  color: var(--etic-action);
+}
+.etic-button--quiet {
+  background: transparent;
+  color: var(--etic-text);
+  border-color: transparent;
+}
+.etic-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.etic-icon-button {
+  width: 48px;
+  padding: 0.5rem;
+  flex-shrink: 0;
+}
+.etic-theme
+  :where(
+    a,
+    button,
+    input,
+    select,
+    textarea,
+    summary,
+    [tabindex]
+  ):focus-visible {
+  outline: 3px solid var(--etic-focus);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 4px var(--etic-beige);
+}
+.etic-card {
+  background: var(--etic-surface);
+  border: 1px solid var(--etic-border);
+  border-radius: var(--etic-radius-lg);
+  padding: var(--etic-space-6);
+}
+.etic-panel {
+  background: var(--etic-surface);
+  border: 1px solid var(--etic-ink);
+  border-radius: var(--etic-radius-md);
+  padding: var(--etic-space-6);
+}
+.etic-heading {
+  font-family: var(--etic-font-display);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  margin: 0;
+  font-weight: 850;
+  text-wrap: balance;
+}
+.etic-copy {
+  max-width: 70ch;
+  margin: 0;
+}
+.etic-muted {
+  color: var(--etic-muted);
+}
+.etic-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--etic-space-4);
+}
+.etic-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--etic-space-3);
+}
+.etic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid currentColor;
+  border-radius: 100px;
+  font-size: var(--etic-text-sm);
+  font-weight: 650;
+  width: fit-content;
+}
+.etic-badge--success {
+  color: var(--etic-success);
+}
+.etic-badge--error {
+  color: var(--etic-error);
+}
+.etic-status {
+  display: flex;
+  gap: var(--etic-space-3);
+  padding: var(--etic-space-4);
+  border: 1px solid currentColor;
+  border-radius: var(--etic-radius-sm);
+  color: var(--etic-text);
+  background: var(--etic-surface);
+}
+.etic-status--success {
+  color: var(--etic-success);
+}
+.etic-status--error {
+  color: var(--etic-error);
+}
+.etic-instructions {
+  margin: 0;
+  padding-inline-start: 1.4rem;
+  max-width: 70ch;
+}
+.etic-instructions li + li {
+  margin-block-start: 0.5rem;
+}
+.etic-progress {
+  display: grid;
+  gap: 0.5rem;
+}
+.etic-progress__label {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: var(--etic-text-sm);
+}
+.etic-progress__track {
+  width: 100%;
+  height: 10px;
+  border: 1px solid var(--etic-border);
+  border-radius: 100px;
+  appearance: none;
+  background: var(--etic-beige);
+  overflow: hidden;
+}
+.etic-progress__track::-webkit-progress-bar {
+  background: var(--etic-beige);
+}
+.etic-progress__track::-webkit-progress-value {
+  background: var(--etic-red);
+}
+.etic-progress__track::-moz-progress-bar {
+  background: var(--etic-red);
+}
+.etic-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--etic-logo-width, 72px) * 0.17);
+  flex-shrink: 0;
+}
+.etic-logo__image {
+  display: block;
+  width: var(--etic-logo-width, 72px);
+  height: auto;
+}
+.etic-decoration {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+.etic-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

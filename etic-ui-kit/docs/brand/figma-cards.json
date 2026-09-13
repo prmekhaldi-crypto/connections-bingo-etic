@@ -1,0 +1,388 @@
+[
+  {
+    "id": "1:2092",
+    "name": "Frame 15",
+    "width": 659.2189331054688,
+    "height": 472.5696716308594,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 0.8799999952316284,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "boundVariables": {}
+      }
+    ],
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "visible": true,
+        "radius": 34.749549865722656,
+        "boundVariables": {},
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.17000000178813934
+        },
+        "offset": {
+          "x": 0,
+          "y": 2.316636562347412
+        },
+        "spread": 0,
+        "blendMode": "NORMAL",
+        "showShadowBehindNode": false
+      }
+    ],
+    "cornerRadius": 21.42888832092285,
+    "rotation": -6.086041302266183,
+    "children": [
+      {
+        "id": "1:2093",
+        "name": "Type 2",
+        "type": "TEXT"
+      },
+      {
+        "id": "1:2094",
+        "name": "Layer 23",
+        "type": "GROUP"
+      },
+      {
+        "id": "1:2123",
+        "name": "Layer 23",
+        "type": "GROUP"
+      },
+      {
+        "id": "1:2152",
+        "name": "Layer 23",
+        "type": "GROUP"
+      },
+      {
+        "id": "1:2172",
+        "name": "Layer 2",
+        "type": "GROUP"
+      },
+      {
+        "id": "1:2183",
+        "name": "Layer 24",
+        "type": "GROUP"
+      },
+      {
+        "id": "1:2203",
+        "name": "Layer 2",
+        "type": "GROUP"
+      }
+    ]
+  },
+  {
+    "id": "1:2232",
+    "name": "Frame 16",
+    "width": 679.7406005859375,
+    "height": 504.1588439941406,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 0.8799999952316284,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "boundVariables": {}
+      }
+    ],
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "visible": true,
+        "radius": 34.749549865722656,
+        "boundVariables": {},
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.17000000178813934
+        },
+        "offset": {
+          "x": 0,
+          "y": 2.316636562347412
+        },
+        "spread": 0,
+        "blendMode": "NORMAL",
+        "showShadowBehindNode": false
+      }
+    ],
+    "cornerRadius": 21.42888832092285,
+    "rotation": 7.434313363067373,
+    "children": [
+      {
+        "id": "1:2233",
+        "name": "Type 1",
+        "type": "TEXT"
+      },
+      {
+        "id": "1:2234",
+        "name": "Layer 1",
+        "type": "GROUP"
+      },
+      {
+        "id": "1:2253",
+        "name": "Layer 2",
+        "type": "GROUP"
+      },
+      {
+        "id": "1:2282",
+        "name": "Layer 16",
+        "type": "GROUP"
+      },
+      {
+        "id": "1:2302",
+        "name": "Layer 2",
+        "type": "GROUP"
+      },
+      {
+        "id": "1:2331",
+        "name": "Layer 2",
+        "type": "GROUP"
+      },
+      {
+        "id": "1:2351",
+        "name": "Layer 23",
+        "type": "GROUP"
+      },
+      {
+        "id": "1:2380",
+        "name": "Layer 2",
+        "type": "GROUP"
+      }
+    ]
+  },
+  {
+    "id": "1:2669",
+    "name": "Group 82",
+    "width": 422,
+    "height": 104,
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "visible": true,
+        "radius": 16.299999237060547,
+        "boundVariables": {},
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.25
+        },
+        "offset": {
+          "x": 0,
+          "y": 4
+        },
+        "spread": -3,
+        "blendMode": "NORMAL",
+        "showShadowBehindNode": false
+      }
+    ],
+    "rotation": 3.517868047902526,
+    "children": [
+      {
+        "id": "1:2670",
+        "name": "Frame 139",
+        "type": "FRAME"
+      }
+    ]
+  },
+  {
+    "id": "1:2793",
+    "name": "Group 82",
+    "width": 517.3525390625,
+    "height": 175.7200469970703,
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "visible": true,
+        "radius": 16.299999237060547,
+        "boundVariables": {},
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.25
+        },
+        "offset": {
+          "x": 0,
+          "y": 4
+        },
+        "spread": -3,
+        "blendMode": "NORMAL",
+        "showShadowBehindNode": false
+      }
+    ],
+    "rotation": 3.517868047902526,
+    "children": [
+      {
+        "id": "1:2794",
+        "name": "Frame 139",
+        "type": "FRAME"
+      }
+    ]
+  },
+  {
+    "id": "1:2862",
+    "name": "Group 131",
+    "width": 400.1124267578125,
+    "height": 139.0294189453125,
+    "effects": [],
+    "rotation": 5.335175081307786,
+    "children": [
+      {
+        "id": "1:2863",
+        "name": "Rectangle 28",
+        "type": "RECTANGLE"
+      },
+      {
+        "id": "1:2864",
+        "name": "Pattern",
+        "type": "GROUP"
+      }
+    ]
+  },
+  {
+    "id": "1:3352",
+    "name": "Frame 121",
+    "width": 304,
+    "height": 349,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 0.8799999952316284,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "boundVariables": {}
+      }
+    ],
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "visible": true,
+        "radius": 16.299999237060547,
+        "boundVariables": {},
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.25
+        },
+        "offset": {
+          "x": 0,
+          "y": 4
+        },
+        "spread": -3,
+        "blendMode": "NORMAL",
+        "showShadowBehindNode": false
+      }
+    ],
+    "cornerRadius": 22,
+    "rotation": 0,
+    "children": []
+  },
+  {
+    "id": "1:3439",
+    "name": "Frame 121",
+    "width": 304,
+    "height": 349,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 0.8799999952316284,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "boundVariables": {}
+      }
+    ],
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "visible": true,
+        "radius": 16.299999237060547,
+        "boundVariables": {},
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.25
+        },
+        "offset": {
+          "x": 0,
+          "y": 4
+        },
+        "spread": -3,
+        "blendMode": "NORMAL",
+        "showShadowBehindNode": false
+      }
+    ],
+    "cornerRadius": 22,
+    "rotation": 0,
+    "children": []
+  },
+  {
+    "id": "1:1003",
+    "name": "Rectangle 28",
+    "width": 1488,
+    "height": 714,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 0.9599999785423279,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "boundVariables": {}
+      }
+    ],
+    "effects": [
+      {
+        "type": "DROP_SHADOW",
+        "visible": true,
+        "radius": 60,
+        "boundVariables": {},
+        "color": {
+          "r": 0,
+          "g": 0,
+          "b": 0,
+          "a": 0.07000000029802322
+        },
+        "offset": {
+          "x": 0,
+          "y": 4
+        },
+        "spread": 0,
+        "blendMode": "NORMAL",
+        "showShadowBehindNode": false
+      }
+    ],
+    "cornerRadius": 38,
+    "rotation": 0
+  }
+]

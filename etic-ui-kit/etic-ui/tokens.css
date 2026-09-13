@@ -1,0 +1,72 @@
+/* Official palette: Figma 1:1460. All other scales/semantic assignments are app choices. */
+.etic-theme {
+  --etic-teal: #02a9a2;
+  --etic-red: #c1333f;
+  --etic-yellow: #ffca00;
+  --etic-orange: #ec9e00;
+  --etic-green: #1aaf5d;
+  --etic-ink: #272421;
+  --etic-beige: #fffcf7;
+  --etic-mint: #00dabf;
+  --etic-pink: #f6415c;
+  /* Web adaptations of verified stops; source transforms live in docs/brand. */
+  --etic-gradient-1: linear-gradient(
+    135deg,
+    #c1333f 16.8269%,
+    #ec9e00 65.8654%,
+    #ffca00 100%
+  );
+  --etic-gradient-2: linear-gradient(45deg, #ec9e00 27.3326%, #e7be6b 100%);
+  --etic-gradient-3: linear-gradient(90deg, #ffca00 0.0726%, #fffafa 100%);
+  --etic-gradient-4: linear-gradient(
+    135deg,
+    #02a9a2 19.2308%,
+    #00dabf 74.0385%
+  );
+  --etic-gradient-5: linear-gradient(135deg, #02a9a2 0%, #1aaf5d 80.5699%);
+  --etic-surface: var(--etic-beige);
+  --etic-text: var(--etic-ink);
+  --etic-action: var(--etic-red);
+  --etic-on-action: #fff; /* White text explicitly allowed in Figma 1:1615. */
+  --etic-border: #b5aea4; /* App neutral for decorative separators. */
+  --etic-muted: #665d54;
+  --etic-success: #146d40; /* Darkened green for readable text, not an official swatch. */
+  --etic-error: var(--etic-red);
+  --etic-focus: var(--etic-ink);
+  --etic-font:
+    "Gotham Pro", "Gotham", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --etic-font-display: "Gotham Black", "Gotham Pro", system-ui, sans-serif;
+  --etic-font-playful: "Humming", "Gotham Pro", system-ui, sans-serif;
+  --etic-font-arabic: "Noto Sans Arabic", Tahoma, sans-serif;
+  --etic-text-sm: 0.875rem;
+  --etic-text-md: 1rem;
+  --etic-text-lg: 1.25rem;
+  --etic-text-xl: 1.75rem;
+  --etic-text-2xl: 2.5rem;
+  --etic-space-1: 0.25rem;
+  --etic-space-2: 0.5rem;
+  --etic-space-3: 0.75rem;
+  --etic-space-4: 1rem;
+  --etic-space-6: 1.5rem;
+  --etic-space-8: 2rem;
+  --etic-space-12: 3rem;
+  --etic-space-16: 4rem;
+  --etic-radius-sm: 0.5rem;
+  --etic-radius-md: 1rem;
+  --etic-radius-lg: 1.5rem;
+  --etic-shadow: 0 8px 24px rgb(39 36 33 / 7%);
+  --etic-duration: 160ms;
+  --etic-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  color: var(--etic-text);
+  font-family: var(--etic-font);
+  line-height: 1.5;
+  color-scheme: light;
+}
+.etic-theme:lang(ar) {
+  font-family: var(--etic-font-arabic);
+}
+@media (prefers-reduced-motion: reduce) {
+  .etic-theme {
+    --etic-duration: 0ms;
+  }
+}

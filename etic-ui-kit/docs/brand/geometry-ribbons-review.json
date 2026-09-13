@@ -1,0 +1,743 @@
+[
+  {
+    "id": "1:2807",
+    "name": "bar-teal",
+    "type": "VECTOR",
+    "width": 213,
+    "height": 641,
+    "visible": true,
+    "images": false,
+    "sourceName": "Vector",
+    "category": "geometric",
+    "primitive": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2808",
+    "name": "bar-orange",
+    "type": "VECTOR",
+    "width": 213,
+    "height": 641,
+    "visible": true,
+    "images": false,
+    "sourceName": "Vector",
+    "category": "geometric",
+    "primitive": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2809",
+    "name": "bar-yellow",
+    "type": "VECTOR",
+    "width": 213,
+    "height": 641,
+    "visible": true,
+    "images": false,
+    "sourceName": "Vector",
+    "category": "geometric",
+    "primitive": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2811",
+    "name": "corner-cutout-teal-bottom",
+    "type": "VECTOR",
+    "width": 213,
+    "height": 320,
+    "visible": true,
+    "images": false,
+    "sourceName": "Vector",
+    "category": "geometric",
+    "primitive": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2812",
+    "name": "corner-cutout-teal-top",
+    "type": "VECTOR",
+    "width": 213,
+    "height": 320,
+    "visible": true,
+    "images": false,
+    "sourceName": "Vector",
+    "category": "geometric",
+    "primitive": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2813",
+    "name": "half-ellipse-teal",
+    "type": "VECTOR",
+    "width": 213,
+    "height": 532,
+    "visible": true,
+    "images": false,
+    "sourceName": "Vector",
+    "category": "geometric",
+    "primitive": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2823",
+    "name": "dot-yellow",
+    "type": "VECTOR",
+    "width": 107,
+    "height": 107,
+    "visible": true,
+    "images": false,
+    "sourceName": "Vector",
+    "category": "geometric",
+    "primitive": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2850",
+    "name": "half-disc-warm-01",
+    "type": "RECTANGLE",
+    "width": 456,
+    "height": 580,
+    "visible": true,
+    "images": false,
+    "sourceName": "Rectangle 35",
+    "category": "geometric",
+    "primitive": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2851",
+    "name": "half-disc-warm-02",
+    "type": "RECTANGLE",
+    "width": 456,
+    "height": 580,
+    "visible": true,
+    "images": false,
+    "sourceName": "Rectangle 37",
+    "category": "geometric",
+    "primitive": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2852",
+    "name": "half-disc-warm-03",
+    "type": "RECTANGLE",
+    "width": 456,
+    "height": 580,
+    "visible": true,
+    "images": false,
+    "sourceName": "Rectangle 36",
+    "category": "geometric",
+    "primitive": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2853",
+    "name": "half-disc-warm-04",
+    "type": "RECTANGLE",
+    "width": 456,
+    "height": 580,
+    "visible": true,
+    "images": false,
+    "sourceName": "Rectangle 38",
+    "category": "geometric",
+    "primitive": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2848",
+    "name": "module-warm-square",
+    "type": "FRAME",
+    "width": 641,
+    "height": 641,
+    "visible": true,
+    "images": false,
+    "sourceName": "Frame 119",
+    "category": "geometric",
+    "primitive": false,
+    "format": "svg"
+  },
+  {
+    "id": "1:36",
+    "name": "ribbon-banner-loop",
+    "type": "GROUP",
+    "width": 1426,
+    "height": 1600,
+    "visible": true,
+    "images": true,
+    "sourceName": "Layer 2",
+    "category": "ribbons",
+    "primitive": false,
+    "format": "webp"
+  },
+  {
+    "id": "1:56",
+    "name": "ribbon-banner-arc",
+    "type": "GROUP",
+    "width": 1511,
+    "height": 1600,
+    "visible": true,
+    "images": true,
+    "sourceName": "Layer 2",
+    "category": "ribbons",
+    "primitive": false,
+    "format": "webp"
+  },
+  {
+    "id": "1:945",
+    "name": "ribbon-contents-loop",
+    "type": "GROUP",
+    "width": 1600,
+    "height": 1297,
+    "visible": true,
+    "images": true,
+    "sourceName": "Layer 19",
+    "category": "ribbons",
+    "primitive": false,
+    "format": "webp"
+  },
+  {
+    "id": "1:3675",
+    "name": "ribbon-clearspace-loop",
+    "type": "GROUP",
+    "width": 1600,
+    "height": 1518,
+    "visible": true,
+    "images": true,
+    "sourceName": "Layer 22",
+    "category": "ribbons",
+    "primitive": false,
+    "format": "webp"
+  },
+  {
+    "id": "1:3686",
+    "name": "ribbon-clearspace-crossing",
+    "type": "GROUP",
+    "width": 1279,
+    "height": 1600,
+    "visible": true,
+    "images": true,
+    "sourceName": "new",
+    "category": "ribbons",
+    "primitive": false,
+    "format": "webp"
+  },
+  {
+    "id": "1:3509",
+    "name": "ribbon-card-front",
+    "type": "GROUP",
+    "width": 1319,
+    "height": 1383,
+    "visible": true,
+    "images": true,
+    "sourceName": "Layer 1",
+    "category": "ribbons",
+    "primitive": false,
+    "format": "webp"
+  },
+  {
+    "id": "1:3546",
+    "name": "ribbon-card-back",
+    "type": "GROUP",
+    "width": 1100,
+    "height": 1600,
+    "visible": true,
+    "images": true,
+    "sourceName": "Layer 1",
+    "category": "ribbons",
+    "primitive": false,
+    "format": "webp"
+  },
+  {
+    "id": "1:2814",
+    "name": "half-ellipse-mint",
+    "type": "VECTOR",
+    "width": 213,
+    "height": 532,
+    "visible": true,
+    "images": false,
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "gradientStops": [
+          {
+            "color": {
+              "r": 0,
+              "g": 0.8549019694328308,
+              "b": 0.7490196228027344,
+              "a": 1
+            },
+            "position": 0.23999999463558197,
+            "boundVariables": {}
+          },
+          {
+            "color": {
+              "r": 0.007843137718737125,
+              "g": 0.6627451181411743,
+              "b": 0.6352941393852234,
+              "a": 1
+            },
+            "position": 0.9903846383094788,
+            "boundVariables": {}
+          }
+        ],
+        "gradientTransform": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            2.492316484451294,
+            -0.746158242225647
+          ]
+        ]
+      }
+    ],
+    "sourceName": "Vector",
+    "category": "geometric",
+    "primitive": true,
+    "existing": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2815",
+    "name": "half-disc-white",
+    "type": "VECTOR",
+    "width": 213,
+    "height": 107,
+    "visible": true,
+    "images": false,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "boundVariables": {}
+      }
+    ],
+    "sourceName": "Vector",
+    "category": "geometric",
+    "primitive": true,
+    "existing": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2816",
+    "name": "capsule-light-long",
+    "type": "VECTOR",
+    "width": 213,
+    "height": 534,
+    "visible": true,
+    "images": false,
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "gradientStops": [
+          {
+            "color": {
+              "r": 1,
+              "g": 0.7921568751335144,
+              "b": 0,
+              "a": 1
+            },
+            "position": 0.0007262741564773023,
+            "boundVariables": {}
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 0.9798073172569275,
+              "b": 0.9798073172569275,
+              "a": 1
+            },
+            "position": 1,
+            "boundVariables": {}
+          }
+        ],
+        "gradientTransform": [
+          [
+            -0.03521306812763214,
+            1.0262540578842163,
+            -0.009386162273585796
+          ],
+          [
+            -0.1646367311477661,
+            -1.223748657963597e-09,
+            0.5827527046203613
+          ]
+        ]
+      }
+    ],
+    "sourceName": "Vector",
+    "category": "geometric",
+    "primitive": true,
+    "existing": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2821",
+    "name": "dots-nine",
+    "type": "GROUP",
+    "width": 320,
+    "height": 321,
+    "visible": true,
+    "images": false,
+    "sourceName": "Layer 2",
+    "category": "geometric",
+    "primitive": true,
+    "existing": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2832",
+    "name": "disc-warm-texture",
+    "type": "GROUP",
+    "width": 440,
+    "height": 442,
+    "visible": true,
+    "images": true,
+    "sourceName": "Layer 2",
+    "category": "geometric",
+    "primitive": true,
+    "existing": true,
+    "format": "webp"
+  },
+  {
+    "id": "1:2843",
+    "name": "d-shape-teal",
+    "type": "GROUP",
+    "width": 320,
+    "height": 321,
+    "visible": true,
+    "images": false,
+    "sourceName": "Layer 2",
+    "category": "geometric",
+    "primitive": true,
+    "existing": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2846",
+    "name": "gradient-block-01",
+    "type": "RECTANGLE",
+    "width": 160,
+    "height": 321,
+    "visible": true,
+    "images": false,
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "gradientStops": [
+          {
+            "color": {
+              "r": 0.7568627595901489,
+              "g": 0.20000000298023224,
+              "b": 0.24705882370471954,
+              "a": 1
+            },
+            "position": 0.16826923191547394,
+            "boundVariables": {}
+          },
+          {
+            "color": {
+              "r": 0.9254902005195618,
+              "g": 0.6196078658103943,
+              "b": 0,
+              "a": 1
+            },
+            "position": 0.6586538553237915,
+            "boundVariables": {}
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 0.7921568751335144,
+              "b": 0,
+              "a": 1
+            },
+            "position": 1,
+            "boundVariables": {}
+          }
+        ],
+        "gradientTransform": [
+          [
+            0.40663987398147583,
+            0.6140081882476807,
+            -0.010324054397642612
+          ],
+          [
+            -0.4912065863609314,
+            0.5082998275756836,
+            0.4914533495903015
+          ]
+        ]
+      }
+    ],
+    "sourceName": "Rectangle 4",
+    "category": "geometric",
+    "primitive": true,
+    "existing": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2847",
+    "name": "gradient-block-02",
+    "type": "RECTANGLE",
+    "width": 160,
+    "height": 321,
+    "visible": true,
+    "images": false,
+    "fills": [
+      {
+        "type": "GRADIENT_LINEAR",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "gradientStops": [
+          {
+            "color": {
+              "r": 0.7568627595901489,
+              "g": 0.20000000298023224,
+              "b": 0.24705882370471954,
+              "a": 1
+            },
+            "position": 0.16826923191547394,
+            "boundVariables": {}
+          },
+          {
+            "color": {
+              "r": 0.9254902005195618,
+              "g": 0.6196078658103943,
+              "b": 0,
+              "a": 1
+            },
+            "position": 0.6586538553237915,
+            "boundVariables": {}
+          },
+          {
+            "color": {
+              "r": 1,
+              "g": 0.7921568751335144,
+              "b": 0,
+              "a": 1
+            },
+            "position": 1,
+            "boundVariables": {}
+          }
+        ],
+        "gradientTransform": [
+          [
+            -0.40663987398147583,
+            -0.6140081882476807,
+            1.0103240013122559
+          ],
+          [
+            0.4912065863609314,
+            -0.5082997679710388,
+            0.5085465908050537
+          ]
+        ]
+      }
+    ],
+    "sourceName": "Rectangle 4",
+    "category": "geometric",
+    "primitive": true,
+    "existing": true,
+    "format": "svg"
+  },
+  {
+    "id": "1:2804",
+    "name": "geometric-columns",
+    "type": "FRAME",
+    "width": 1280,
+    "height": 1282,
+    "visible": true,
+    "images": true,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": false,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "boundVariables": {}
+      }
+    ],
+    "sourceName": "Frame 36",
+    "category": "geometric",
+    "primitive": false,
+    "existing": true,
+    "format": "webp"
+  },
+  {
+    "id": "1:2817",
+    "name": "geometric-pattern",
+    "type": "FRAME",
+    "width": 1280,
+    "height": 1282,
+    "visible": true,
+    "images": true,
+    "fills": [
+      {
+        "type": "SOLID",
+        "visible": true,
+        "opacity": 1,
+        "blendMode": "NORMAL",
+        "color": {
+          "r": 1,
+          "g": 1,
+          "b": 1
+        },
+        "boundVariables": {}
+      }
+    ],
+    "sourceName": "Frame 37",
+    "category": "geometric",
+    "primitive": false,
+    "existing": true,
+    "format": "webp"
+  },
+  {
+    "id": "1:2810",
+    "name": "disc-pink-texture",
+    "sourceName": "Vector",
+    "category": "geometric",
+    "primitive": true,
+    "existing": true,
+    "width": 428,
+    "height": 428,
+    "images": true,
+    "format": "webp"
+  },
+  {
+    "name": "module-dots",
+    "id": "1:2817",
+    "sourceName": "source-frame-crop",
+    "category": "geometric",
+    "kind": "module",
+    "crop": [
+      0,
+      0,
+      319.812,
+      320.376
+    ],
+    "format": "svg",
+    "width": 320,
+    "height": 320
+  },
+  {
+    "name": "module-disc-orange",
+    "id": "1:2817",
+    "sourceName": "source-frame-crop",
+    "category": "geometric",
+    "kind": "module",
+    "crop": [
+      319.812,
+      0,
+      319.812,
+      320.376
+    ],
+    "format": "webp",
+    "width": 640,
+    "height": 641
+  },
+  {
+    "name": "module-d-teal",
+    "id": "1:2817",
+    "sourceName": "source-frame-crop",
+    "category": "geometric",
+    "kind": "module",
+    "crop": [
+      0,
+      320.376,
+      319.812,
+      320.376
+    ],
+    "format": "svg",
+    "width": 320,
+    "height": 320
+  },
+  {
+    "name": "module-stripes-warm",
+    "id": "1:2817",
+    "sourceName": "source-frame-crop",
+    "category": "geometric",
+    "kind": "module",
+    "crop": [
+      319.812,
+      320.376,
+      319.812,
+      320.376
+    ],
+    "format": "svg",
+    "width": 320,
+    "height": 320
+  },
+  {
+    "name": "module-teal-column",
+    "id": "1:2804",
+    "sourceName": "source-frame-crop",
+    "category": "geometric",
+    "kind": "module",
+    "crop": [
+      0,
+      0,
+      213.205,
+      640.752
+    ],
+    "format": "svg",
+    "width": 213,
+    "height": 641
+  },
+  {
+    "name": "module-orange-column",
+    "id": "1:2804",
+    "sourceName": "source-frame-crop",
+    "category": "geometric",
+    "kind": "module",
+    "crop": [
+      213.205,
+      0,
+      213.214,
+      640.752
+    ],
+    "format": "webp",
+    "width": 426,
+    "height": 1282
+  },
+  {
+    "name": "module-yellow-column",
+    "id": "1:2804",
+    "sourceName": "source-frame-crop",
+    "category": "geometric",
+    "kind": "module",
+    "crop": [
+      426.419,
+      0,
+      213.205,
+      640.752
+    ],
+    "format": "svg",
+    "width": 213,
+    "height": 641
+  }
+]

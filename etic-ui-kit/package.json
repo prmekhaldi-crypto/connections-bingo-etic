@@ -1,0 +1,32 @@
+{
+  "name": "etic-shared-ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Ressources visuelles, CSS et composants React réutilisables pour ETIC. Aucun site ni application.",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "catalog:generate": "node scripts/update-catalog.mjs",
+    "check:assets": "node scripts/check-assets.mjs",
+    "check": "npm run typecheck && npm run check:assets && npm run check:generated && npm run test:catalog",
+    "check:generated": "node scripts/update-catalog.mjs --check",
+    "test:browser": "node --test tests/kit.browser.mjs",
+    "assets:refresh": "node scripts/refresh-asset-fingerprints.mjs",
+    "test:catalog": "node --test tests/catalog.test.mjs",
+    "copy:kit": "node scripts/copy-kit.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "esbuild": "^0.28.2",
+    "playwright": "^1.63.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}

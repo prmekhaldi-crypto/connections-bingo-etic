@@ -1,0 +1,546 @@
+{
+  "gameId": "fun-facts-dz",
+  "_lisezMoi": "Banque de questions du mini-jeu. Le jeu en tire questionsPerGame au hasard a chaque partie : deux joueurs cote a cote n'ont donc pas la meme grille. Les entrees 'etic-insider' dont l'enonce commence encore par '[A REMPLACER' sont ignorees par le tirage : remplace-les et elles entrent automatiquement dans le jeu.",
+  "meta": {
+    "timePerQuestion": 8,
+    "passThreshold": 6,
+    "pointsPerCorrect": 100,
+    "speedBonusPerSecond": 5,
+    "questionsPerGame": 10,
+    "insiderPerGame": 2
+  },
+  "questions": [
+    {
+      "id": "dz01",
+      "statement": "Le Sahara couvre plus de 80 % du territoire algérien.",
+      "isTrue": true,
+      "explanation": "Vrai : le désert occupe environ 84 % de la superficie du pays.",
+      "category": "géographie"
+    },
+    {
+      "id": "dz02",
+      "statement": "L'Algérie est le plus grand pays d'Afrique par la superficie.",
+      "isTrue": true,
+      "explanation": "Vrai, depuis 2011 et la partition du Soudan : environ 2 381 741 km².",
+      "category": "géographie"
+    },
+    {
+      "id": "dz03",
+      "statement": "L'Algérie possède un accès à l'océan Atlantique.",
+      "isTrue": false,
+      "explanation": "Faux : sa seule façade maritime est méditerranéenne.",
+      "category": "géographie"
+    },
+    {
+      "id": "dz04",
+      "statement": "L'Algérie partage une frontière terrestre avec l'Égypte.",
+      "isTrue": false,
+      "explanation": "Faux : la Libye s'intercale entre les deux pays.",
+      "category": "géographie"
+    },
+    {
+      "id": "dz05",
+      "statement": "L'Algérie partage une frontière terrestre avec le Mali.",
+      "isTrue": true,
+      "explanation": "Vrai : la frontière saharienne algéro-malienne dépasse 1 300 km.",
+      "category": "géographie"
+    },
+    {
+      "id": "dz06",
+      "statement": "Le point culminant de l'Algérie se trouve dans les montagnes de Kabylie.",
+      "isTrue": false,
+      "explanation": "Faux : c'est le mont Tahat, 2 908 m, dans le Hoggar, en plein Sahara.",
+      "category": "géographie"
+    },
+    {
+      "id": "dz07",
+      "statement": "Le Grand Erg Oriental est une chaîne de montagnes du nord du pays.",
+      "isTrue": false,
+      "explanation": "Faux : c'est une immense mer de dunes, au Sahara.",
+      "category": "géographie"
+    },
+    {
+      "id": "dz08",
+      "statement": "Le Chott Melrhir est un lac salé situé sous le niveau de la mer.",
+      "isTrue": true,
+      "explanation": "Vrai : cette dépression descend à une quarantaine de mètres sous le niveau marin.",
+      "category": "géographie"
+    },
+    {
+      "id": "dz09",
+      "statement": "Le fleuve le plus long d'Algérie est la Soummam.",
+      "isTrue": false,
+      "explanation": "Faux : c'est le Chéliff, environ 700 km, de l'Atlas saharien à la Méditerranée.",
+      "category": "géographie"
+    },
+    {
+      "id": "dz10",
+      "statement": "L'Algérie compte encore 48 wilayas, comme dans les années 1980.",
+      "isTrue": false,
+      "explanation": "Faux : le découpage de 2021 a porté le pays à 58 wilayas.",
+      "category": "géographie"
+    },
+    {
+      "id": "dz11",
+      "statement": "La ville de Béchar se situe dans le nord-est du pays.",
+      "isTrue": false,
+      "explanation": "Faux : Béchar est une ville du sud-ouest algérien.",
+      "category": "géographie"
+    },
+    {
+      "id": "dz12",
+      "statement": "Oran est située sur la côte est de l'Algérie.",
+      "isTrue": false,
+      "explanation": "Faux : Oran est le grand port de l'ouest algérien.",
+      "category": "géographie"
+    },
+    {
+      "id": "dz13",
+      "statement": "Le Sahara algérien ne connaît jamais la neige.",
+      "isTrue": false,
+      "explanation": "Faux : Aïn Séfra, aux portes du Sahara, a été enneigée à plusieurs reprises ces dernières années.",
+      "category": "géographie"
+    },
+    {
+      "id": "dz14",
+      "statement": "L'Algérie possède une façade méditerranéenne de plus de 900 km.",
+      "isTrue": true,
+      "explanation": "Vrai : le littoral algérien s'étend sur près de mille kilomètres.",
+      "category": "géographie"
+    },
+    {
+      "id": "dz15",
+      "statement": "Le massif du Hoggar est d'origine volcanique.",
+      "isTrue": true,
+      "explanation": "Vrai : ses pitons caractéristiques sont d'anciens culots volcaniques.",
+      "category": "géographie"
+    },
+    {
+      "id": "dz16",
+      "statement": "L'Algérie a obtenu son indépendance le 5 juillet 1962.",
+      "isTrue": true,
+      "explanation": "Vrai : le 5 juillet est depuis la fête nationale.",
+      "category": "histoire"
+    },
+    {
+      "id": "dz17",
+      "statement": "La bataille d'Alger s'est déroulée en 1961-1962.",
+      "isTrue": false,
+      "explanation": "Faux : elle a eu lieu en 1956-1957, dans la Casbah.",
+      "category": "histoire"
+    },
+    {
+      "id": "dz18",
+      "statement": "Djamila Bouhired est une figure de la guerre d'indépendance.",
+      "isTrue": true,
+      "explanation": "Vrai : militante du FLN, condamnée à mort en 1957 puis graciée.",
+      "category": "histoire"
+    },
+    {
+      "id": "dz19",
+      "statement": "Timgad, surnommée « la Pompéi africaine », est une cité grecque des Aurès.",
+      "isTrue": false,
+      "explanation": "Faux : c'est une cité romaine, fondée vers 100 apr. J.-C. sous Trajan.",
+      "category": "histoire"
+    },
+    {
+      "id": "dz20",
+      "statement": "Annaba portait le nom d'Hippone dans l'Antiquité.",
+      "isTrue": true,
+      "explanation": "Vrai : Hippo Regius, l'un des grands ports romains d'Afrique du Nord.",
+      "category": "histoire"
+    },
+    {
+      "id": "dz21",
+      "statement": "Saint Augustin a été évêque de Tlemcen.",
+      "isTrue": false,
+      "explanation": "Faux : il fut évêque d'Hippone, l'actuelle Annaba, de 395 à 430.",
+      "category": "histoire"
+    },
+    {
+      "id": "dz22",
+      "statement": "Les peintures rupestres du Tassili n'Ajjer ont plus de 9 000 ans.",
+      "isTrue": true,
+      "explanation": "Vrai : ce site UNESCO conserve des milliers de peintures, dont les plus anciennes dépassent 9 000 ans.",
+      "category": "histoire"
+    },
+    {
+      "id": "dz23",
+      "statement": "Béjaïa a donné son nom au mot français « bougie ».",
+      "isTrue": true,
+      "explanation": "Vrai : la ville, appelée Bougie, exportait la cire vers l'Europe médiévale.",
+      "category": "histoire"
+    },
+    {
+      "id": "dz24",
+      "statement": "« El Djazaïr », le nom arabe de l'Algérie, signifie « les îles ».",
+      "isTrue": true,
+      "explanation": "Vrai : en référence aux îlots qui faisaient face au port d'Alger.",
+      "category": "histoire"
+    },
+    {
+      "id": "dz25",
+      "statement": "Le premier satellite algérien, Alsat-1, a été lancé en 2010.",
+      "isTrue": false,
+      "explanation": "Faux : Alsat-1 a été lancé en 2002.",
+      "category": "histoire"
+    },
+    {
+      "id": "dz26",
+      "statement": "La capitale de l'Algérie est Oran.",
+      "isTrue": false,
+      "explanation": "Faux : la capitale est Alger.",
+      "category": "villes"
+    },
+    {
+      "id": "dz27",
+      "statement": "Constantine est surnommée « la ville des ponts suspendus ».",
+      "isTrue": true,
+      "explanation": "Vrai : bâtie sur un rocher creusé par les gorges du Rhummel, franchies par plusieurs ponts.",
+      "category": "villes"
+    },
+    {
+      "id": "dz28",
+      "statement": "Alger est surnommée « Alger la Blanche ».",
+      "isTrue": true,
+      "explanation": "Vrai : un surnom né de ses façades blanches vues depuis la baie.",
+      "category": "villes"
+    },
+    {
+      "id": "dz29",
+      "statement": "Annaba est surnommée « la perle du Maghreb ».",
+      "isTrue": false,
+      "explanation": "Faux : ce surnom est celui de Tlemcen, ancienne capitale zianide.",
+      "category": "villes"
+    },
+    {
+      "id": "dz30",
+      "statement": "La Casbah d'Alger est classée au patrimoine mondial de l'UNESCO.",
+      "isTrue": true,
+      "explanation": "Vrai : elle est inscrite depuis 1992.",
+      "category": "villes"
+    },
+    {
+      "id": "dz31",
+      "statement": "La vallée du M'Zab, classée à l'UNESCO, se situe en Kabylie.",
+      "isTrue": false,
+      "explanation": "Faux : elle se trouve dans la wilaya de Ghardaïa, au nord du Sahara.",
+      "category": "villes"
+    },
+    {
+      "id": "dz32",
+      "statement": "Tipaza abrite des ruines romaines classées à l'UNESCO.",
+      "isTrue": true,
+      "explanation": "Vrai : le site archéologique est inscrit depuis 1982.",
+      "category": "villes"
+    },
+    {
+      "id": "dz33",
+      "statement": "L'Algérie compte deux sites inscrits au patrimoine mondial de l'UNESCO.",
+      "isTrue": false,
+      "explanation": "Faux : il y en a sept, dont la Casbah d'Alger, Timgad et le Tassili n'Ajjer.",
+      "category": "villes"
+    },
+    {
+      "id": "dz34",
+      "statement": "Le Maqam Echahid, le Mémorial du Martyr, domine la baie d'Alger.",
+      "isTrue": true,
+      "explanation": "Vrai : inauguré en 1982 pour les vingt ans de l'indépendance.",
+      "category": "villes"
+    },
+    {
+      "id": "dz35",
+      "statement": "La Grande Poste d'Alger est un monument de style néo-mauresque.",
+      "isTrue": true,
+      "explanation": "Vrai : inaugurée en 1910, c'est l'un des emblèmes du centre d'Alger.",
+      "category": "villes"
+    },
+    {
+      "id": "dz36",
+      "statement": "L'aéroport international d'Alger porte le nom de Frantz Fanon.",
+      "isTrue": false,
+      "explanation": "Faux : il porte le nom de Houari Boumédiène depuis 1979.",
+      "category": "villes"
+    },
+    {
+      "id": "dz37",
+      "statement": "Tamanrasset est une ville du Sahara algérien.",
+      "isTrue": true,
+      "explanation": "Vrai : c'est la principale ville du Hoggar, dans l'extrême sud.",
+      "category": "villes"
+    },
+    {
+      "id": "dz38",
+      "statement": "Le parc national du Djurdjura se trouve dans les Aurès.",
+      "isTrue": false,
+      "explanation": "Faux : le Djurdjura est en Kabylie, entre Tizi Ouzou et Bouira.",
+      "category": "villes"
+    },
+    {
+      "id": "dz39",
+      "statement": "Le lac Oubeïra se situe dans le parc national d'El Kala.",
+      "isTrue": true,
+      "explanation": "Vrai : c'est l'une des zones humides majeures de l'extrême nord-est.",
+      "category": "villes"
+    },
+    {
+      "id": "dz40",
+      "statement": "Le couscous a été inscrit au patrimoine immatériel de l'UNESCO en 2020 par l'Algérie seule.",
+      "isTrue": false,
+      "explanation": "Faux : c'est un dossier commun déposé par l'Algérie, le Maroc, la Mauritanie et la Tunisie.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz41",
+      "statement": "Le couscous se cuit traditionnellement au four, dans un plat en terre.",
+      "isTrue": false,
+      "explanation": "Faux : il cuit à la vapeur, dans un keskès, au-dessus du bouillon.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz42",
+      "statement": "Le bourek est une pâtisserie sucrée servie à l'Aïd.",
+      "isTrue": false,
+      "explanation": "Faux : c'est un feuilleté salé, incontournable sur la table du Ramadan.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz43",
+      "statement": "La zlabia la plus réputée d'Algérie est celle de Constantine.",
+      "isTrue": false,
+      "explanation": "Faux : c'est la zlabia de Boufarik qui est la plus réputée.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz44",
+      "statement": "La « garantita » (karantika) est une spécialité constantinoise à base de semoule.",
+      "isTrue": false,
+      "explanation": "Faux : c'est une spécialité oranaise, à base de farine de pois chiches.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz45",
+      "statement": "La chakhchoukha est un plat traditionnel des Aurès et de la région de Biskra.",
+      "isTrue": true,
+      "explanation": "Vrai : galette émiettée arrosée d'une sauce épicée à la viande.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz46",
+      "statement": "Le m'semen est une soupe servie pendant le Ramadan.",
+      "isTrue": false,
+      "explanation": "Faux : c'est une crêpe feuilletée, pliée plusieurs fois puis cuite à la plaque.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz47",
+      "statement": "Yennayer, le nouvel an amazigh, se fête au mois de juillet.",
+      "isTrue": false,
+      "explanation": "Faux : il se fête le 12 janvier, et il est férié depuis 2018.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz48",
+      "statement": "Le tamazight n'a aucun statut officiel en Algérie.",
+      "isTrue": false,
+      "explanation": "Faux : c'est une langue officielle depuis la révision constitutionnelle de 2016.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz49",
+      "statement": "Le chaoui est le dialecte amazigh parlé en Kabylie.",
+      "isTrue": false,
+      "explanation": "Faux : le chaoui est la langue des Aurès ; en Kabylie, on parle le kabyle.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz50",
+      "statement": "Les Touaregs sont surnommés « les hommes bleus ».",
+      "isTrue": true,
+      "explanation": "Vrai : à cause de l'indigo de leurs voiles qui déteint sur la peau.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz51",
+      "statement": "Le chèche est un couvre-chef porté dans le Sahara.",
+      "isTrue": true,
+      "explanation": "Vrai : ce long voile protège du soleil, du vent et du sable.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz52",
+      "statement": "Le bendir est un instrument à cordes.",
+      "isTrue": false,
+      "explanation": "Faux : c'est un tambour sur cadre, donc une percussion.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz53",
+      "statement": "Le raï est né à Constantine.",
+      "isTrue": false,
+      "explanation": "Faux : le raï est né dans l'Oranie, autour d'Oran.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz54",
+      "statement": "Le drapeau algérien associe le vert, le blanc et un croissant rouge.",
+      "isTrue": true,
+      "explanation": "Vrai : deux bandes verticales verte et blanche, croissant et étoile rouges.",
+      "category": "traditions"
+    },
+    {
+      "id": "dz55",
+      "statement": "Albert Camus, prix Nobel de littérature, est né en Algérie.",
+      "isTrue": true,
+      "explanation": "Vrai : né en 1913 à Mondovi, aujourd'hui Dréan.",
+      "category": "personnalités"
+    },
+    {
+      "id": "dz56",
+      "statement": "Assia Djebar a reçu le prix Nobel de littérature.",
+      "isTrue": false,
+      "explanation": "Faux : elle a été élue à l'Académie française en 2005, une première pour le Maghreb.",
+      "category": "personnalités"
+    },
+    {
+      "id": "dz57",
+      "statement": "Kateb Yacine est l'auteur du roman « L'Étranger ».",
+      "isTrue": false,
+      "explanation": "Faux : « L'Étranger » est d'Albert Camus. Kateb Yacine a écrit « Nedjma ».",
+      "category": "personnalités"
+    },
+    {
+      "id": "dz58",
+      "statement": "Warda al-Djazaïria était une chanteuse algérienne.",
+      "isTrue": true,
+      "explanation": "Vrai : l'une des plus grandes voix de la chanson arabe.",
+      "category": "personnalités"
+    },
+    {
+      "id": "dz59",
+      "statement": "Hassiba Boulmerka a été championne olympique du marathon en 1992.",
+      "isTrue": false,
+      "explanation": "Faux : elle a gagné le 1 500 m, à Barcelone.",
+      "category": "personnalités"
+    },
+    {
+      "id": "dz60",
+      "statement": "Noureddine Morceli a été champion olympique du 1 500 m en 1996.",
+      "isTrue": true,
+      "explanation": "Vrai : titre décroché à Atlanta.",
+      "category": "personnalités"
+    },
+    {
+      "id": "dz61",
+      "statement": "Taoufik Makhloufi a remporté l'or du 1 500 m aux Jeux de Londres en 2012.",
+      "isTrue": true,
+      "explanation": "Vrai : il devient champion olympique à 24 ans.",
+      "category": "personnalités"
+    },
+    {
+      "id": "dz62",
+      "statement": "Riyad Mahrez a été élu meilleur joueur africain de l'année en 2016.",
+      "isTrue": true,
+      "explanation": "Vrai : la même année que son titre de champion d'Angleterre avec Leicester.",
+      "category": "personnalités"
+    },
+    {
+      "id": "dz63",
+      "statement": "Le fennec est l'emblème de l'équipe nationale de football.",
+      "isTrue": true,
+      "explanation": "Vrai : les joueurs sont surnommés « les Fennecs ».",
+      "category": "sport & symboles"
+    },
+    {
+      "id": "dz64",
+      "statement": "Le fennec, emblème des Verts, est le plus grand renard du monde.",
+      "isTrue": false,
+      "explanation": "Faux : c'est au contraire le plus petit canidé du monde, adapté au désert.",
+      "category": "sport & symboles"
+    },
+    {
+      "id": "dz65",
+      "statement": "L'Algérie a remporté la Coupe d'Afrique des Nations en 1990 et en 2019.",
+      "isTrue": true,
+      "explanation": "Vrai : deux titres, à domicile puis en Égypte.",
+      "category": "sport & symboles"
+    },
+    {
+      "id": "dz66",
+      "statement": "Oran a accueilli les Jeux Méditerranéens en 2022.",
+      "isTrue": true,
+      "explanation": "Vrai : la 19e édition s'est tenue à Oran.",
+      "category": "sport & symboles"
+    },
+    {
+      "id": "dz67",
+      "statement": "L'Algérie est membre de l'OPEP.",
+      "isTrue": true,
+      "explanation": "Vrai : elle a rejoint l'organisation en 1969.",
+      "category": "sport & symboles"
+    },
+    {
+      "id": "dz68",
+      "statement": "Le dinar est la monnaie nationale algérienne.",
+      "isTrue": true,
+      "explanation": "Vrai : le dinar algérien a remplacé le franc en 1964.",
+      "category": "sport & symboles"
+    },
+    {
+      "id": "dz69",
+      "statement": "Le gaz naturel est l'une des principales exportations de l'Algérie.",
+      "isTrue": true,
+      "explanation": "Vrai : hydrocarbures en tête, avec le gaz comme fer de lance.",
+      "category": "sport & symboles"
+    },
+    {
+      "id": "dz70",
+      "statement": "L'École nationale Supérieure d'Informatique (ESI) se situe à Constantine.",
+      "isTrue": false,
+      "explanation": "Faux : le campus de l'ESI est à Oued Smar, dans l'est d'Alger.",
+      "category": "sport & symboles"
+    },
+    {
+      "id": "etic01",
+      "statement": "[À REMPLACER PAR GHANO — anecdote ETIC : affirmation vraie ou fausse sur le club]",
+      "isTrue": true,
+      "explanation": "[À REMPLACER PAR GHANO — explication courte de l'anecdote]",
+      "category": "etic-insider"
+    },
+    {
+      "id": "etic02",
+      "statement": "[À REMPLACER PAR GHANO — running gag du Training Camp]",
+      "isTrue": false,
+      "explanation": "[À REMPLACER PAR GHANO — explication courte de l'anecdote]",
+      "category": "etic-insider"
+    },
+    {
+      "id": "etic03",
+      "statement": "[À REMPLACER PAR GHANO — anecdote sur un événement ETIC de l'année]",
+      "isTrue": true,
+      "explanation": "[À REMPLACER PAR GHANO — explication courte de l'anecdote]",
+      "category": "etic-insider"
+    },
+    {
+      "id": "etic04",
+      "statement": "[À REMPLACER PAR GHANO — anecdote sur un département du club]",
+      "isTrue": false,
+      "explanation": "[À REMPLACER PAR GHANO — explication courte de l'anecdote]",
+      "category": "etic-insider"
+    },
+    {
+      "id": "etic05",
+      "statement": "[À REMPLACER PAR GHANO — anecdote sur la vie à l'ESI]",
+      "isTrue": true,
+      "explanation": "[À REMPLACER PAR GHANO — explication courte de l'anecdote]",
+      "category": "etic-insider"
+    },
+    {
+      "id": "etic06",
+      "statement": "[À REMPLACER PAR GHANO — running gag des réunions du club]",
+      "isTrue": false,
+      "explanation": "[À REMPLACER PAR GHANO — explication courte de l'anecdote]",
+      "category": "etic-insider"
+    }
+  ]
+}

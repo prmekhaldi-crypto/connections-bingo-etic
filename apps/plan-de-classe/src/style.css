@@ -1,0 +1,139 @@
+@import '../../../etic-ui-kit/etic-ui/styles.css';
+/* Product layout and game objects. Brand components/tokens live in the shared kit.
+   Gotham/Humming binaries are absent; the kit's documented system fallbacks apply. */
+.plan-game {background:var(--etic-surface);min-height:100vh;--game-line:color-mix(in srgb,var(--etic-border) 42%,var(--etic-surface));}
+.plan-game *{box-sizing:border-box}
+.plan-game h1,.plan-game h2,.plan-game p{margin:0}
+.plan-game p{line-height:1.65}
+.plan-game button{font:inherit;cursor:pointer}
+.plan-game button:disabled{cursor:not-allowed;opacity:.5}
+.plan-game .topbar{max-width:1500px;margin:auto;padding:var(--etic-space-4) var(--etic-space-12);display:flex;align-items:center;justify-content:space-between;gap:var(--etic-space-6);border-bottom:1px solid var(--game-line)}
+.plan-game .brand{display:flex;align-items:center;gap:var(--etic-space-3);padding:0;border:0;background:none;text-align:left;font-weight:800;color:var(--etic-text);font-size:17px}
+.plan-game .brand small{display:block;font-size:10px;letter-spacing:.18em;color:var(--etic-muted);margin-top:4px}
+.plan-game nav{display:flex;gap:var(--etic-space-3);align-items:center}
+.plan-game .etic-button{font-size:14px}
+.plan-game .eyebrow{display:block;font-size:12px;font-weight:750;letter-spacing:.14em;color:var(--etic-action)}
+.plan-game .welcome{max-width:1440px;margin:auto;padding:var(--etic-space-16) var(--etic-space-12) 0;display:grid;grid-template-columns:1.15fr 1fr;column-gap:var(--etic-space-12);align-items:center}
+.plan-game .welcome h1{font-size:clamp(48px,6vw,88px);line-height:.98;letter-spacing:-.055em;margin:var(--etic-space-8) 0}
+.plan-game .welcome h1 .etic-brand-heading__accent{font-size:clamp(27px,3vw,42px);letter-spacing:-.03em;line-height:1.3;color:var(--etic-action);margin-top:var(--etic-space-4)}
+.plan-game .welcome-copy>p{max-width:47ch;font-size:17px;color:var(--etic-muted)}
+.plan-game .welcome-actions{display:flex;flex-wrap:wrap;gap:var(--etic-space-3);margin-top:var(--etic-space-8)}
+.plan-game .welcome-actions .etic-button{min-height:54px;padding-inline:var(--etic-space-6)}
+.plan-game .home-meta{display:flex;align-items:center;gap:var(--etic-space-4);font-size:13px;font-weight:600;margin-top:var(--etic-space-6)}
+.plan-game .home-meta i{height:4px;width:4px;border-radius:50%;background:var(--etic-action)}
+.plan-game .welcome-copy .score-note{font-size:13px;border-top:1px solid var(--game-line);padding-top:var(--etic-space-4);margin-top:var(--etic-space-6);max-width:53ch}
+.plan-game .welcome-art{min-width:0;position:relative;overflow:hidden;align-self:stretch;display:flex;flex-direction:column;justify-content:center;min-height:450px}
+.plan-game .hero-ribbon{width:115%;max-width:none;position:relative;left:-3%;height:auto;flex-shrink:0}
+.plan-game .hero-students{display:flex;justify-content:center;gap:var(--etic-space-3);margin-top:var(--etic-space-4)}
+.plan-game .hero-students span{width:68px}.plan-game .hero-students svg{width:100%;height:auto;display:block}
+.plan-game .art-caption{text-align:center;margin:var(--etic-space-4) 0;color:var(--etic-muted);font-family:var(--etic-font-playful);font-size:20px}
+.plan-game .welcome-footer{grid-column:1/-1;display:flex;justify-content:space-between;gap:var(--etic-space-4);padding:var(--etic-space-6) 0;margin-top:var(--etic-space-12);font-size:12px;color:var(--etic-muted);border-top:1px solid var(--game-line)}
+.plan-game .game{max-width:1560px;padding:var(--etic-space-8) var(--etic-space-12);margin:auto}
+.plan-game .level-heading{margin-bottom:var(--etic-space-8)}
+.plan-game .level-heading h1{font-size:36px;margin:var(--etic-space-3) 0}
+.plan-game .level-heading p{font-size:14px;color:var(--etic-muted);max-width:95ch}
+.plan-game .game-layout{display:grid;grid-template-columns:230px minmax(390px,1fr) 285px;gap:var(--etic-space-6);align-items:start}
+.plan-game .roster{position:sticky;top:var(--etic-space-4);min-width:0}
+.plan-game .panel-title{display:flex;align-items:center;justify-content:space-between;gap:var(--etic-space-2)}
+.plan-game h2{font-weight:800;font-size:18px;letter-spacing:-.025em}
+.plan-game .count{font-size:11px;white-space:nowrap;color:var(--etic-muted);font-weight:600}
+.plan-game .muted,.plan-game .memo-subtitle{font-size:12px;color:var(--etic-muted);margin:var(--etic-space-2) 0 var(--etic-space-4)}
+.plan-game .student-list{display:grid;gap:var(--etic-space-2);max-height:560px;overflow:auto;padding:4px}
+.plan-game .student{display:flex;align-items:center;gap:var(--etic-space-3);text-align:left;width:100%;padding:var(--etic-space-3);border:1px solid var(--game-line);border-radius:var(--etic-radius-sm);box-shadow:none;background:var(--etic-surface);color:var(--etic-text)}
+.plan-game .student:hover{border-color:var(--etic-text)}
+.plan-game .student>svg{width:44px;height:44px;flex-shrink:0}
+.plan-game .student-info{min-width:0}.plan-game .student strong{display:block;font-size:14px;margin-bottom:5px}
+.plan-game .badges{display:flex;flex-wrap:wrap;gap:4px}
+.plan-game .badge{border-radius:4px;border-color:var(--game-line);font-size:10px;font-weight:500;padding:2px 4px;white-space:nowrap;color:var(--etic-muted)}
+.plan-game .grip{margin-left:auto;color:var(--etic-muted)}
+.plan-game .student.selected{outline:3px solid var(--etic-action);outline-offset:0;background:color-mix(in srgb,var(--etic-red) 7%,var(--etic-surface))}
+.plan-game .student.error{border:2px solid var(--etic-error)}
+.plan-game .reserve{width:100%;min-height:44px;background:transparent;border:1px dashed var(--etic-border);color:var(--etic-text);border-radius:var(--etic-radius-sm);font-size:12px;margin-top:var(--etic-space-3)}
+.plan-game .reserve.ready{border-color:var(--etic-action);color:var(--etic-action)}
+.plan-game .profile{font-size:12px;color:var(--etic-muted);margin-top:var(--etic-space-4);padding-top:var(--etic-space-4);border-top:1px solid var(--game-line);min-height:90px}.plan-game .profile p{margin:6px 0}.plan-game .profile strong{color:var(--etic-text)}
+.plan-game .empty{display:grid;gap:var(--etic-space-2);padding:var(--etic-space-6) 0;font-size:13px;color:var(--etic-success)}
+.plan-game .classroom{background:color-mix(in srgb,var(--etic-ink) 3%,var(--etic-surface));border:1px solid var(--game-line);padding:var(--etic-space-6) var(--etic-space-4) 0;border-radius:var(--etic-radius-md);min-width:0}
+.plan-game .room-top{display:flex;justify-content:space-between;align-items:center;gap:var(--etic-space-4);margin-bottom:var(--etic-space-6)}
+.plan-game .room-label,.plan-game .row-label,.plan-game .desk-title,.plan-game .orientation{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--etic-muted)}
+.plan-game .placed-count{min-width:150px;gap:5px}.plan-game .placed-count label{font-size:11px}.plan-game .placed-count progress{height:5px}
+.plan-game .blackboard{position:relative;max-width:340px;margin:auto;background:var(--etic-surface);border:2px solid var(--etic-text);border-bottom-width:6px;border-radius:4px;text-align:center;padding:var(--etic-space-4);color:var(--etic-text)}
+.plan-game .blackboard>span:first-child{font-weight:850;letter-spacing:-.03em;font-size:20px}
+.plan-game .blackboard small{display:block;color:var(--etic-muted);font-size:11px;margin-top:4px}
+.plan-game .board-doodle,.plan-game .chalk{display:none}
+.plan-game .teacher{display:flex;justify-content:center;gap:12px;width:200px;margin:var(--etic-space-3) auto;border:1px solid var(--etic-border);background:var(--etic-surface);padding:7px;border-radius:4px;font-size:10px;color:var(--etic-muted)}
+.plan-game .book{width:14px;background:var(--etic-red);border-bottom:3px solid var(--etic-beige)}
+.plan-game .orientation{text-align:center;margin:var(--etic-space-6) 0}
+.plan-game .rows{display:grid;gap:var(--etic-space-6)}.plan-game .row-label{margin-bottom:var(--etic-space-2)}
+.plan-game .tables{display:grid;grid-template-columns:1fr 1fr;gap:var(--etic-space-4)}
+.plan-game .desk{background:color-mix(in srgb,var(--etic-orange) 13%,var(--etic-surface));border:1px solid var(--etic-border);border-bottom-width:3px;border-radius:var(--etic-radius-sm);padding:8px;min-width:0}
+.plan-game .desk-title{text-align:center;margin-bottom:8px;font-size:9px;letter-spacing:.03em}
+.plan-game .seats{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:stretch}
+.plan-game .seat{min-width:0;position:relative;border-radius:6px;min-height:130px}
+.plan-game .empty-seat{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;width:100%;height:100%;min-height:130px;border:1px dashed var(--etic-border);background:var(--etic-surface);border-radius:6px;color:var(--etic-muted)}
+.plan-game .seat-plus{font-size:24px}.plan-game .empty-seat small{font-size:11px}
+.plan-game .seat .student{flex-direction:column;gap:5px;padding:6px 3px 26px;height:100%;min-height:130px;text-align:center;border-radius:6px}
+.plan-game .seat .student svg{width:38px;height:38px}.plan-game .seat .student strong{font-size:12px;margin:0 0 4px}
+.plan-game .seat .badges{justify-content:center;gap:3px}.plan-game .seat .badge{font-size:9px;padding:1px 2px}
+.plan-game .seat-number{position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:10px;color:var(--etic-muted);pointer-events:none}
+.plan-game .destination{outline:1px dashed var(--etic-action);outline-offset:3px}.plan-game .hint-target{outline:3px solid var(--etic-action);outline-offset:3px}
+.plan-game .room-tip{border-top:1px solid var(--game-line);padding:var(--etic-space-4) 0;font-size:12px;line-height:1.6;color:var(--etic-muted)}
+.plan-game .paper{padding:var(--etic-space-6);box-shadow:var(--etic-wide-shadow)}
+.plan-game .rule{display:flex;gap:var(--etic-space-3);padding:var(--etic-space-3) 0;border-top:1px solid var(--game-line);font-size:12px}
+.plan-game .rule-marker{flex-shrink:0;font-size:11px;font-weight:750;width:22px;height:22px;display:grid;place-items:center;border:1px solid var(--game-line);border-radius:50%}
+.plan-game .rule small{display:block;line-height:1.6;font-size:11px;margin-top:8px}
+.plan-game .rule.satisfied{color:var(--etic-success)}.plan-game .rule.violated{color:var(--etic-error)}.plan-game .rule.pending small{color:var(--etic-muted)}
+.plan-game .memo-note{font-size:11px;line-height:1.7;color:var(--etic-muted);margin-top:var(--etic-space-4);padding-top:var(--etic-space-4);border-top:1px solid var(--game-line)}
+.plan-game .action-bar{position:sticky;bottom:12px;z-index:3;display:flex;justify-content:space-between;gap:var(--etic-space-3);background:var(--etic-surface);border:1px solid var(--etic-border);border-radius:var(--etic-radius-md);padding:var(--etic-space-3);margin-top:var(--etic-space-6);box-shadow:var(--etic-shadow)}
+.plan-game .action-bar>div{display:flex;align-items:center;gap:8px}.plan-game .history-actions .etic-button{font-size:12px;padding-inline:10px}
+.plan-game .feedback:not(:empty){margin-top:var(--etic-space-4)}.plan-game .feedback p{font-size:14px}
+.plan-game .game-footer{display:flex;justify-content:space-between;gap:var(--etic-space-4);margin-top:var(--etic-space-4);font-size:11px;color:var(--etic-muted)}
+.plan-game dialog{position:fixed;max-width:560px;width:calc(100% - 32px);max-height:90dvh;padding:var(--etic-space-8);border:1px solid var(--game-line);background:var(--etic-surface);overflow:auto}
+.plan-game dialog::backdrop{background:rgb(39 36 33 / 55%)}
+.plan-game dialog h2{font-size:28px;line-height:1.15;max-width:90%;margin-bottom:var(--etic-space-6)}
+.plan-game dialog p{font-size:14px;color:var(--etic-muted);margin:var(--etic-space-3) 0}
+.plan-game .close{position:absolute;right:8px;top:8px;width:44px;padding:0;font-size:26px}
+.plan-game .dialog-actions{display:flex;flex-wrap:wrap;gap:var(--etic-space-3);margin-top:var(--etic-space-6)}
+.plan-game .win-score{font-family:var(--etic-font-display);font-size:44px;font-weight:850;color:var(--etic-action);letter-spacing:-.04em;margin:var(--etic-space-4) 0}
+.plan-game .result-art{width:96px;height:auto;margin-bottom:var(--etic-space-4)}
+@media(min-width:1500px){.plan-game .game-layout{grid-template-columns:260px minmax(450px,1fr) 310px;gap:32px}}
+@media(max-width:1150px){.plan-game .topbar,.plan-game .game,.plan-game .welcome{padding-inline:24px}.plan-game .game-layout{grid-template-columns:200px minmax(360px,1fr);gap:24px}.plan-game .instructions{grid-column:1/-1}.plan-game .rule-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0 24px}.plan-game .welcome h1{font-size:clamp(45px,6vw,72px)}}
+@media(max-width:700px){
+ .plan-game .topbar{padding:12px 16px;gap:8px}.plan-game .brand{gap:4px;font-size:13px}.plan-game .brand small{font-size:8px}.plan-game .brand .etic-logo{--etic-logo-width:32px!important}.plan-game nav{gap:0}.plan-game nav .etic-button{padding:8px;font-size:11px}
+ .plan-game .welcome{grid-template-columns:1fr;padding:32px 20px 0;gap:16px}.plan-game .welcome h1{font-size:58px;margin:24px 0}.plan-game .welcome-copy>p{font-size:15px}.plan-game .welcome-art{min-height:0;max-height:310px;margin-top:16px}.plan-game .hero-ribbon{width:80%;max-height:190px;object-fit:contain;left:10%}.plan-game .hero-students span{width:45px}.plan-game .art-caption{font-size:16px;margin:8px}.plan-game .welcome-footer{margin-top:24px;font-size:11px}.plan-game .home-meta{font-size:12px}
+ .plan-game .game{padding:24px 14px}.plan-game .level-heading h1{font-size:30px}.plan-game .level-heading p{font-size:12px}.plan-game .eyebrow{font-size:10px}
+ .plan-game .game-layout{display:flex;flex-direction:column;gap:24px}.plan-game .roster{position:static;width:100%}.plan-game .student-list{display:flex;overflow-x:auto;max-height:none}.plan-game .student-list .student{min-width:165px;max-width:180px;flex-shrink:0}.plan-game .profile{min-height:0;font-size:12px}.plan-game .profile p{display:inline}.plan-game .profile span{display:block;margin-top:4px}
+ .plan-game .classroom{width:100%;padding:16px 10px 0}.plan-game .room-top{gap:8px}.plan-game .room-label{font-size:9px}.plan-game .tables{gap:12px}.plan-game .desk{padding:6px}.plan-game .seats{gap:5px}.plan-game .desk-title{font-size:8px}.plan-game .seat .badge{font-size:9px}.plan-game .seat .student svg{width:35px;height:35px}.plan-game .room-tip{font-size:11px}.plan-game .instructions{width:100%}.plan-game .paper{padding:20px}.plan-game .rule-list{display:block}.plan-game .rule{font-size:13px}
+ .plan-game .action-bar{flex-direction:column;bottom:0;padding:8px;gap:8px}.plan-game .action-bar>div{justify-content:center}.plan-game .action-bar>div:last-child>.etic-button{flex:1}.plan-game .history-actions .etic-button{min-height:40px}.plan-game .game-footer{flex-direction:column;gap:6px}
+ .plan-game dialog{padding:28px 20px}.plan-game dialog h2{font-size:25px}.plan-game .win-score{font-size:36px}
+}
+@media(max-width:370px){.plan-game .brand small{display:none}.plan-game .brand{font-size:11px}.plan-game nav .etic-button{font-size:10px}.plan-game .welcome h1{font-size:48px}.plan-game .hero-students{gap:8px}}
+@media(prefers-reduced-motion:reduce){.plan-game *,.plan-game *::before,.plan-game *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* ETIC's actual composition assets now frame the game, not only its welcome. */
+.plan-game .welcome-art{min-height:560px;isolation:isolate;display:block}
+.plan-game .hero-ribbon{position:absolute;width:110%;height:auto;max-height:none;left:0;top:-100px;z-index:-1}
+.plan-game .hero-impact{position:absolute;width:190px;height:auto;right:7%;bottom:62px;background:var(--etic-surface);padding:12px;border-radius:var(--etic-radius-md)}
+.plan-game .art-caption{position:absolute;bottom:12px;left:0;right:0;margin:0}
+.plan-game .level-heading{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 210px;min-height:205px;overflow:hidden;background:var(--etic-red);color:var(--etic-on-action);border-radius:var(--etic-radius-lg);margin-bottom:var(--etic-space-4);isolation:isolate}
+.plan-game .game-heading-copy{padding:var(--etic-space-8);align-self:center;min-width:0}
+.plan-game .level-heading .eyebrow{color:var(--etic-on-action);font-size:11px;letter-spacing:.16em}
+.plan-game .level-heading h1{font-size:clamp(30px,3.2vw,48px);letter-spacing:-.04em;margin:var(--etic-space-3) 0;line-height:1.04;text-wrap:balance}
+.plan-game .game-heading-accent{font-size:21px}
+.plan-game .game-heading-art{position:relative;overflow:hidden;pointer-events:none}
+.plan-game .game-heading-art img{position:absolute;width:270px;max-width:none;height:auto;top:-45px;left:-10px}
+.plan-game .game-intro{font-size:13px;max-width:110ch;color:var(--etic-muted);margin:0 0 var(--etic-space-8);line-height:1.7}
+.plan-game .result-art{width:150px;height:auto;margin:0 auto var(--etic-space-6)}
+@media(max-width:1150px){.plan-game .welcome-art{min-height:480px}.plan-game .hero-ribbon{top:-35px}.plan-game .hero-impact{width:165px;bottom:60px}}
+@media(max-width:700px){
+ .plan-game .brand .etic-logo{--etic-logo-width:44px!important}
+ .plan-game .welcome-art{min-height:330px;max-height:330px;margin-top:var(--etic-space-4)}
+ .plan-game .hero-ribbon{width:290px;max-height:none;left:calc(50% - 145px);top:-100px}
+ .plan-game .hero-impact{width:134px;right:6%;bottom:35px;padding:8px}
+ .plan-game .art-caption{font-size:14px;bottom:5px}
+ .plan-game .level-heading{grid-template-columns:minmax(0,1fr) 82px;min-height:180px;border-radius:var(--etic-radius-md)}
+ .plan-game .game-heading-copy{padding:22px 0 22px 18px}
+ .plan-game .level-heading h1{font-size:30px;line-height:1.08}
+ .plan-game .level-heading .eyebrow{font-size:9px;letter-spacing:.06em}
+ .plan-game .game-heading-accent{font-size:15px;max-width:22ch}
+ .plan-game .game-heading-art img{width:170px;top:0;left:0}
+ .plan-game .game-intro{font-size:12px;margin-bottom:24px}
+}
